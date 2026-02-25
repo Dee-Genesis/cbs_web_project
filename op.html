@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Programs — CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --sky:#1B3F6E;--sky-deep:#112b4e;--sky-mid:#254f8a;--sky-pale:#EEF3FA;
+  --dba-deep:#0A0A14;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Syne",sans-serif;--body:"DM Sans",sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* ── NEWS TICKER ─────────────────────── */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:"\2022";margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── TOP BAR ─────────────────────────── */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85;display:block}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+
+/* ── HEADER ──────────────────────────── */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:260px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ── MOBILE DRAWER ───────────────────── */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+.drawer-btn-gold:hover{background:var(--gold-light)}
+
+/* ══════════════════════════════════════
+   PAGE HERO — editorial split
+══════════════════════════════════════ */
+.op-hero{background:var(--sky-deep);position:relative;overflow:hidden;padding:6rem 5vw 5rem}
+/* Decorative rings */
+.op-hero::before{content:"";position:absolute;top:-150px;right:-150px;width:700px;height:700px;border-radius:50%;border:1px solid rgba(201,168,76,.06);pointer-events:none}
+.op-hero::after{content:"";position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(201,168,76,.04);pointer-events:none}
+.op-hero-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.op-hero-left{}
+.op-hero-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.op-hero-eyebrow::before{content:"";display:block;width:28px;height:2px;background:var(--gold)}
+.op-hero-title{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.5rem);color:#fff;line-height:1.0;margin-bottom:1.25rem}
+.op-hero-title em{color:var(--gold);font-style:italic}
+.op-hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.8;max-width:480px;margin-bottom:2.5rem}
+.op-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-hero-gold{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;transition:all .25s}
+.btn-hero-gold:hover{background:var(--gold-light)}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:.9rem 1.75rem;transition:all .25s}
+.btn-hero-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* Hero right — mini program ladder */
+.op-hero-right{display:flex;flex-direction:column;gap:.5rem}
+.hero-ladder-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid transparent;transition:all .3s var(--ease-out);cursor:pointer}
+.hero-ladder-item:hover{background:rgba(201,168,76,.08);border-left-color:var(--gold)}
+.hero-ladder-item.featured{background:rgba(201,168,76,.1);border-left-color:var(--gold)}
+.hero-ladder-num{font-family:var(--serif);font-size:1.5rem;color:rgba(255,255,255,.15);line-height:1;flex-shrink:0;width:32px}
+.hero-ladder-item:hover .hero-ladder-num,.hero-ladder-item.featured .hero-ladder-num{color:var(--gold)}
+.hero-ladder-badge{font-family:var(--sans);font-size:.55rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--sky-mid);color:#fff;padding:.2rem .55rem;flex-shrink:0;min-width:40px;text-align:center}
+.hero-ladder-item.featured .hero-ladder-badge{background:var(--gold);color:var(--ink)}
+.hero-ladder-item:nth-child(5) .hero-ladder-badge{background:rgba(201,168,76,.2);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+.hero-ladder-text strong{display:block;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:.1rem}
+.hero-ladder-text span{font-size:.75rem;color:rgba(255,255,255,.45)}
+.hero-ladder-arrow{margin-left:auto;color:var(--gold);opacity:0;font-size:.9rem;transition:all .25s;flex-shrink:0}
+.hero-ladder-item:hover .hero-ladder-arrow{opacity:1}
+.hero-ladder-connector{display:flex;align-items:center;gap:0;padding-left:1.9rem}
+.hero-ladder-connector-line{width:1px;height:14px;background:rgba(255,255,255,.1);margin-left:15px}
+
+/* ── STATS STRIP ──────────────────────── */
+.stats-strip{background:var(--gold);padding:1.5rem 5vw}
+.stats-strip-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--serif);font-size:2.5rem;color:var(--ink);line-height:1;display:block;margin-bottom:.2rem}
+.stat-label{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.65)}
+
+/* ── SECTION INTRO ────────────────────── */
+.section-intro-wrap{max-width:1400px;margin:0 auto;padding:5rem 5vw 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;border-bottom:1px solid rgba(13,13,13,.07)}
+.section-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.section-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
+.section-intro-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);color:var(--ink);line-height:1.1}
+.section-intro-title em{font-style:italic;color:var(--sky)}
+.section-intro-body{font-size:1rem;color:rgba(13,13,13,.65);line-height:1.85}
+.section-intro-body p{margin-bottom:1rem}
+.section-intro-body p:last-child{margin-bottom:0}
+
+/* ══════════════════════════════════════
+   PROGRAM CARDS — full-width showcase
+══════════════════════════════════════ */
+.programs-showcase{max-width:1400px;margin:0 auto;padding:0 5vw 2rem}
+
+/* Each program row */
+.prog-row{display:grid;grid-template-columns:280px 1fr;border-bottom:1px solid rgba(13,13,13,.07);padding:4rem 0;gap:4rem;align-items:start}
+.prog-row:last-child{border-bottom:none}
+
+/* Left: identity panel */
+.prog-identity{position:relative}
+.prog-number{font-family:var(--serif);font-size:5rem;color:rgba(13,13,13,.04);line-height:1;margin-bottom:-.5rem}
+.prog-level-tag{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:var(--sky);color:#fff;padding:.3rem .75rem;display:inline-block;margin-bottom:1rem}
+.prog-row.level-dba .prog-level-tag{background:var(--dba-deep);color:var(--gold);border:1px solid rgba(201,168,76,.3)}
+.prog-row.level-mba .prog-level-tag{background:var(--sky-deep)}
+.prog-name-short{font-family:var(--sans);font-size:2.5rem;font-weight:800;letter-spacing:.04em;color:var(--ink);line-height:1;margin-bottom:.25rem}
+.prog-name-full{font-family:var(--body);font-size:.85rem;color:rgba(13,13,13,.5);margin-bottom:1.5rem}
+.prog-meta-list{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem}
+.prog-meta-row{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:rgba(13,13,13,.6)}
+.prog-meta-row strong{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.4);width:80px;flex-shrink:0}
+.prog-meta-row span{color:var(--ink)}
+.prog-identity-ctas{display:flex;flex-direction:column;gap:.6rem}
+.btn-prog-primary{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.75rem 1.25rem;transition:all .25s;text-align:center}
+.btn-prog-primary:hover{background:var(--sky)}
+.btn-prog-outline{display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1.5px solid rgba(13,13,13,.25);padding:.75rem 1.25rem;transition:all .25s;text-align:center}
+.btn-prog-outline:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+.prog-row.level-dba .btn-prog-primary{background:var(--gold);color:var(--ink)}
+.prog-row.level-dba .btn-prog-primary:hover{background:var(--gold-dark);color:#fff}
+
+/* Right: content panel */
+.prog-content{}
+.prog-overview{font-size:.975rem;color:rgba(13,13,13,.72);line-height:1.85;margin-bottom:2rem;border-left:3px solid var(--gold);padding-left:1.25rem}
+
+/* Key features inline */
+.prog-features{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem}
+.prog-feature{display:flex;align-items:flex-start;gap:.7rem;padding:.85rem;background:var(--ivory);border:1px solid rgba(13,13,13,.05)}
+.prog-feature-icon{width:30px;height:30px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
+.prog-row.level-dba .prog-feature-icon{background:var(--ink)}
+.prog-feature-text strong{display:block;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-bottom:.2rem}
+.prog-feature-text span{font-size:.8rem;color:rgba(13,13,13,.6);line-height:1.5}
+
+/* Specializations inline pills */
+.prog-specs-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.prog-specs-label::before{content:"";display:block;width:14px;height:1px;background:rgba(13,13,13,.2)}
+.prog-specs-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.spec-pill{font-family:var(--body);font-size:.72rem;color:var(--sky);background:var(--sky-pale);border:1px solid rgba(27,63,110,.12);padding:.25rem .7rem}
+.spec-pill-more{font-family:var(--sans);font-size:.68rem;font-weight:700;color:var(--gold-dark);background:var(--paper);border:1px solid rgba(201,168,76,.2);padding:.25rem .7rem}
+.prog-row.level-dba .spec-pill{color:var(--ink);background:var(--paper);border-color:rgba(13,13,13,.1)}
+.prog-row.level-dba .spec-pill-more{color:var(--gold-dark)}
+
+/* Pathway chip */
+.prog-pathway{display:inline-flex;align-items:center;gap:.5rem;background:rgba(13,13,13,.04);border:1px solid rgba(13,13,13,.08);padding:.5rem 1rem;font-size:.78rem;color:rgba(13,13,13,.6)}
+.prog-pathway strong{color:var(--sky);font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.prog-row.level-dba .prog-pathway strong{color:var(--gold-dark)}
+
+/* ══════════════════════════════════════
+   ACADEMIC LADDER — full-width visual
+══════════════════════════════════════ */
+.ladder-section{background:var(--sky-deep);padding:5rem 5vw;position:relative;overflow:hidden}
+.ladder-section::before{content:"";position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(255,255,255,.04);pointer-events:none}
+.ladder-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1}
+.ladder-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.ladder-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
+.ladder-title{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.75rem);color:#fff;margin-bottom:.75rem}
+.ladder-sub{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:540px;margin-bottom:3.5rem}
+.ladder-track{display:flex;align-items:stretch;gap:0;position:relative}
+.ladder-step{flex:1;position:relative;padding:2rem 1.5rem 1.75rem;border:1px solid rgba(255,255,255,.07);border-right:none;display:flex;flex-direction:column;transition:background .3s}
+.ladder-step:last-child{border-right:1px solid rgba(255,255,255,.07)}
+.ladder-step:hover{background:rgba(255,255,255,.03)}
+.ladder-step.is-dba{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.2)}
+.ladder-step.is-dba:hover{background:rgba(201,168,76,.1)}
+/* Arrow connector between steps */
+.ladder-step::after{content:"›";position:absolute;top:50%;right:-14px;transform:translateY(-50%);color:rgba(255,255,255,.2);font-size:1.5rem;z-index:2;line-height:1}
+.ladder-step:last-child::after{display:none}
+.ladder-step-level{font-family:var(--sans);font-size:.52rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem}
+.ladder-step.is-dba .ladder-step-level{color:var(--gold)}
+.ladder-step-badge{font-family:var(--sans);font-size:1.6rem;font-weight:800;letter-spacing:.04em;color:#fff;margin-bottom:.5rem;line-height:1}
+.ladder-step.is-dba .ladder-step-badge{color:var(--gold)}
+.ladder-step-name{font-family:var(--serif);font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.3;margin-bottom:1rem;flex:1}
+.ladder-step.is-dba .ladder-step-name{color:#fff}
+.ladder-step-meta{font-family:var(--body);font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.5;margin-bottom:1.25rem}
+.ladder-step.is-dba .ladder-step-meta{color:rgba(201,168,76,.6)}
+.ladder-step-link{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.35rem;transition:gap .2s;margin-top:auto}
+.ladder-step:hover .ladder-step-link{gap:.55rem}
+
+/* ══════════════════════════════════════
+   SPECIALIZATIONS GRID — all programs
+══════════════════════════════════════ */
+.spec-overview{max-width:1400px;margin:0 auto;padding:5rem 5vw}
+.spec-overview-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(13,13,13,.07)}
+.spec-overview-title{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.75rem);color:var(--ink);line-height:1.1}
+.spec-overview-title em{font-style:italic;color:var(--sky)}
+.spec-overview-body{font-size:.95rem;color:rgba(13,13,13,.6);line-height:1.75}
+.spec-clusters{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.spec-cluster{background:#fff;padding:1.75rem;transition:all .3s var(--ease-out);position:relative;overflow:hidden}
+.spec-cluster::before{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .4s var(--ease-out);transform-origin:left}
+.spec-cluster:hover{background:var(--ivory)}
+.spec-cluster:hover::before{transform:scaleX(1)}
+.spec-cluster-icon{font-size:1.5rem;margin-bottom:.85rem}
+.spec-cluster-name{font-family:var(--sans);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.spec-cluster-count{font-family:var(--serif);font-size:.85rem;color:var(--gold-dark);margin-bottom:.85rem}
+.spec-cluster-list{display:flex;flex-direction:column;gap:.35rem}
+.spec-cluster-item{font-size:.78rem;color:rgba(13,13,13,.6);line-height:1.45;display:flex;align-items:flex-start;gap:.4rem}
+.spec-cluster-item::before{content:"";width:5px;height:5px;background:var(--sky);border-radius:50%;flex-shrink:0;margin-top:.45rem}
+
+/* ══════════════════════════════════════
+   ACCREDITATION STRIP
+══════════════════════════════════════ */
+.accreditation-strip{background:var(--paper);padding:3rem 5vw;border-top:4px solid var(--gold);border-bottom:1px solid rgba(13,13,13,.08)}
+.accreditation-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.acc-label{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,13,13,.55);white-space:nowrap;margin-right:1rem}
+.acc-logo-img{height:44px;width:auto;object-fit:contain;display:block;padding:.6rem 1.25rem;background:#fff;border:1px solid rgba(13,13,13,.1);box-shadow:0 2px 8px rgba(0,0,0,.06);filter:grayscale(.3);opacity:.85;transition:all .3s}
+.acc-logo-img:hover{opacity:1;filter:grayscale(0);box-shadow:0 4px 16px rgba(0,0,0,.12);border-color:var(--gold);transform:translateY(-2px)}
+
+/* ══════════════════════════════════════
+   CTA BANNER
+══════════════════════════════════════ */
+.cta-banner{background:var(--sky-deep);padding:5.5rem 5vw;position:relative;overflow:hidden}
+.cta-banner::before{content:"";position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(255,255,255,.04);pointer-events:none}
+.cta-banner::after{content:"";position:absolute;bottom:-100px;left:8%;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.03);pointer-events:none}
+.cta-banner-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;position:relative;z-index:1}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.25rem);color:#fff;line-height:1.1;margin-bottom:.75rem}
+.cta-banner-title em{color:var(--gold);font-style:italic}
+.cta-banner-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:520px}
+.cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:220px}
+.btn-cta-gold{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.95rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-gold:hover{background:var(--gold-light)}
+.btn-cta-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.35);padding:.95rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.06)}
+
+/* ── FOOTER ──────────────────────────── */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8;display:block}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:1200px){
+  .spec-clusters{grid-template-columns:repeat(2,1fr)}
+  .ladder-track{flex-wrap:wrap}
+  .ladder-step{flex:1 1 calc(50% - 1px);border-right:1px solid rgba(255,255,255,.07)}
+  .ladder-step::after{display:none}
+}
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .op-hero-inner{grid-template-columns:1fr}
+  .op-hero-right{display:none}
+  .section-intro-wrap{grid-template-columns:1fr;gap:2rem}
+  .prog-row{grid-template-columns:1fr;gap:2rem}
+  .prog-identity-ctas{flex-direction:row}
+  .spec-overview-head{grid-template-columns:1fr;gap:1.5rem}
+  .cta-banner-inner{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .stats-strip-inner{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  .prog-features{grid-template-columns:1fr}
+  .spec-clusters{grid-template-columns:1fr}
+  .ladder-step{flex:1 1 100%}
+  .stats-strip-inner{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .cta-banner-btns{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>Applications for 2026 intake are now open &mdash; Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 &mdash; Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 &mdash; Congratulations to all graduates</span>
+      <span>Applications for 2026 intake are now open &mdash; Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 &mdash; Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 &mdash; Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15550001234">&#128222; +1 (555) 000-1234</a>
+    <a href="mailto:info@cbsedu.us">&#9993; info@cbsedu.us</a>
+    <a href="cm.html">&#128205; View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name"><span class="logo-name-top">CIML</span><span class="logo-name-bottom">Business School</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop active">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">&#10005;</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item open">
+      <a href="op.html" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="#ladder-section" class="drawer-btn drawer-btn-outline">View Academic Ladder</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now &#8594;</a>
+  </div>
+</aside>
+
+<!-- ═══ HERO ═══ -->
+<section class="op-hero">
+  <div class="op-hero-inner">
+    <div class="op-hero-left">
+      <div class="op-hero-eyebrow">Academic Programs</div>
+      <h1 class="op-hero-title">Five pathways.<br>One <em>ascending</em><br>journey.</h1>
+      <p class="op-hero-sub">From foundational business principles to doctoral-level applied research — CIML Business School offers a complete, internationally validated academic ladder designed to take you exactly as far as your ambition demands.</p>
+      <div class="op-hero-actions">
+        <a href="app.html" class="btn-hero-gold">Apply for 2026</a>
+        <a href="#programs" class="btn-hero-ghost">Explore Programs &#8595;</a>
+      </div>
+    </div>
+    <div class="op-hero-right">
+      <a href="dp.html" class="hero-ladder-item">
+        <span class="hero-ladder-num">01</span>
+        <span class="hero-ladder-badge">DP</span>
+        <div class="hero-ladder-text"><strong>Diploma Program</strong><span>Foundation level &middot; Entry-level readiness</span></div>
+        <span class="hero-ladder-arrow">&#8594;</span>
+      </a>
+      <div class="hero-ladder-connector"><div class="hero-ladder-connector-line"></div></div>
+      <a href="avd.html" class="hero-ladder-item">
+        <span class="hero-ladder-num">02</span>
+        <span class="hero-ladder-badge">AVD</span>
+        <div class="hero-ladder-text"><strong>Advanced Diploma</strong><span>Intermediate level &middot; Management skills</span></div>
+        <span class="hero-ladder-arrow">&#8594;</span>
+      </a>
+      <div class="hero-ladder-connector"><div class="hero-ladder-connector-line"></div></div>
+      <a href="pgd.html" class="hero-ladder-item">
+        <span class="hero-ladder-num">03</span>
+        <span class="hero-ladder-badge">PGD</span>
+        <div class="hero-ladder-text"><strong>Postgraduate Diploma</strong><span>Postgrad level &middot; Senior leadership bridge</span></div>
+        <span class="hero-ladder-arrow">&#8594;</span>
+      </a>
+      <div class="hero-ladder-connector"><div class="hero-ladder-connector-line"></div></div>
+      <a href="mba.html" class="hero-ladder-item featured">
+        <span class="hero-ladder-num">04</span>
+        <span class="hero-ladder-badge">MBA</span>
+        <div class="hero-ladder-text"><strong>Master of Business Administration</strong><span>Master's level &middot; Executive leadership</span></div>
+        <span class="hero-ladder-arrow">&#8594;</span>
+      </a>
+      <div class="hero-ladder-connector"><div class="hero-ladder-connector-line"></div></div>
+      <a href="dba.html" class="hero-ladder-item">
+        <span class="hero-ladder-num">05</span>
+        <span class="hero-ladder-badge" style="background:rgba(201,168,76,.2);color:var(--gold);border:1px solid rgba(201,168,76,.3)">DBA</span>
+        <div class="hero-ladder-text"><strong>Doctor of Business Administration</strong><span>Doctoral level &middot; Terminal credential</span></div>
+        <span class="hero-ladder-arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Academic Programs</span></div>
+    <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label">Specializations</span></div>
+    <div class="stat-item"><span class="stat-num">12,000+</span><span class="stat-label">Alumni Worldwide</span></div>
+    <div class="stat-item"><span class="stat-num">94%</span><span class="stat-label">Graduate Employment Rate</span></div>
+  </div>
+</div>
+
+<!-- SECTION INTRO -->
+<div class="section-intro-wrap">
+  <div>
+    <div class="section-eyebrow">A Complete Academic Pathway</div>
+    <h2 class="section-intro-title">Every qualification.<br><em>Every ambition.</em> Covered.</h2>
+  </div>
+  <div class="section-intro-body">
+    <p>Whether you are taking your first steps in professional education or seeking the highest credential available in business scholarship, CIML Business School has a program built for your stage and your goals.</p>
+    <p>Each qualification builds directly on the last — allowing you to enter at the level that fits your background and ascend as far as your ambition takes you. All programs are internationally validated and recognized across academic, corporate, and government institutions worldwide.</p>
+  </div>
+</div>
+
+<!-- ═══ PROGRAMS SHOWCASE ═══ -->
+<div class="programs-showcase" id="programs">
+
+  <!-- 01 DIPLOMA -->
+  <div class="prog-row level-diploma">
+    <div class="prog-identity">
+      <div class="prog-number">01</div>
+      <div class="prog-level-tag">Foundation Level</div>
+      <div class="prog-name-short">Diploma</div>
+      <div class="prog-name-full">Diploma in Business Management</div>
+      <div class="prog-meta-list">
+        <div class="prog-meta-row"><strong>Duration</strong><span>6&ndash;12 Months</span></div>
+        <div class="prog-meta-row"><strong>Mode</strong><span>Online, Blended, Full-time</span></div>
+        <div class="prog-meta-row"><strong>Next Step</strong><span>Advanced Diploma</span></div>
+      </div>
+      <div class="prog-identity-ctas">
+        <a href="dp.html" class="btn-prog-primary">View Program &#8594;</a>
+        <a href="rdp.html" class="btn-prog-outline">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-overview">The Diploma is the foundation of the CIML academic pathway — designed for learners beginning their journey in management and leadership. It delivers a strong grounding in core business principles while offering industry-specific specializations, preparing graduates for entry-level roles and seamless progression into advanced qualifications.</p>
+      <div class="prog-features">
+        <div class="prog-feature"><div class="prog-feature-icon">&#128218;</div><div class="prog-feature-text"><strong>Foundational Knowledge</strong><span>Management, communication, economics, accounting &amp; organizational behaviour</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#9881;</div><div class="prog-feature-text"><strong>Practical Skills</strong><span>Applied learning through assignments, projects &amp; real-world case studies</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127959;</div><div class="prog-feature-text"><strong>Industry Awareness</strong><span>Exposure to healthcare, hospitality, finance, energy &amp; technology sectors</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128640;</div><div class="prog-feature-text"><strong>Academic Progression</strong><span>Direct pathway to Advanced Diploma, PGD, MBA &amp; DBA programs</span></div></div>
+      </div>
+      <div class="prog-specs-label">Sample Specializations</div>
+      <div class="prog-specs-pills">
+        <span class="spec-pill">Business Management</span>
+        <span class="spec-pill">Accounting</span>
+        <span class="spec-pill">Financial Management</span>
+        <span class="spec-pill">Human Resource Leadership</span>
+        <span class="spec-pill">Healthcare Management</span>
+        <span class="spec-pill">Hospitality &amp; Tourism</span>
+        <span class="spec-pill">Oil &amp; Gas Management</span>
+        <span class="spec-pill">Marketing &amp; Sales Strategy</span>
+        <span class="spec-pill-more">40+ Specializations &#8594;</span>
+      </div>
+      <div class="prog-pathway">&#128200; <strong>Progression Path:</strong>&nbsp; Diploma &rarr; Advanced Diploma &rarr; PGD &rarr; MBA &rarr; DBA</div>
+    </div>
+  </div>
+
+  <!-- 02 ADVANCED DIPLOMA -->
+  <div class="prog-row level-avd">
+    <div class="prog-identity">
+      <div class="prog-number">02</div>
+      <div class="prog-level-tag">Intermediate Level</div>
+      <div class="prog-name-short">Advanced<br>Diploma</div>
+      <div class="prog-name-full">Advanced Diploma in Business Management</div>
+      <div class="prog-meta-list">
+        <div class="prog-meta-row"><strong>Duration</strong><span>9&ndash;15 Months</span></div>
+        <div class="prog-meta-row"><strong>Mode</strong><span>Online, Blended, Full-time</span></div>
+        <div class="prog-meta-row"><strong>Next Step</strong><span>Postgraduate Diploma</span></div>
+      </div>
+      <div class="prog-identity-ctas">
+        <a href="avd.html" class="btn-prog-primary">View Program &#8594;</a>
+        <a href="ravd.html" class="btn-prog-outline">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-overview">The Advanced Diploma builds directly on the Diploma, strengthening managerial, analytical, and leadership capabilities. It bridges foundational knowledge with advanced, industry-specific expertise — preparing graduates for mid-level management, supervisory positions, and entrepreneurial ventures while opening the pathway to the PGD, MBA, and DBA.</p>
+      <div class="prog-features">
+        <div class="prog-feature"><div class="prog-feature-icon">&#128270;</div><div class="prog-feature-text"><strong>Strategic &amp; Analytical Learning</strong><span>Advanced decision-making, problem-solving &amp; strategic planning beyond operational basics</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127919;</div><div class="prog-feature-text"><strong>Industry-Specific Expertise</strong><span>Tailored specializations across finance, healthcare, hospitality, energy &amp; technology</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127759;</div><div class="prog-feature-text"><strong>Global Relevance</strong><span>International perspectives &amp; cross-cultural management for global careers</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128200;</div><div class="prog-feature-text"><strong>Career Mobility</strong><span>Recognized pathway to PGD, MBA &amp; DBA programs at CIML</span></div></div>
+      </div>
+      <div class="prog-specs-label">Sample Specializations</div>
+      <div class="prog-specs-pills">
+        <span class="spec-pill">Strategic &amp; Corporate Management</span>
+        <span class="spec-pill">Financial Management</span>
+        <span class="spec-pill">HR &amp; Organizational Leadership</span>
+        <span class="spec-pill">International Business</span>
+        <span class="spec-pill">Technology &amp; Innovation Leadership</span>
+        <span class="spec-pill">Real Estate &amp; Property Development</span>
+        <span class="spec-pill-more">40+ Specializations &#8594;</span>
+      </div>
+      <div class="prog-pathway">&#128200; <strong>Progression Path:</strong>&nbsp; Advanced Diploma &rarr; PGD &rarr; MBA &rarr; DBA</div>
+    </div>
+  </div>
+
+  <!-- 03 PGD -->
+  <div class="prog-row level-pgd">
+    <div class="prog-identity">
+      <div class="prog-number">03</div>
+      <div class="prog-level-tag">Postgraduate Level</div>
+      <div class="prog-name-short">Postgrad<br>Diploma</div>
+      <div class="prog-name-full">Postgraduate Diploma in Business Management</div>
+      <div class="prog-meta-list">
+        <div class="prog-meta-row"><strong>Duration</strong><span>12&ndash;18 Months</span></div>
+        <div class="prog-meta-row"><strong>Credits</strong><span>42&ndash;48 Semester Hours</span></div>
+        <div class="prog-meta-row"><strong>Next Step</strong><span>MBA or DBA</span></div>
+      </div>
+      <div class="prog-identity-ctas">
+        <a href="pgd.html" class="btn-prog-primary">View Program &#8594;</a>
+        <a href="rpgd.html" class="btn-prog-outline">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-overview">The Postgraduate Diploma is designed for graduates and professionals who wish to deepen their expertise before pursuing an MBA or DBA. It offers advanced academic rigour, strategic analysis, and applied leadership — the essential bridge between professional experience and master's-level scholarship.</p>
+      <div class="prog-features">
+        <div class="prog-feature"><div class="prog-feature-icon">&#128300;</div><div class="prog-feature-text"><strong>Advanced Academic Rigour</strong><span>Strategic analysis, applied research &amp; leadership thinking at postgraduate level</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127919;</div><div class="prog-feature-text"><strong>Specialization Depth</strong><span>Industry-specific pathways tailored to your target sector &amp; role</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128188;</div><div class="prog-feature-text"><strong>Senior Career Readiness</strong><span>Prepares students for senior management, consultancy &amp; leadership positions</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128640;</div><div class="prog-feature-text"><strong>Direct MBA &amp; DBA Access</strong><span>Serves as the recognized academic entry point into the MBA and DBA programs</span></div></div>
+      </div>
+      <div class="prog-specs-label">Sample Specializations</div>
+      <div class="prog-specs-pills">
+        <span class="spec-pill">Boardroom &amp; Governance Leadership</span>
+        <span class="spec-pill">Banking &amp; Financial Services</span>
+        <span class="spec-pill">Healthcare Administration</span>
+        <span class="spec-pill">Oil &amp; Gas Management</span>
+        <span class="spec-pill">Cybersecurity &amp; Digital Leadership</span>
+        <span class="spec-pill">Women in Leadership</span>
+        <span class="spec-pill-more">40+ Specializations &#8594;</span>
+      </div>
+      <div class="prog-pathway">&#128200; <strong>Progression Path:</strong>&nbsp; PGD &rarr; MBA &rarr; DBA</div>
+    </div>
+  </div>
+
+  <!-- 04 MBA -->
+  <div class="prog-row level-mba">
+    <div class="prog-identity">
+      <div class="prog-number">04</div>
+      <div class="prog-level-tag">Master's Level &nbsp;&#11088;</div>
+      <div class="prog-name-short">MBA</div>
+      <div class="prog-name-full">Master of Business Administration</div>
+      <div class="prog-meta-list">
+        <div class="prog-meta-row"><strong>Duration</strong><span>18&ndash;24 Months</span></div>
+        <div class="prog-meta-row"><strong>Credits</strong><span>60&ndash;66 Semester Hours</span></div>
+        <div class="prog-meta-row"><strong>Next Step</strong><span>DBA Program</span></div>
+      </div>
+      <div class="prog-identity-ctas">
+        <a href="mba.html" class="btn-prog-primary">View Program &#8594;</a>
+        <a href="rmba.html" class="btn-prog-outline">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-overview">Our flagship qualification — the CIML MBA is a globally recognized postgraduate credential tailored for professionals ready to step into executive leadership, strategic management, and specialized industry roles. It combines advanced theoretical frameworks with applied practice, global orientation, and a direct gateway to the DBA.</p>
+      <div class="prog-features">
+        <div class="prog-feature"><div class="prog-feature-icon">&#127959;</div><div class="prog-feature-text"><strong>Strategic Leadership Development</strong><span>Advanced corporate strategy, organizational transformation &amp; executive decision-making</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127758;</div><div class="prog-feature-text"><strong>Global Orientation</strong><span>International case studies, cross-cultural management &amp; global business trends</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128300;</div><div class="prog-feature-text"><strong>Applied Research &amp; Practice</strong><span>Capstone projects &amp; industry assignments applying theory to real challenges</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127942;</div><div class="prog-feature-text"><strong>Globally Validated Credential</strong><span>Validated by California University FCE &amp; government-accredited universities worldwide</span></div></div>
+      </div>
+      <div class="prog-specs-label">Sample Specializations</div>
+      <div class="prog-specs-pills">
+        <span class="spec-pill">Strategic Management &amp; Leadership</span>
+        <span class="spec-pill">Corporate Governance</span>
+        <span class="spec-pill">Finance, Accounting &amp; Risk</span>
+        <span class="spec-pill">Healthcare Administration</span>
+        <span class="spec-pill">Maritime &amp; Port Management</span>
+        <span class="spec-pill">Luxury Brand Management</span>
+        <span class="spec-pill">Aviation &amp; Transport</span>
+        <span class="spec-pill-more">40+ Specializations &#8594;</span>
+      </div>
+      <div class="prog-pathway">&#128200; <strong>Flagship Program</strong> &mdash; Serves as direct pathway to the Doctor of Business Administration (DBA)</div>
+    </div>
+  </div>
+
+  <!-- 05 DBA -->
+  <div class="prog-row level-dba">
+    <div class="prog-identity">
+      <div class="prog-number">05</div>
+      <div class="prog-level-tag">Doctoral Level &nbsp;&#127941;</div>
+      <div class="prog-name-short">DBA</div>
+      <div class="prog-name-full">Doctor of Business Administration</div>
+      <div class="prog-meta-list">
+        <div class="prog-meta-row"><strong>Duration</strong><span>3&ndash;5 Years</span></div>
+        <div class="prog-meta-row"><strong>Credits</strong><span>90&ndash;96 Semester Hours</span></div>
+        <div class="prog-meta-row"><strong>Entry Req.</strong><span>MBA or Equivalent</span></div>
+      </div>
+      <div class="prog-identity-ctas">
+        <a href="dba.html" class="btn-prog-primary">View Program &#8594;</a>
+        <a href="rdba.html" class="btn-prog-outline">Check Eligibility</a>
+      </div>
+    </div>
+    <div class="prog-content">
+      <p class="prog-overview">The pinnacle of professional business education. The CIML DBA is a terminal professional doctorate for senior executives, experienced professionals, and advanced scholars who seek to integrate applied doctoral research with the highest level of executive leadership — contributing original knowledge to global business theory and practice.</p>
+      <div class="prog-features">
+        <div class="prog-feature"><div class="prog-feature-icon">&#128270;</div><div class="prog-feature-text"><strong>Applied Doctoral Research</strong><span>Original research addressing real organizational challenges with direct industry impact</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127959;</div><div class="prog-feature-text"><strong>Executive Leadership at Scale</strong><span>Board-level governance, strategic management &amp; organizational transformation</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#128188;</div><div class="prog-feature-text"><strong>Professional Relevance</strong><span>Designed for CEOs, senior managers, consultants &amp; policymakers in active practice</span></div></div>
+        <div class="prog-feature"><div class="prog-feature-icon">&#127942;</div><div class="prog-feature-text"><strong>Terminal Credential</strong><span>The highest qualification in professional business — globally validated &amp; recognized</span></div></div>
+      </div>
+      <div class="prog-specs-label">Research Specialization Pathways</div>
+      <div class="prog-specs-pills">
+        <span class="spec-pill">Strategic Management &amp; Corporate Governance</span>
+        <span class="spec-pill">Advanced Financial Strategy</span>
+        <span class="spec-pill">Global Marketing &amp; CRM</span>
+        <span class="spec-pill">Healthcare Policy &amp; Administration</span>
+        <span class="spec-pill">Energy &amp; Sustainability Leadership</span>
+        <span class="spec-pill">Ethical &amp; Sustainable Leadership</span>
+        <span class="spec-pill-more">40+ Research Pathways &#8594;</span>
+      </div>
+      <div class="prog-pathway">&#127941; <strong>Terminal Credential</strong> &mdash; The highest level of the CIML academic ladder. No further progression required.</div>
+    </div>
+  </div>
+
+</div><!-- /programs-showcase -->
+
+<!-- ═══ ACADEMIC LADDER ═══ -->
+<section class="ladder-section" id="ladder-section">
+  <div class="ladder-inner">
+    <div class="ladder-eyebrow">Academic Progression</div>
+    <h2 class="ladder-title">One Unbroken Path from Foundation to Doctorate</h2>
+    <p class="ladder-sub">Enter at the level that matches your background. Progress as far as your ambition takes you. Every step is recognized, validated, and builds directly on the last.</p>
+    <div class="ladder-track">
+      <div class="ladder-step">
+        <div class="ladder-step-level">Level 01</div>
+        <div class="ladder-step-badge">DP</div>
+        <div class="ladder-step-name">Diploma Program</div>
+        <div class="ladder-step-meta">6&ndash;12 months &middot; Foundation level &middot; Entry-level professional readiness</div>
+        <a href="dp.html" class="ladder-step-link">Explore &#8594;</a>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-step-level">Level 02</div>
+        <div class="ladder-step-badge">AVD</div>
+        <div class="ladder-step-name">Advanced Diploma</div>
+        <div class="ladder-step-meta">9&ndash;15 months &middot; Intermediate level &middot; Mid-management &amp; supervisory roles</div>
+        <a href="avd.html" class="ladder-step-link">Explore &#8594;</a>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-step-level">Level 03</div>
+        <div class="ladder-step-badge">PGD</div>
+        <div class="ladder-step-name">Postgraduate Diploma</div>
+        <div class="ladder-step-meta">12&ndash;18 months &middot; Postgrad level &middot; Senior management bridge to MBA</div>
+        <a href="pgd.html" class="ladder-step-link">Explore &#8594;</a>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-step-level">Level 04 &nbsp;&#11088;</div>
+        <div class="ladder-step-badge">MBA</div>
+        <div class="ladder-step-name">Master of Business Administration</div>
+        <div class="ladder-step-meta">18&ndash;24 months &middot; Master's level &middot; 60&ndash;66 credit hours &middot; Executive leadership</div>
+        <a href="mba.html" class="ladder-step-link">Explore &#8594;</a>
+      </div>
+      <div class="ladder-step is-dba">
+        <div class="ladder-step-level">Level 05 — Terminal</div>
+        <div class="ladder-step-badge">DBA</div>
+        <div class="ladder-step-name">Doctor of Business Administration</div>
+        <div class="ladder-step-meta">3&ndash;5 years &middot; Doctoral level &middot; 90&ndash;96 credit hours &middot; Applied research &amp; executive scholarship</div>
+        <a href="dba.html" class="ladder-step-link">Explore &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECIALIZATIONS OVERVIEW ═══ -->
+<section class="spec-overview">
+  <div class="spec-overview-head">
+    <div>
+      <div class="section-eyebrow">Specialization Clusters</div>
+      <h2 class="spec-overview-title">40+ specializations across<br><em>every major industry</em></h2>
+    </div>
+    <div class="spec-overview-body">Every CIML program — from the Diploma through to the DBA — offers the same broad range of industry-specific specialization tracks. Whether your focus is finance, healthcare, technology, energy, or leadership, there is a pathway built precisely for your sector and ambition.</div>
+  </div>
+  <div class="spec-clusters">
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#127962;</div>
+      <div class="spec-cluster-name">Business &amp; Corporate</div>
+      <div class="spec-cluster-count">8 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Business Management</div>
+        <div class="spec-cluster-item">Strategic &amp; Corporate Management</div>
+        <div class="spec-cluster-item">International Business &amp; Global Leadership</div>
+        <div class="spec-cluster-item">Boardroom &amp; Governance Leadership</div>
+        <div class="spec-cluster-item">Project &amp; Innovation Management</div>
+        <div class="spec-cluster-item">Technology &amp; Innovation Leadership</div>
+        <div class="spec-cluster-item">Public Administration &amp; Policy</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#128176;</div>
+      <div class="spec-cluster-name">Finance &amp; Accounting</div>
+      <div class="spec-cluster-count">5 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Accounting</div>
+        <div class="spec-cluster-item">Financial Management</div>
+        <div class="spec-cluster-item">Finance, Accounting &amp; Risk Management</div>
+        <div class="spec-cluster-item">Banking &amp; Financial Services Management</div>
+        <div class="spec-cluster-item">Insurance &amp; Risk Management</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#128101;</div>
+      <div class="spec-cluster-name">Human Resource &amp; People</div>
+      <div class="spec-cluster-count">4 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">HR &amp; Organizational Leadership</div>
+        <div class="spec-cluster-item">Talent &amp; Succession Planning</div>
+        <div class="spec-cluster-item">Community &amp; Social Impact Leadership</div>
+        <div class="spec-cluster-item">Women in Leadership &amp; Gender Equity</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#128227;</div>
+      <div class="spec-cluster-name">Marketing &amp; Customer</div>
+      <div class="spec-cluster-count">4 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Marketing, Sales &amp; Consumer Strategy</div>
+        <div class="spec-cluster-item">Customer Relationship Management</div>
+        <div class="spec-cluster-item">Media, Entertainment &amp; Communication</div>
+        <div class="spec-cluster-item">Fashion &amp; Luxury Brand Management</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#127973;</div>
+      <div class="spec-cluster-name">Healthcare &amp; Hospitality</div>
+      <div class="spec-cluster-count">2 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Healthcare Management &amp; Hospital Administration</div>
+        <div class="spec-cluster-item">Hospitality, Tourism &amp; Event Leadership</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#9971;&#65039;</div>
+      <div class="spec-cluster-name">Industry-Specific</div>
+      <div class="spec-cluster-count">9 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Oil &amp; Gas Management</div>
+        <div class="spec-cluster-item">Energy &amp; Sustainability Management</div>
+        <div class="spec-cluster-item">Mining &amp; Natural Resource Management</div>
+        <div class="spec-cluster-item">Maritime &amp; Port Management</div>
+        <div class="spec-cluster-item">Aviation &amp; Transport Management</div>
+        <div class="spec-cluster-item">Real Estate &amp; Property Development</div>
+        <div class="spec-cluster-item">Agribusiness &amp; Food Industry</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#128302;</div>
+      <div class="spec-cluster-name">Emerging &amp; Specialized Leadership</div>
+      <div class="spec-cluster-count">6 specializations</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Cybersecurity &amp; Digital Business Leadership</div>
+        <div class="spec-cluster-item">Ethical &amp; Sustainable Leadership</div>
+        <div class="spec-cluster-item">Crisis &amp; Emergency Management</div>
+        <div class="spec-cluster-item">Environmental &amp; Sustainability Management</div>
+        <div class="spec-cluster-item">Sports Management &amp; Recreation Leadership</div>
+      </div>
+    </div>
+    <div class="spec-cluster">
+      <div class="spec-cluster-icon">&#127942;</div>
+      <div class="spec-cluster-name">Recognition &amp; Validation</div>
+      <div class="spec-cluster-count">All programs</div>
+      <div class="spec-cluster-list">
+        <div class="spec-cluster-item">Validated by California University FCE</div>
+        <div class="spec-cluster-item">Recognized by government-accredited universities worldwide</div>
+        <div class="spec-cluster-item">Accepted across academic, corporate &amp; government institutions</div>
+        <div class="spec-cluster-item">AACSB, EQUIS, AMBA, QAA, ISO 9001 aligned standards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION STRIP -->
+<div class="accreditation-strip">
+  <div class="accreditation-inner">
+    <span class="acc-label">Accredited &amp; Recognised By</span>
+    <img src="assets/logos/aacsb.png" alt="AACSB" class="acc-logo-img">
+    <img src="assets/logos/equis.png" alt="EQUIS" class="acc-logo-img">
+    <img src="assets/logos/amba.png" alt="AMBA" class="acc-logo-img">
+    <img src="assets/logos/qaa.png" alt="QAA" class="acc-logo-img">
+    <img src="assets/logos/iso9001.png" alt="ISO 9001" class="acc-logo-img">
+    <img src="assets/logos/unesco.png" alt="UNESCO" class="acc-logo-img">
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <div>
+      <h2 class="cta-banner-title">Find your program.<br>Begin your <em>ascent</em>.</h2>
+      <p class="cta-banner-sub">Whether you're starting at the Diploma level or joining directly at the MBA or DBA, CIML Business School has a validated, internationally recognized pathway designed for your ambitions. Applications for the 2026 intake are now open — and places are limited.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="app.html" class="btn-cta-gold">Apply for 2026</a>
+      <a href="acc.html" class="btn-cta-ghost">View Accreditation</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="dp.html">Diploma Program</a></li>
+        <li><a href="avd.html">Advanced Diploma</a></li>
+        <li><a href="pgd.html">Postgraduate Diploma</a></li>
+        <li><a href="mba.html">MBA</a></li>
+        <li><a href="dba.html">DBA</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Institution</h4><ul>
+        <li><a href="ov.html">Overview</a></li>
+        <li><a href="m.html">Mission</a></li>
+        <li><a href="acc.html">Accreditation</a></li>
+        <li><a href="wcs.html">Why Choose Us</a></li>
+        <li><a href="#">News &amp; Events</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
+        <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
+        <li><a href="app.html">Admissions / Apply</a></li>
+        <li><a href="https://cbsedu.us/cbs/user/">Student Verification &amp; Result Portal</a></li>
+        <li><a href="cm.html">Campus Map</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal"><a href="p.html">Privacy Policy</a><a href="t.html">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Header scroll */
+const header=document.getElementById("siteHeader");
+window.addEventListener("scroll",()=>{header.classList.toggle("scrolled",window.scrollY>20)},{passive:true});
+
+/* Mobile drawer */
+const hamburgerBtn=document.getElementById("hamburgerBtn");
+const mobileDrawer=document.getElementById("mobileDrawer");
+const mobileOverlay=document.getElementById("mobileOverlay");
+const drawerClose=document.getElementById("drawerClose");
+function openDrawer(){hamburgerBtn.classList.add("open");mobileDrawer.classList.add("open");mobileOverlay.classList.add("open");document.body.style.overflow="hidden";hamburgerBtn.setAttribute("aria-expanded","true")}
+function closeDrawer(){hamburgerBtn.classList.remove("open");mobileDrawer.classList.remove("open");mobileOverlay.classList.remove("open");document.body.style.overflow="";hamburgerBtn.setAttribute("aria-expanded","false")}
+hamburgerBtn.addEventListener("click",()=>{mobileDrawer.classList.contains("open")?closeDrawer():openDrawer()});
+drawerClose.addEventListener("click",closeDrawer);
+mobileOverlay.addEventListener("click",closeDrawer);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()});
+document.querySelectorAll(".drawer-has-sub").forEach(link=>{
+  link.addEventListener("click",function(e){
+    e.preventDefault();
+    const parent=this.closest(".drawer-item");
+    const isOpen=parent.classList.contains("open");
+    document.querySelectorAll(".drawer-item").forEach(i=>i.classList.remove("open"));
+    if(!isOpen)parent.classList.add("open");
+  });
+});
+window.addEventListener("resize",()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
+</script>
+</body>
+</html>

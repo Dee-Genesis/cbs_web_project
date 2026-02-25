@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --sky:#1B3F6E;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* NEWS TICKER */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:'•';margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TOP BAR */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-contact .tbc-icon{font-size:.85rem}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+
+/* HEADER */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s ease}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE DRAWER */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+
+/* PAGE HERO */
+.page-hero{background:var(--sky);position:relative;overflow:hidden;padding:5rem 5vw 4rem}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('assets/images/hero-main.jpg') center/cover no-repeat;opacity:.08}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.page-hero-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
+.breadcrumb a,.breadcrumb span{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{color:rgba(255,255,255,.3);font-size:.65rem}
+.breadcrumb .current{color:var(--gold)}
+.page-hero-tag{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.page-hero-tag::before{content:'';display:block;width:28px;height:2px;background:var(--gold)}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);color:#fff;line-height:1.1;margin-bottom:.85rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.page-hero-meta span{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:.4rem}
+.page-hero-meta span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);display:block}
+
+/* LAYOUT */
+.page-layout{display:grid;grid-template-columns:260px 1fr;gap:0;max-width:1400px;margin:0 auto}
+
+/* TOC SIDEBAR */
+.toc-sidebar{background:var(--paper);border-right:1px solid rgba(13,13,13,.07);padding:2.5rem 0;position:sticky;top:80px;height:fit-content;align-self:start}
+.toc-head{padding:0 1.75rem 1.25rem;border-bottom:1px solid rgba(13,13,13,.07);margin-bottom:1rem}
+.toc-head p{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,13,13,.35);margin-bottom:.3rem}
+.toc-head strong{font-family:var(--sans);font-size:.82rem;font-weight:700;color:var(--ink)}
+.toc-list{padding:0 1rem}
+.toc-item{display:flex;align-items:center;gap:.65rem;padding:.65rem .75rem;font-family:var(--body);font-size:.82rem;color:rgba(13,13,13,.6);cursor:pointer;border-left:2px solid transparent;transition:all .2s;text-decoration:none}
+.toc-item:hover,.toc-item.active{color:var(--sky);border-left-color:var(--gold);background:rgba(201,168,76,.06);padding-left:1rem}
+.toc-num{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.1em;color:var(--gold);min-width:18px}
+.toc-contact{margin:2rem 1.75rem 0;padding:1.25rem;background:#fff;border:1px solid rgba(13,13,13,.07)}
+.toc-contact p{font-size:.78rem;color:rgba(13,13,13,.55);line-height:1.6;margin-bottom:.75rem}
+.toc-contact a{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.toc-contact a:hover{color:var(--gold-dark)}
+
+/* CONTENT AREA */
+.policy-content{padding:4rem 4rem 5rem;background:#fff}
+
+/* SECTION */
+.policy-section{margin-bottom:3.5rem;scroll-margin-top:100px}
+.policy-section:last-of-type{margin-bottom:1rem}
+
+.section-number{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.65rem;margin-bottom:.75rem}
+.section-number::before{content:'';width:20px;height:2px;background:var(--gold);display:block}
+
+.policy-section h2{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);color:var(--ink);line-height:1.15;margin-bottom:1.25rem}
+.policy-section h2 em{font-style:italic;color:var(--sky)}
+
+.policy-section p{font-size:.95rem;color:rgba(13,13,13,.72);line-height:1.85;margin-bottom:1rem}
+.policy-section p:last-child{margin-bottom:0}
+
+/* POLICY LIST */
+.policy-list{display:flex;flex-direction:column;gap:.6rem;margin:1rem 0}
+.policy-list li{display:flex;align-items:flex-start;gap:.85rem;font-size:.9rem;color:rgba(13,13,13,.72);line-height:1.65;padding:.75rem 1rem;background:var(--ivory);border:1px solid rgba(13,13,13,.05);transition:border-color .2s}
+.policy-list li:hover{border-color:rgba(201,168,76,.3)}
+.policy-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.55rem}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:var(--sky);padding:1.75rem 2rem;margin:1.5rem 0;display:flex;align-items:flex-start;gap:1.25rem}
+.hb-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.hb-text h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.hb-text p{font-size:.875rem;color:rgba(255,255,255,.85);line-height:1.7;margin:0}
+
+/* DIVIDER */
+.section-divider{height:1px;background:rgba(13,13,13,.07);margin-bottom:3.5rem}
+
+/* RIGHTS GRID */
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.07);border:1px solid rgba(13,13,13,.07);margin:1.25rem 0}
+.right-item{background:#fff;padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;transition:background .2s}
+.right-item:hover{background:var(--ivory)}
+.right-icon{font-size:1.4rem}
+.right-title{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky)}
+.right-desc{font-size:.83rem;color:rgba(13,13,13,.6);line-height:1.55}
+
+/* LAST UPDATED BANNER */
+.last-updated{background:var(--paper);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-top:3rem;display:flex;align-items:center;gap:1rem}
+.last-updated-icon{font-size:1.2rem;color:var(--gold-dark)}
+.last-updated p{font-size:.82rem;color:rgba(13,13,13,.55);line-height:1.5}
+.last-updated strong{color:var(--ink)}
+
+/* CTA BANNER */
+.cta-banner{position:relative;padding:4.5rem 5vw;overflow:hidden;background:var(--sky)}
+.cta-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.1}
+.cta-banner-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.75rem);color:#fff;line-height:1.1;margin-bottom:.65rem}
+.cta-banner-title em{color:var(--gold);font-style:italic}
+.cta-banner-sub{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.6;max-width:450px}
+.cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:180px}
+.btn-cta-main{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 1.75rem;text-align:center;transition:all .25s}
+.btn-cta-main:hover{background:var(--gold-light)}
+.btn-cta-sec{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:.9rem 1.75rem;text-align:center;transition:all .25s}
+.btn-cta-sec:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* FOOTER */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .page-layout{grid-template-columns:1fr}
+  .toc-sidebar{display:none}
+  .policy-content{padding:2.5rem 5vw 4rem}
+  .rights-grid{grid-template-columns:1fr}
+  .cta-banner-inner{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  .rights-grid{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:column}
+  .footer-top{grid-template-columns:1fr}
+  .page-hero-meta{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15052951352"><span class="tbc-icon">📞</span> 505 295 1352</a>
+    <a href="mailto:info@cbsedu.us"><span class="tbc-icon">✉</span> info@cbsedu.us</a>
+    <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School Logo" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name">
+        <span class="logo-name-top">CIML</span>
+        <span class="logo-name-bottom">Business School</span>
+      </span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a>
+            <a href="m.html">Mission</a>
+            <a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a>
+            <a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a>
+            <a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a>
+            <a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a>
+            <a href="rmba.html">MBA</a>
+            <a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="https://cbsedu.us/cbs/user/" class="drawer-btn drawer-btn-outline">Student Verification and Result Portal</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now →</a>
+  </div>
+</aside>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Privacy Policy</span>
+    </nav>
+    <div class="page-hero-tag">Legal &amp; Compliance</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="page-hero-meta">
+      <span>Effective Date: January 1, 2026</span>
+      <span>Last Updated: February 2026</span>
+      <span>CIML Business School</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT LAYOUT -->
+<div class="page-layout">
+
+  <!-- TABLE OF CONTENTS SIDEBAR -->
+  <aside class="toc-sidebar">
+    <div class="toc-head">
+      <p>Contents</p>
+      <strong>Privacy Policy</strong>
+    </div>
+    <nav class="toc-list">
+      <a href="#introduction" class="toc-item active"><span class="toc-num">01</span> Introduction</a>
+      <a href="#information-collected" class="toc-item"><span class="toc-num">02</span> Information We Collect</a>
+      <a href="#how-we-use" class="toc-item"><span class="toc-num">03</span> How We Use Your Information</a>
+      <a href="#data-sharing" class="toc-item"><span class="toc-num">04</span> Data Sharing</a>
+      <a href="#data-security" class="toc-item"><span class="toc-num">05</span> Data Security</a>
+      <a href="#your-rights" class="toc-item"><span class="toc-num">06</span> Your Rights</a>
+      <a href="#contact" class="toc-item"><span class="toc-num">07</span> Contact Us</a>
+    </nav>
+    <div class="toc-contact">
+      <p>Questions about your privacy or data? Contact our team directly.</p>
+      <a href="mailto:info@cbsedu.us">✉ info@cbsedu.us</a>
+    </div>
+  </aside>
+
+  <!-- POLICY CONTENT -->
+  <main class="policy-content">
+
+    <!-- 01. INTRODUCTION -->
+    <section class="policy-section" id="introduction">
+      <div class="section-number">01 &mdash; Introduction</div>
+      <h2>We respect your <em>privacy</em></h2>
+      <p>CIML Business School ("we," "our," or "us") is committed to protecting the privacy and personal information of all individuals who interact with our institution — including prospective students, enrolled students, alumni, faculty, and website visitors.</p>
+      <p>This Privacy Policy explains how we collect, use, store, share, and safeguard your personal data when you visit our website, submit an application, enrol in a program, or otherwise engage with our services. By using our website or services, you agree to the practices described in this policy.</p>
+      <div class="highlight-box">
+        <span class="hb-icon">🔒</span>
+        <div class="hb-text">
+          <h4>Our Commitment</h4>
+          <p>We are committed to transparency, data minimisation, and ensuring that your personal information is only used for the purposes for which it was provided. We will never sell your personal data to third parties.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 02. INFORMATION WE COLLECT -->
+    <section class="policy-section" id="information-collected">
+      <div class="section-number">02 &mdash; Information We Collect</div>
+      <h2>Information <em>We Collect</em></h2>
+      <p>We collect personal information that is necessary for the administration of our programs and the delivery of our services. The type of information we collect depends on how you interact with us.</p>
+      <ul class="policy-list">
+        <li><strong>Personal details</strong> — including your name, email address, phone number, date of birth, nationality, and identification documents, collected when you apply to a program or submit an enquiry.</li>
+        <li><strong>Academic and professional background</strong> — including your qualifications, transcripts, employment history, and references, provided during the admissions process.</li>
+        <li><strong>Payment information</strong> — including billing details and transaction records related to tuition fees, registration, and other institutional charges. Payment data is processed securely by trusted third-party payment processors.</li>
+        <li><strong>Website usage data</strong> — including IP addresses, browser type, pages visited, time spent on our website, and referral sources, collected via cookies and analytics tools to help us understand and improve user experience.</li>
+        <li><strong>Communications</strong> — records of correspondence with our admissions team, student services, or faculty via email, phone, or contact forms.</li>
+      </ul>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 03. HOW WE USE YOUR INFORMATION -->
+    <section class="policy-section" id="how-we-use">
+      <div class="section-number">03 &mdash; How We Use Your Information</div>
+      <h2>How We Use <em>Your Information</em></h2>
+      <p>CIML Business School processes your personal information for specific, legitimate purposes directly related to the operation of our institution and the provision of our programs and services.</p>
+      <ul class="policy-list">
+        <li><strong>To process applications and admissions</strong> — reviewing your eligibility, evaluating your application, and communicating decisions to you and relevant internal teams.</li>
+        <li><strong>To provide program updates and student services</strong> — including course information, scheduling, results, certificates, and ongoing academic support throughout your studies.</li>
+        <li><strong>To improve website functionality and user experience</strong> — analysing how visitors use our website so we can enhance navigation, content, and accessibility.</li>
+        <li><strong>To comply with legal and accreditation requirements</strong> — meeting our obligations under applicable laws and the requirements of our accrediting bodies and partner institutions.</li>
+        <li><strong>To send relevant communications</strong> — including program updates, alumni news, and institutional announcements. You may opt out of marketing communications at any time.</li>
+      </ul>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 04. DATA SHARING -->
+    <section class="policy-section" id="data-sharing">
+      <div class="section-number">04 &mdash; Data Sharing</div>
+      <h2>Data <em>Sharing</em></h2>
+      <p>We take your privacy seriously and do not sell, rent, or trade your personal information to any third party for commercial purposes. However, there are limited circumstances in which your data may be shared with trusted parties.</p>
+      <div class="highlight-box">
+        <span class="hb-icon">🚫</span>
+        <div class="hb-text">
+          <h4>We Do Not Sell Your Data</h4>
+          <p>CIML Business School will never sell, lease, or otherwise transfer your personal data to third parties for marketing or commercial gain. Your information is used solely to support your academic journey with us.</p>
+        </div>
+      </div>
+      <ul class="policy-list" style="margin-top:1.25rem">
+        <li><strong>Trusted service partners</strong> — such as payment processors, IT infrastructure providers, and academic management systems, who are contractually bound to protect your data and may only use it for the purpose we specify.</li>
+        <li><strong>Accreditation and recognition bodies</strong> — including California University FCE and other internationally recognised accrediting institutions, where disclosure is required to validate your qualifications.</li>
+        <li><strong>Legal and regulatory authorities</strong> — in circumstances where we are required by law, court order, or regulatory directive to disclose personal information.</li>
+        <li><strong>With your explicit consent</strong> — in any other circumstance where we would like to share your data with a third party, we will seek your explicit consent in advance.</li>
+      </ul>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 05. DATA SECURITY -->
+    <section class="policy-section" id="data-security">
+      <div class="section-number">05 &mdash; Data Security</div>
+      <h2>Data <em>Security</em></h2>
+      <p>CIML Business School implements industry-standard technical and organisational security measures to protect your personal information against unauthorised access, accidental loss, alteration, disclosure, or destruction.</p>
+      <p>Our security practices include, but are not limited to, encrypted data transmission (SSL/TLS), restricted access controls, secure data storage, and regular security assessments. Only authorised personnel with a legitimate need have access to personal data.</p>
+      <p>While we take all reasonable steps to protect your information, no method of transmission over the internet or electronic storage is completely secure. If you believe your data has been compromised, please contact us immediately at <a href="mailto:info@cbsedu.us" style="color:var(--sky);font-weight:600">info@cbsedu.us</a>.</p>
+      <div class="highlight-box">
+        <span class="hb-icon">🛡️</span>
+        <div class="hb-text">
+          <h4>Security Measures</h4>
+          <p>Encrypted data transmission · Restricted staff access controls · Secure third-party payment processing · Regular internal security reviews · Data minimisation practices</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 06. YOUR RIGHTS -->
+    <section class="policy-section" id="your-rights">
+      <div class="section-number">06 &mdash; Your Rights</div>
+      <h2>Your <em>Rights</em></h2>
+      <p>You have a number of important rights regarding your personal data. We are committed to upholding these rights and will respond to any verified request within a reasonable timeframe, typically within 30 days.</p>
+      <div class="rights-grid">
+        <div class="right-item">
+          <div class="right-icon">👁️</div>
+          <div class="right-title">Right of Access</div>
+          <div class="right-desc">You have the right to request a copy of the personal data we hold about you and to understand how it is being used.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-icon">✏️</div>
+          <div class="right-title">Right to Correction</div>
+          <div class="right-desc">If any personal information we hold is inaccurate or incomplete, you have the right to request that we correct or update it.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-icon">🗑️</div>
+          <div class="right-title">Right to Deletion</div>
+          <div class="right-desc">You may request the deletion of your personal data where it is no longer necessary for the purpose for which it was collected, subject to legal obligations.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-icon">📧</div>
+          <div class="right-title">Opt Out of Marketing</div>
+          <div class="right-desc">You may unsubscribe from marketing emails or promotional communications at any time by clicking the unsubscribe link or contacting us directly.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-icon">📋</div>
+          <div class="right-title">Right to Information</div>
+          <div class="right-desc">You have the right to request clear information about how your personal data is used, who it is shared with, and for how long it is retained.</div>
+        </div>
+        <div class="right-item">
+          <div class="right-icon">⛔</div>
+          <div class="right-title">Right to Object</div>
+          <div class="right-desc">You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.</div>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem">To exercise any of these rights, please contact our data team at <a href="mailto:info@cbsedu.us" style="color:var(--sky);font-weight:600">info@cbsedu.us</a>. We may need to verify your identity before processing your request.</p>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 07. CONTACT -->
+    <section class="policy-section" id="contact">
+      <div class="section-number">07 &mdash; Contact Us</div>
+      <h2>Questions or <em>Concerns?</em></h2>
+      <p>If you have any questions, concerns, or requests relating to this Privacy Policy or the way we handle your personal data, please do not hesitate to contact us. We take all privacy enquiries seriously and will respond promptly.</p>
+      <ul class="policy-list">
+        <li><strong>Email:</strong> <a href="mailto:info@cbsedu.us" style="color:var(--sky)">info@cbsedu.us</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+15052951352" style="color:var(--sky)">505 295 1352</a></li>
+        <li><strong>Post:</strong> CIML Business School, Admissions &amp; Compliance Office</li>
+      </ul>
+      <p style="margin-top:1.25rem">We reserve the right to update this Privacy Policy from time to time to reflect changes in law, our practices, or our services. Any updates will be published on this page with a revised effective date. We encourage you to review this policy periodically.</p>
+    </section>
+
+    <!-- LAST UPDATED -->
+    <div class="last-updated">
+      <span class="last-updated-icon">📅</span>
+      <p><strong>Last Updated:</strong> February 2026. This policy is reviewed periodically and updated as necessary to reflect changes in legislation or institutional practice. Continued use of our services constitutes acceptance of the current policy.</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <img src="assets/images/offering-mba.jpg" alt="" class="cta-banner-img">
+  <div class="cta-banner-inner">
+    <div>
+      <h2 class="cta-banner-title">Ready to join<br><em>CIML Business School?</em></h2>
+      <p class="cta-banner-sub">Applications for the 2026 intake are now open. Your data is safe with us — apply with confidence.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="app.html" class="btn-cta-main">Apply for 2026</a>
+      <a href="index.html" class="btn-cta-sec">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="dp.html">Diploma Program</a></li>
+          <li><a href="avd.html">Advanced Diploma</a></li>
+          <li><a href="pgd.html">Postgraduate Diploma</a></li>
+          <li><a href="mba.html">MBA</a></li>
+          <li><a href="dba.html">DBA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <ul>
+          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="acc.html">Accreditation</a></li>
+          <li><a href="wcs.html">Why Choose Us</a></li>
+          <li><a href="act.html">Academic Tools</a></li>
+          <li><a href="#">News &amp; Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
+          <li><a href="tel:+15052951352">505 295 1352</a></li>
+          <li><a href="app.html">Admissions / Apply</a></li>
+          <li><a href="https://cbsedu.us/cbs/user/">Student Portal</a></li>
+          <li><a href="cm.html">Campus Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="p.html">Privacy Policy</a>
+        <a href="t.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+
+// Mobile drawer
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileDrawer=document.getElementById('mobileDrawer');
+const mobileOverlay=document.getElementById('mobileOverlay');
+const drawerClose=document.getElementById('drawerClose');
+function openDrawer(){hamburgerBtn.classList.add('open');mobileDrawer.classList.add('open');mobileOverlay.classList.add('open');document.body.style.overflow='hidden';hamburgerBtn.setAttribute('aria-expanded','true')}
+function closeDrawer(){hamburgerBtn.classList.remove('open');mobileDrawer.classList.remove('open');mobileOverlay.classList.remove('open');document.body.style.overflow='';hamburgerBtn.setAttribute('aria-expanded','false')}
+hamburgerBtn.addEventListener('click',()=>{mobileDrawer.classList.contains('open')?closeDrawer():openDrawer()});
+drawerClose.addEventListener('click',closeDrawer);
+mobileOverlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+document.querySelectorAll('.drawer-has-sub').forEach(link=>{
+  link.addEventListener('click',function(e){
+    e.preventDefault();
+    const parent=this.closest('.drawer-item');
+    const isOpen=parent.classList.contains('open');
+    document.querySelectorAll('.drawer-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)parent.classList.add('open');
+  });
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
+
+// Active TOC on scroll
+const tocItems=document.querySelectorAll('.toc-item');
+const sections=document.querySelectorAll('.policy-section');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id=entry.target.id;
+      tocItems.forEach(item=>{
+        item.classList.toggle('active',item.getAttribute('href')==='#'+id);
+      });
+    }
+  });
+},{rootMargin:'-20% 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

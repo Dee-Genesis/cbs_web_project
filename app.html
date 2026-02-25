@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now — CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --sky:#1B3F6E;--sky-light:#2A5BA3;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --red:#C0392B;--green:#27AE60;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+input,select,textarea{font-family:var(--body)}
+
+/* NEWS TICKER */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:'•';margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TOP BAR */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-contact .tbc-icon{font-size:.85rem}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+
+/* HEADER */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s ease}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE DRAWER */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+
+/* PAGE HERO */
+.page-hero{background:var(--sky);position:relative;overflow:hidden;padding:4rem 5vw 3rem}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('assets/images/hero-study.jpg') center/cover no-repeat;opacity:.1}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.page-hero-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
+.breadcrumb a,.breadcrumb span{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{color:rgba(255,255,255,.3);font-size:.65rem}
+.breadcrumb .current{color:var(--gold)}
+.page-hero-tag{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.page-hero-tag::before{content:'';display:block;width:28px;height:2px;background:var(--gold)}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);color:#fff;line-height:1.1;margin-bottom:.85rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero p{font-size:.95rem;color:rgba(255,255,255,.82);line-height:1.75;max-width:520px}
+.hero-deadline-box{background:rgba(201,168,76,.15);border:1.5px solid rgba(201,168,76,.4);padding:1.5rem 2rem;flex-shrink:0;min-width:220px}
+.hdl-label{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.hdl-date{font-family:var(--serif);font-size:1.6rem;color:#fff;line-height:1;margin-bottom:.35rem}
+.hdl-sub{font-size:.78rem;color:rgba(255,255,255,.65)}
+
+/* APPLICATION LAYOUT */
+.app-layout{display:grid;grid-template-columns:280px 1fr;gap:0;max-width:1400px;margin:0 auto;min-height:70vh}
+
+/* SIDE STEPPER */
+.step-sidebar{background:var(--ink);padding:2.5rem 0;position:sticky;top:80px;height:fit-content;align-self:start}
+.step-sidebar-head{padding:0 2rem 2rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem}
+.step-sidebar-head p{font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.35rem}
+.step-sidebar-head strong{font-family:var(--sans);font-size:.85rem;font-weight:700;color:#fff;display:block}
+.step-list{padding:0 1.5rem;display:flex;flex-direction:column;gap:.25rem}
+.step-item{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem .75rem;border-left:3px solid transparent;cursor:pointer;transition:all .2s;border-radius:0;position:relative}
+.step-item.active{border-left-color:var(--gold);background:rgba(201,168,76,.07)}
+.step-item.done{border-left-color:var(--green)}
+.step-item.done .step-num{background:var(--green);color:#fff;border-color:var(--green)}
+.step-num{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.65rem;font-weight:800;color:rgba(255,255,255,.4);flex-shrink:0;transition:all .3s}
+.step-item.active .step-num{border-color:var(--gold);background:var(--gold);color:var(--ink)}
+.step-text{}
+.step-text-label{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.15rem;transition:color .2s}
+.step-item.active .step-text-label{color:var(--gold)}
+.step-item.done .step-text-label{color:var(--green)}
+.step-text-name{font-family:var(--sans);font-size:.82rem;font-weight:700;color:rgba(255,255,255,.6);line-height:1.2;transition:color .2s}
+.step-item.active .step-text-name{color:#fff}
+.step-item.done .step-text-name{color:rgba(255,255,255,.7)}
+.step-check{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);color:var(--green);font-size:.9rem;opacity:0;transition:opacity .2s}
+.step-item.done .step-check{opacity:1}
+.step-sidebar-footer{padding:2rem 2rem 0;border-top:1px solid rgba(255,255,255,.08);margin-top:2rem}
+.step-sidebar-footer p{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
+.step-sidebar-footer a{color:var(--gold);transition:color .2s}
+.step-sidebar-footer a:hover{color:var(--gold-light)}
+
+/* FORM AREA */
+.form-area{background:var(--ivory);padding:3rem 3.5rem}
+.form-panel{display:none;animation:fadeIn .35s var(--ease-out)}
+.form-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.form-panel-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.2rem);color:var(--ink);margin-bottom:.4rem;line-height:1.15}
+.form-panel-title em{font-style:italic;color:var(--sky)}
+.form-panel-sub{font-size:.9rem;color:rgba(13,13,13,.55);margin-bottom:2.5rem;line-height:1.6}
+.form-section-label{font-family:var(--sans);font-size:.63rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:1.25rem;margin-top:2rem;padding-bottom:.6rem;border-bottom:1px solid rgba(13,13,13,.08);display:flex;align-items:center;gap:.6rem}
+.form-section-label:first-of-type{margin-top:0}
+.form-section-label::before{content:'';width:16px;height:2px;background:var(--gold);display:block}
+
+/* FORM GRID */
+.form-row{display:grid;gap:1.25rem;margin-bottom:1.25rem}
+.form-row.cols-2{grid-template-columns:1fr 1fr}
+.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}
+.form-row.cols-1{grid-template-columns:1fr}
+
+/* FORM FIELDS */
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.55)}
+.field label .req{color:var(--gold-dark)}
+.field input,.field select,.field textarea{background:#fff;border:1.5px solid rgba(13,13,13,.12);padding:.85rem 1rem;font-size:.9rem;color:var(--ink);transition:border-color .2s,box-shadow .2s;outline:none;width:100%;appearance:none;-webkit-appearance:none;border-radius:0}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(27,63,110,.08)}
+.field input.error,.field select.error{border-color:var(--red)}
+.field textarea{resize:vertical;min-height:100px}
+.field-hint{font-size:.75rem;color:rgba(13,13,13,.4);margin-top:.2rem}
+.field-error{font-size:.75rem;color:var(--red);margin-top:.2rem;display:none}
+.field input.error+.field-error,.field select.error+.field-error{display:block}
+
+/* RADIO / CHECKBOX GROUPS */
+.radio-group,.check-group{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.35rem}
+.radio-opt,.check-opt{display:flex;align-items:center;gap:.5rem;background:#fff;border:1.5px solid rgba(13,13,13,.1);padding:.6rem 1rem;cursor:pointer;transition:all .2s;font-size:.85rem;color:rgba(13,13,13,.7);user-select:none}
+.radio-opt:hover,.check-opt:hover{border-color:var(--sky);color:var(--sky)}
+.radio-opt input,.check-opt input{width:14px;height:14px;accent-color:var(--sky);flex-shrink:0}
+.radio-opt.selected,.check-opt.selected{border-color:var(--sky);background:rgba(27,63,110,.05);color:var(--sky);font-weight:500}
+
+/* FILE UPLOAD */
+.file-upload{border:2px dashed rgba(13,13,13,.12);background:#fff;padding:2rem;text-align:center;cursor:pointer;transition:all .25s;position:relative}
+.file-upload:hover,.file-upload.drag{border-color:var(--sky);background:rgba(27,63,110,.03)}
+.file-upload input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.file-upload-icon{font-size:2rem;margin-bottom:.75rem}
+.file-upload p{font-size:.85rem;color:rgba(13,13,13,.55);line-height:1.55}
+.file-upload strong{color:var(--sky);font-weight:600}
+.file-upload .file-types{font-size:.72rem;color:rgba(13,13,13,.35);margin-top:.35rem}
+.file-list{margin-top:.85rem;display:flex;flex-direction:column;gap:.4rem}
+.file-item{display:flex;align-items:center;justify-content:space-between;background:rgba(27,63,110,.06);border:1px solid rgba(27,63,110,.15);padding:.5rem .85rem;font-size:.8rem;color:var(--sky)}
+.file-item-remove{color:var(--red);cursor:pointer;font-size:.85rem;padding:.1rem .25rem;transition:opacity .2s}
+.file-item-remove:hover{opacity:.7}
+
+/* REVIEW SECTION */
+.review-section{background:#fff;border:1px solid rgba(13,13,13,.07);margin-bottom:1.5rem}
+.review-section-head{background:var(--sky);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.review-section-head h4{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+.review-edit{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);cursor:pointer;transition:color .2s}
+.review-edit:hover{color:#fff}
+.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.review-item{padding:1rem 1.5rem;border-bottom:1px solid rgba(13,13,13,.05)}
+.review-item:nth-last-child(-n+2){border-bottom:none}
+.review-item-label{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.25rem}
+.review-item-val{font-size:.88rem;color:var(--ink);font-weight:500}
+.review-item-val.gold{color:var(--gold-dark);font-weight:700}
+
+/* DECLARATION */
+.declaration-box{background:#fff;border:1.5px solid rgba(13,13,13,.1);padding:1.75rem;margin-bottom:1.5rem}
+.declaration-box p{font-size:.85rem;color:rgba(13,13,13,.65);line-height:1.75;margin-bottom:1.25rem}
+.declaration-check{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer}
+.declaration-check input{width:16px;height:16px;margin-top:.15rem;accent-color:var(--sky);flex-shrink:0}
+.declaration-check span{font-size:.875rem;color:var(--ink);line-height:1.5}
+.declaration-check a{color:var(--sky);text-decoration:underline}
+
+/* SUCCESS SCREEN */
+.success-screen{display:none;text-align:center;padding:4rem 2rem}
+.success-screen.show{display:block;animation:fadeIn .5s var(--ease-out)}
+.success-icon{width:80px;height:80px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-size:2.2rem}
+.success-screen h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);margin-bottom:1rem;line-height:1.15}
+.success-screen h2 em{font-style:italic;color:var(--sky)}
+.success-screen p{font-size:.95rem;color:rgba(13,13,13,.6);line-height:1.75;max-width:480px;margin:0 auto 2rem}
+.success-ref{background:var(--paper);border:1.5px solid rgba(13,13,13,.08);padding:1.25rem 2rem;display:inline-block;margin-bottom:2rem}
+.success-ref-label{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.35rem}
+.success-ref-num{font-family:var(--serif);font-size:1.75rem;color:var(--sky)}
+.success-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FORM NAVIGATION */
+.form-nav{display:flex;align-items:center;justify-content:space-between;padding-top:2.5rem;margin-top:2.5rem;border-top:1px solid rgba(13,13,13,.08)}
+.btn-prev{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.55);border:1.5px solid rgba(13,13,13,.2);padding:.85rem 1.75rem;transition:all .25s}
+.btn-prev:hover{color:var(--ink);border-color:var(--ink)}
+.btn-prev:disabled{opacity:.35;pointer-events:none}
+.btn-next{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--sky);color:#fff;padding:.85rem 2.5rem;transition:all .25s;display:flex;align-items:center;gap:.65rem;position:relative;overflow:hidden}
+.btn-next::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateX(-100%);transition:transform .3s var(--ease-out)}
+.btn-next:hover::before{transform:translateX(0)}
+.btn-next:hover{color:var(--ink)}
+.btn-next span{position:relative;z-index:1}
+.btn-submit{background:var(--gold);color:var(--ink)}
+.btn-submit::before{background:var(--gold-dark)}
+.btn-submit:hover{color:#fff}
+.btn-submit:disabled{opacity:.6;pointer-events:none}
+.step-progress{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.35)}
+.step-progress strong{color:var(--sky)}
+
+/* TRUST BADGES */
+.trust-strip{background:var(--paper);padding:2rem 5vw;border-top:1px solid rgba(13,13,13,.07)}
+.trust-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.5)}
+.trust-icon{font-size:1.2rem;color:var(--gold)}
+
+/* CTA BANNER */
+.cta-banner{position:relative;padding:4rem 5vw;overflow:hidden;background:var(--sky)}
+.cta-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.1}
+.cta-banner-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.75rem);color:#fff;line-height:1.1;margin-bottom:.75rem}
+.cta-banner-title em{color:var(--gold);font-style:italic}
+.cta-banner-sub{font-size:.95rem;color:rgba(255,255,255,.85);line-height:1.6;max-width:450px}
+.cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:200px}
+.btn-cta-main{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-main:hover{background:var(--gold-light)}
+.btn-cta-sec{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-sec:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* FOOTER */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* ── TOAST POPUP ── */
+#toastPopup{
+  position:fixed;top:30px;right:30px;z-index:9999;
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;border-radius:10px;
+  box-shadow:0 10px 40px rgba(0,0,0,.18);
+  padding:20px 22px 20px 20px;max-width:380px;
+  border-left:5px solid var(--green);
+  transform:translateX(calc(100% + 50px));
+  transition:transform .5s var(--ease-out);
+  pointer-events:none;
+}
+#toastPopup.show{transform:translateX(0);pointer-events:auto}
+#toastPopup.error-toast{border-left-color:var(--red)}
+.toast-icon{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center}
+#toastPopup.error-toast .toast-icon{background:var(--red)}
+.toast-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.toast-body{flex:1}
+.toast-title{font-family:var(--sans);font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:3px}
+.toast-msg{font-size:.78rem;color:rgba(13,13,13,.55);line-height:1.5;margin:0}
+.toast-close{background:none;border:none;cursor:pointer;color:#bbb;font-size:1.1rem;line-height:1;padding:0;flex-shrink:0;transition:color .2s}
+.toast-close:hover{color:var(--ink)}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .page-hero-inner{grid-template-columns:1fr}
+  .hero-deadline-box{display:none}
+  .app-layout{grid-template-columns:1fr}
+  .step-sidebar{position:static;display:flex;overflow-x:auto;padding:1.25rem;gap:0;border-bottom:2px solid var(--gold)}
+  .step-sidebar-head{display:none}
+  .step-list{flex-direction:row;padding:0;gap:.5rem;flex:1}
+  .step-sidebar-footer{display:none}
+  .step-item{flex-direction:column;align-items:center;text-align:center;gap:.35rem;padding:.5rem .75rem;border-left:none;border-bottom:3px solid transparent;flex:1;min-width:60px}
+  .step-item.active{border-left:none;border-bottom-color:var(--gold);background:rgba(201,168,76,.07)}
+  .step-item.done{border-bottom-color:var(--green)}
+  .step-text-label{display:none}
+  .step-text-name{font-size:.65rem}
+  .step-check{position:static;transform:none;display:none}
+  .form-area{padding:2rem 1.5rem}
+  .form-row.cols-2,.form-row.cols-3{grid-template-columns:1fr}
+  .review-grid{grid-template-columns:1fr}
+  .review-item:last-child{border-bottom:none}
+  .cta-banner-inner{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .trust-inner{gap:1.5rem}
+  #toastPopup{top:16px;right:16px;left:16px;max-width:none}
+}
+@media(max-width:640px){
+  .form-nav{flex-direction:column;gap:1rem;align-items:stretch}
+  .btn-next,.btn-prev{text-align:center;justify-content:center}
+  .cta-banner-btns{flex-direction:column}
+  .footer-top{grid-template-columns:1fr}
+  .success-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOAST POPUP ── -->
+<div id="toastPopup" role="alert" aria-live="assertive">
+  <div class="toast-icon">
+    <svg id="toastIcon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  </div>
+  <div class="toast-body">
+    <div class="toast-title" id="toastTitle">Application Submitted!</div>
+    <p class="toast-msg" id="toastMsg">Your application and documents have been successfully received by CIML Business School.</p>
+  </div>
+  <button class="toast-close" id="toastClose" aria-label="Dismiss">&times;</button>
+</div>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15052951352"><span class="tbc-icon">📞</span> 505 295 1352</a>
+    <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School Logo" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name">
+        <span class="logo-name-top">CIML</span>
+        <span class="logo-name-bottom">Business School</span>
+      </span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a>
+            <a href="m.html">Mission</a>
+            <a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a>
+            <a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a>
+            <a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop active">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a>
+            <a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a>
+            <a href="rmba.html">MBA</a>
+            <a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">&#x2715;</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="https://cbsedu.us/cbs/user/" class="drawer-btn drawer-btn-outline">Student Verification and Result Portal</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now &rarr;</a>
+  </div>
+</aside>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">&#8250;</span>
+        <a href="#">Admissions</a>
+        <span class="sep">&#8250;</span>
+        <span class="current">Apply Now</span>
+      </nav>
+      <div class="page-hero-tag">Application Portal — 2026 Intake</div>
+      <h1>Begin Your <em>Application</em></h1>
+      <p>Complete the form below to apply for your chosen CIML program. Applications are reviewed on a rolling basis — early applicants receive priority consideration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM LAYOUT -->
+<div class="app-layout" id="appLayout">
+
+  <!-- STEP SIDEBAR -->
+  <aside class="step-sidebar">
+    <div class="step-sidebar-head">
+      <p>Your Progress</p>
+      <strong>2026 Application</strong>
+    </div>
+    <div class="step-list">
+      <div class="step-item active" data-step="1">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 1</div>
+          <div class="step-text-name">Program Selection</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+      <div class="step-item" data-step="2">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 2</div>
+          <div class="step-text-name">Personal Info</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+      <div class="step-item" data-step="3">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 3</div>
+          <div class="step-text-name">Academic Background</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+      <div class="step-item" data-step="4">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 4</div>
+          <div class="step-text-name">Experience &amp; Goals</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+      <div class="step-item" data-step="5">
+        <div class="step-num">5</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 5</div>
+          <div class="step-text-name">Documents</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+      <div class="step-item" data-step="6">
+        <div class="step-num">6</div>
+        <div class="step-text">
+          <div class="step-text-label">Step 6</div>
+          <div class="step-text-name">Review &amp; Submit</div>
+        </div>
+        <span class="step-check">&#10003;</span>
+      </div>
+    </div>
+    <div class="step-sidebar-footer">
+      <p>Need help? Contact our admissions team at <a href="mailto:info@cbsedu.us">info@cbsedu.us</a> or call <a href="tel:+15052951352">505 295 1352</a>.</p>
+    </div>
+  </aside>
+
+  <!-- FORM PANELS -->
+  <div class="form-area">
+
+    <!-- STEP 1: PROGRAM SELECTION -->
+    <div class="form-panel active" id="panel-1">
+      <h2 class="form-panel-title">Choose Your <em>Program</em></h2>
+      <p class="form-panel-sub">Select the program you wish to apply for, your preferred intake year, and study mode. All programs lead to internationally recognised qualifications.</p>
+
+      <div class="form-section-label">Select Program</div>
+      <div class="form-row cols-1">
+        <div class="field">
+          <label>Program Applying For <span class="req">*</span></label>
+          <select id="programSelect" required onchange="updateProgramInfo(this)">
+            <option value="">&#8212; Select a Program &#8212;</option>
+            <option value="Diploma Program">Diploma Program</option>
+            <option value="Advanced Diploma Program">Advanced Diploma Program</option>
+            <option value="Post Graduate Diploma">Post Graduate Diploma</option>
+            <option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
+            <option value="Doctor of Business Administration (DBA)">Doctor of Business Administration (DBA)</option>
+          </select>
+          <span class="field-hint">Not sure which program is right for you? <a href="rad.html" target="_blank" style="color:var(--sky)">View admission requirements &rarr;</a></span>
+        </div>
+      </div>
+      <div id="progInfoBox" style="display:none;background:#fff;border-left:3px solid var(--gold);padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:.85rem;color:rgba(13,13,13,.65);line-height:1.6"></div>
+
+      <div class="form-section-label" style="margin-top:2rem">Intake &amp; Study Details</div>
+      <div class="form-row cols-3">
+        <div class="field">
+          <label>Intake Year <span class="req">*</span></label>
+          <select id="intakeYear" required>
+            <option value="">Select Year</option>
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Intake Semester <span class="req">*</span></label>
+          <select id="intakeSem" required>
+            <option value="">Select Semester</option>
+            <option value="January / Spring">January / Spring</option>
+            <option value="September / Fall" selected>September / Fall</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Study Mode <span class="req">*</span></label>
+          <select id="studyMode" required>
+            <option value="">Select Mode</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Online / Distance">Online / Distance</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Specialization / Pathway (if known)</label>
+          <select id="specialization">
+            <option value="">Select Specialization (Optional)</option>
+            <option>Business Management</option>
+            <option>Strategic Management &amp; Leadership</option>
+            <option>Finance &amp; Accounting</option>
+            <option>Marketing &amp; Consumer Strategy</option>
+            <option>Human Resource Management</option>
+            <option>International Business</option>
+            <option>Healthcare Management</option>
+            <option>Project &amp; Innovation Management</option>
+            <option>Oil &amp; Gas Management</option>
+            <option>Cybersecurity &amp; Digital Business</option>
+            <option>Aviation &amp; Transport Management</option>
+            <option>Real Estate &amp; Property Development</option>
+            <option>Other / Not Yet Decided</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>How did you hear about CIML?</label>
+          <select id="referralSource">
+            <option value="">Select Source</option>
+            <option>Search Engine (Google, Bing)</option>
+            <option>Social Media</option>
+            <option>Referral from a Friend / Colleague</option>
+            <option>Current or Former Student</option>
+            <option>LinkedIn</option>
+            <option>Advertisement</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <div class="step-progress">Step <strong>1</strong> of 6</div>
+        <button class="btn-next" onclick="goToStep(2)"><span>Next: Personal Info</span> <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 2: PERSONAL INFORMATION -->
+    <div class="form-panel" id="panel-2">
+      <h2 class="form-panel-title">Personal <em>Information</em></h2>
+      <p class="form-panel-sub">Please provide your personal details exactly as they appear on your official identification documents.</p>
+
+      <div class="form-section-label">Name &amp; Identity</div>
+      <div class="form-row cols-3">
+        <div class="field">
+          <label>Title <span class="req">*</span></label>
+          <select id="title" required>
+            <option value="">Select</option>
+            <option>Mr.</option><option>Ms.</option><option>Mrs.</option>
+            <option>Dr.</option><option>Prof.</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" placeholder="e.g. John" required>
+        </div>
+        <div class="field">
+          <label>Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" placeholder="e.g. Okafor" required>
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Middle Name</label>
+          <input type="text" id="middleName" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label>Date of Birth <span class="req">*</span></label>
+          <input type="date" id="dob" required>
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Gender <span class="req">*</span></label>
+          <select id="gender" required>
+            <option value="">Select</option>
+            <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to say</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Nationality <span class="req">*</span></label>
+          <input type="text" id="nationality" placeholder="e.g. Nigerian, American, British" required>
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>ID / Passport Number <span class="req">*</span></label>
+          <input type="text" id="passportNum" placeholder="e.g. A12345678" required>
+        </div>
+        <div class="field">
+          <label>Country of Residence <span class="req">*</span></label>
+          <input type="text" id="country" placeholder="e.g. Nigeria" required>
+        </div>
+      </div>
+
+      <div class="form-section-label">Contact Details</div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+          <span class="field-hint">You will receive your application reference at this address.</span>
+        </div>
+        <div class="field">
+          <label>Confirm Email <span class="req">*</span></label>
+          <input type="email" id="emailConfirm" placeholder="Repeat email address" required>
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="+234 800 000 0000" required>
+        </div>
+        <div class="field">
+          <label>WhatsApp Number</label>
+          <input type="tel" id="whatsapp" placeholder="If different from above">
+        </div>
+      </div>
+      <div class="form-row cols-1">
+        <div class="field">
+          <label>Home / Mailing Address <span class="req">*</span></label>
+          <textarea id="address" placeholder="Street address, city, state, country, postal code" rows="3" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-prev" onclick="goToStep(1)">&#8592; Back</button>
+        <div class="step-progress">Step <strong>2</strong> of 6</div>
+        <button class="btn-next" onclick="goToStep(3)"><span>Next: Academic Background</span> <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: ACADEMIC BACKGROUND -->
+    <div class="form-panel" id="panel-3">
+      <h2 class="form-panel-title">Academic <em>Background</em></h2>
+      <p class="form-panel-sub">Tell us about your highest educational qualifications. Add all relevant qualifications below.</p>
+
+      <div class="form-section-label">Highest Qualification</div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Highest Qualification <span class="req">*</span></label>
+          <select id="highestQual" required>
+            <option value="">Select Qualification</option>
+            <option>High School Diploma / GED</option>
+            <option>Diploma (CIML or equivalent)</option>
+            <option>Advanced Diploma (CIML or equivalent)</option>
+            <option>Postgraduate Diploma (CIML or equivalent)</option>
+            <option>Bachelor's Degree (B.Sc, B.A, B.Eng, etc.)</option>
+            <option>Master's Degree (MBA, MSc, MA, etc.)</option>
+            <option>Doctoral Degree (PhD, DBA, etc.)</option>
+            <option>Professional Certification</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Field of Study <span class="req">*</span></label>
+          <input type="text" id="fieldOfStudy" placeholder="e.g. Business Administration, Engineering" required>
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Name of Institution <span class="req">*</span></label>
+          <input type="text" id="institution1" placeholder="e.g. University of Lagos" required>
+        </div>
+        <div class="field">
+          <label>Country of Institution <span class="req">*</span></label>
+          <input type="text" id="instCountry1" placeholder="e.g. Nigeria" required>
+        </div>
+      </div>
+      <div class="form-row cols-3">
+        <div class="field">
+          <label>Year of Graduation <span class="req">*</span></label>
+          <input type="number" id="gradYear" placeholder="e.g. 2018" min="1960" max="2026" required>
+        </div>
+        <div class="field">
+          <label>Grade / GPA / Class of Degree</label>
+          <input type="text" id="grade" placeholder="e.g. 3.8 GPA / First Class">
+        </div>
+        <div class="field">
+          <label>Language of Instruction</label>
+          <select id="instrLang">
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section-label">Additional Qualifications (Optional)</div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Second Qualification / Certificate</label>
+          <input type="text" id="qual2" placeholder="e.g. PMP, CFA, ACCA">
+        </div>
+        <div class="field">
+          <label>Awarding Body / Institution</label>
+          <input type="text" id="body2" placeholder="e.g. PMI, CFA Institute">
+        </div>
+      </div>
+
+      <div class="form-section-label">English Language Proficiency</div>
+      <div class="field" style="margin-bottom:1.25rem">
+        <label>English Proficiency Method <span class="req">*</span></label>
+        <div class="radio-group" id="englishGroup">
+          <label class="radio-opt"><input type="radio" name="english" value="Prior Education in English"> Prior education in English</label>
+          <label class="radio-opt"><input type="radio" name="english" value="TOEFL"> TOEFL</label>
+          <label class="radio-opt"><input type="radio" name="english" value="IELTS"> IELTS</label>
+          <label class="radio-opt"><input type="radio" name="english" value="Internal Assessment"> CIML Internal Assessment</label>
+          <label class="radio-opt"><input type="radio" name="english" value="Native Speaker"> Native English Speaker</label>
+        </div>
+      </div>
+      <div class="form-row cols-2" id="englishScoreRow" style="display:none">
+        <div class="field">
+          <label>Test Score</label>
+          <input type="text" id="englishScore" placeholder="e.g. IELTS 7.0 / TOEFL 100">
+        </div>
+        <div class="field">
+          <label>Test Date</label>
+          <input type="date" id="englishDate">
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-prev" onclick="goToStep(2)">&#8592; Back</button>
+        <div class="step-progress">Step <strong>3</strong> of 6</div>
+        <button class="btn-next" onclick="goToStep(4)"><span>Next: Experience &amp; Goals</span> <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 4: EXPERIENCE & GOALS -->
+    <div class="form-panel" id="panel-4">
+      <h2 class="form-panel-title">Experience <em>&amp; Goals</em></h2>
+      <p class="form-panel-sub">Share your professional background and motivations. This helps us understand your aspirations and match you to the right program pathway.</p>
+
+      <div class="form-section-label">Professional Experience</div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Current / Most Recent Job Title</label>
+          <input type="text" id="jobTitle" placeholder="e.g. Finance Manager">
+        </div>
+        <div class="field">
+          <label>Current / Most Recent Employer</label>
+          <input type="text" id="employer" placeholder="e.g. Shell Nigeria">
+        </div>
+      </div>
+      <div class="form-row cols-3">
+        <div class="field">
+          <label>Industry / Sector</label>
+          <select id="industry">
+            <option value="">Select Industry</option>
+            <option>Banking &amp; Finance</option><option>Oil &amp; Gas / Energy</option>
+            <option>Healthcare &amp; Pharmaceutical</option><option>Education</option>
+            <option>Technology / ICT</option><option>Government / Public Sector</option>
+            <option>Consulting</option><option>Manufacturing</option>
+            <option>Aviation &amp; Transport</option><option>Real Estate &amp; Construction</option>
+            <option>Retail &amp; FMCG</option><option>NGO / Non-Profit</option>
+            <option>Military / Defence</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Years of Work Experience</label>
+          <select id="yearsExp">
+            <option value="">Select Range</option>
+            <option>Less than 1 year</option>
+            <option>1–2 years</option><option>3–5 years</option>
+            <option>5–7 years</option><option>7–10 years</option>
+            <option>10–15 years</option><option>15+ years</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Years in Management / Leadership</label>
+          <select id="mgmtExp">
+            <option value="">Select Range</option>
+            <option>None</option><option>Less than 1 year</option>
+            <option>1–3 years</option><option>3–5 years</option>
+            <option>5–10 years</option><option>10+ years</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section-label">Statement of Purpose</div>
+      <div class="form-row cols-1">
+        <div class="field">
+          <label>Why do you wish to study at CIML Business School? <span class="req">*</span></label>
+          <textarea id="motivation" rows="5" placeholder="Describe your motivation for applying, your career goals, and why this program aligns with your ambitions. (Minimum 100 words)" required></textarea>
+          <span class="field-hint">Minimum 100 words recommended. This is an important part of your application.</span>
+        </div>
+      </div>
+      <div class="form-row cols-1">
+        <div class="field">
+          <label>What are your short and long-term career goals?</label>
+          <textarea id="goals" rows="4" placeholder="Where do you see yourself in 3 years? 10 years? How will this program help you get there?"></textarea>
+        </div>
+      </div>
+
+      <div class="form-section-label">References (Optional)</div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Reference 1 — Name</label>
+          <input type="text" id="ref1name" placeholder="Full name of referee">
+        </div>
+        <div class="field">
+          <label>Reference 1 — Email / Contact</label>
+          <input type="email" id="ref1email" placeholder="referee@organisation.com">
+        </div>
+      </div>
+      <div class="form-row cols-2">
+        <div class="field">
+          <label>Reference 1 — Position / Title</label>
+          <input type="text" id="ref1title" placeholder="e.g. Director, HR Manager">
+        </div>
+        <div class="field">
+          <label>Reference 1 — Organisation</label>
+          <input type="text" id="ref1org" placeholder="e.g. World Bank">
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-prev" onclick="goToStep(3)">&#8592; Back</button>
+        <div class="step-progress">Step <strong>4</strong> of 6</div>
+        <button class="btn-next" onclick="goToStep(5)"><span>Next: Documents</span> <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 5: DOCUMENTS -->
+    <div class="form-panel" id="panel-5">
+      <h2 class="form-panel-title">Supporting <em>Documents</em></h2>
+      <p class="form-panel-sub">Upload your supporting documents below. All files must be clear, legible scans or photos in PDF, JPG, or PNG format. Maximum 5MB per file.</p>
+
+      <div class="form-section-label">Required Documents</div>
+      <div class="form-row cols-1" style="gap:1.5rem">
+        <div class="field">
+          <label>Passport or National ID (Photo Page) <span class="req">*</span></label>
+          <div class="file-upload" id="upload-id">
+            <input type="file" id="upload_id" name="upload_id" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'upload-id','list-id')">
+            <div class="file-upload-icon">&#x1F4CB;</div>
+            <p><strong>Click to upload</strong> or drag &amp; drop your ID document</p>
+            <div class="file-types">PDF, JPG, PNG — Max 5MB</div>
+          </div>
+          <div class="file-list" id="list-id"></div>
+        </div>
+
+        <div class="field">
+          <label>Academic Transcripts / Certificates <span class="req">*</span></label>
+          <div class="file-upload" id="upload-transcripts">
+            <input type="file" id="upload_transcripts" name="upload_transcripts" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'upload-transcripts','list-transcripts')">
+            <div class="file-upload-icon">&#x1F4C4;</div>
+            <p><strong>Click to upload</strong> transcripts and certificates</p>
+            <div class="file-types">PDF, JPG, PNG — Max 5MB</div>
+          </div>
+          <div class="file-list" id="list-transcripts"></div>
+        </div>
+
+        <div class="field">
+          <label>Curriculum Vitae / R&eacute;sum&eacute; <span class="req">*</span></label>
+          <div class="file-upload" id="upload-cv">
+            <input type="file" id="upload_cv" name="upload_cv" accept=".pdf,.doc,.docx" onchange="handleFile(this,'upload-cv','list-cv')">
+            <div class="file-upload-icon">&#x1F4CB;</div>
+            <p><strong>Click to upload</strong> your CV or r&eacute;sum&eacute;</p>
+            <div class="file-types">PDF, DOC, DOCX — Max 5MB</div>
+          </div>
+          <div class="file-list" id="list-cv"></div>
+        </div>
+      </div>
+
+      <div class="form-section-label">Optional Documents</div>
+      <div class="form-row cols-1" style="gap:1.5rem">
+        <div class="field">
+          <label>English Language Test Certificate (TOEFL / IELTS)</label>
+          <div class="file-upload" id="upload-english">
+            <input type="file" id="upload_english" name="upload_english" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'upload-english','list-english')">
+            <div class="file-upload-icon">&#x1F4DD;</div>
+            <p><strong>Click to upload</strong> English proficiency certificate (if applicable)</p>
+            <div class="file-types">PDF, JPG, PNG — Max 5MB</div>
+          </div>
+          <div class="file-list" id="list-english"></div>
+        </div>
+
+        <div class="field">
+          <label>Letters of Reference / Recommendation</label>
+          <div class="file-upload" id="upload-refs">
+            <input type="file" id="upload_refs" name="upload_refs" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'upload-refs','list-refs')">
+            <div class="file-upload-icon">&#x2709;&#xFE0F;</div>
+            <p><strong>Click to upload</strong> letters of recommendation</p>
+            <div class="file-types">PDF, JPG, PNG — Max 5MB</div>
+          </div>
+          <div class="file-list" id="list-refs"></div>
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-prev" onclick="goToStep(4)">&#8592; Back</button>
+        <div class="step-progress">Step <strong>5</strong> of 6</div>
+        <button class="btn-next" onclick="goToStep(6)"><span>Review Application</span> <span>&#8594;</span></button>
+      </div>
+    </div>
+
+    <!-- STEP 6: REVIEW & SUBMIT -->
+    <div class="form-panel" id="panel-6">
+      <h2 class="form-panel-title">Review <em>&amp; Submit</em></h2>
+      <p class="form-panel-sub">Please review your application carefully before submitting. You can go back to any section to make changes. Once submitted, your application will be reviewed by our admissions team.</p>
+
+      <div class="review-section">
+        <div class="review-section-head">
+          <h4>Program Selection</h4>
+          <span class="review-edit" onclick="goToStep(1)">Edit &rarr;</span>
+        </div>
+        <div class="review-grid">
+          <div class="review-item"><div class="review-item-label">Program</div><div class="review-item-val gold" id="rv-program">—</div></div>
+          <div class="review-item"><div class="review-item-label">Specialization</div><div class="review-item-val" id="rv-spec">—</div></div>
+          <div class="review-item"><div class="review-item-label">Intake</div><div class="review-item-val" id="rv-intake">—</div></div>
+          <div class="review-item"><div class="review-item-label">Study Mode</div><div class="review-item-val" id="rv-mode">—</div></div>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-section-head">
+          <h4>Personal Information</h4>
+          <span class="review-edit" onclick="goToStep(2)">Edit &rarr;</span>
+        </div>
+        <div class="review-grid">
+          <div class="review-item"><div class="review-item-label">Full Name</div><div class="review-item-val" id="rv-name">—</div></div>
+          <div class="review-item"><div class="review-item-label">Date of Birth</div><div class="review-item-val" id="rv-dob">—</div></div>
+          <div class="review-item"><div class="review-item-label">Email Address</div><div class="review-item-val" id="rv-email">—</div></div>
+          <div class="review-item"><div class="review-item-label">Phone</div><div class="review-item-val" id="rv-phone">—</div></div>
+          <div class="review-item"><div class="review-item-label">Nationality</div><div class="review-item-val" id="rv-nationality">—</div></div>
+          <div class="review-item"><div class="review-item-label">Country of Residence</div><div class="review-item-val" id="rv-country">—</div></div>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-section-head">
+          <h4>Academic Background</h4>
+          <span class="review-edit" onclick="goToStep(3)">Edit &rarr;</span>
+        </div>
+        <div class="review-grid">
+          <div class="review-item"><div class="review-item-label">Highest Qualification</div><div class="review-item-val" id="rv-qual">—</div></div>
+          <div class="review-item"><div class="review-item-label">Field of Study</div><div class="review-item-val" id="rv-field">—</div></div>
+          <div class="review-item"><div class="review-item-label">Institution</div><div class="review-item-val" id="rv-inst">—</div></div>
+          <div class="review-item"><div class="review-item-label">Year of Graduation</div><div class="review-item-val" id="rv-gradyr">—</div></div>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-section-head">
+          <h4>Professional Experience</h4>
+          <span class="review-edit" onclick="goToStep(4)">Edit &rarr;</span>
+        </div>
+        <div class="review-grid">
+          <div class="review-item"><div class="review-item-label">Job Title</div><div class="review-item-val" id="rv-job">—</div></div>
+          <div class="review-item"><div class="review-item-label">Industry</div><div class="review-item-val" id="rv-industry">—</div></div>
+          <div class="review-item"><div class="review-item-label">Years of Experience</div><div class="review-item-val" id="rv-exp">—</div></div>
+          <div class="review-item"><div class="review-item-label">Management Experience</div><div class="review-item-val" id="rv-mgmt">—</div></div>
+        </div>
+      </div>
+
+      <div class="declaration-box">
+        <p>By submitting this application, I confirm that all information provided is accurate, complete, and truthful. I understand that any false or misleading information may result in the rejection of this application or, if discovered after admission, the cancellation of my enrolment. I consent to CIML Business School processing my personal data in accordance with its Privacy Policy for the purposes of evaluating this application.</p>
+        <label class="declaration-check" id="declarationLabel">
+          <input type="checkbox" id="declarationCheck">
+          <span>I confirm that all information is accurate and I agree to the <a href="p.html">Privacy Policy</a> and <a href="t.html">Terms of Use</a> of CIML Business School.</span>
+        </label>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn-prev" onclick="goToStep(5)">&#8592; Back</button>
+        <div class="step-progress">Step <strong>6</strong> of 6</div>
+        <button class="btn-next btn-submit" id="submitBtn" onclick="submitApplication()">
+          <span id="submitBtnText">Submit Application &#10003;</span>
+          <span id="submitBtnSpinner" style="display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,.2);border-top-color:#000;border-radius:50%;animation:spin .7s linear infinite;position:relative;z-index:1"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS SCREEN -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">&#10003;</div>
+      <h2>Application <em>Submitted</em></h2>
+      <p>Thank you for applying to CIML Business School. Your application has been received and is now under review by our admissions team. You will receive a confirmation email shortly.</p>
+      <div class="success-ref">
+        <div class="success-ref-label">Your Application Reference</div>
+        <div class="success-ref-num" id="refNumber">CIML-2026-——</div>
+      </div>
+      <p style="font-size:.85rem;color:rgba(13,13,13,.5);margin-bottom:2rem">Please keep this reference number for your records. Our admissions team will contact you within <strong>5–10 business days</strong>.</p>
+      <div class="success-btns">
+        <a href="index.html" class="btn-next" style="display:inline-flex;text-decoration:none"><span>Return to Home</span></a>
+        <a href="rad.html" class="btn-prev" style="display:inline-flex;text-decoration:none">View Requirements</a>
+      </div>
+    </div>
+
+  </div><!-- /form-area -->
+</div><!-- /app-layout -->
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">&#x1F512;</span>Secure &amp; Encrypted</div>
+    <div class="trust-item"><span class="trust-icon">&#x1F30D;</span>Globally Recognised</div>
+    <div class="trust-item"><span class="trust-icon">&#x26A1;</span>Decision in 5–10 Days</div>
+    <div class="trust-item"><span class="trust-icon">&#x1F393;</span>Rolling Admissions</div>
+    <div class="trust-item"><span class="trust-icon">&#x1F4DE;</span>Dedicated Admissions Support</div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <img src="assets/images/offering-mba.jpg" alt="" class="cta-banner-img">
+  <div class="cta-banner-inner">
+    <div>
+      <h2 class="cta-banner-title">Have questions about<br><em>admissions?</em></h2>
+      <p class="cta-banner-sub">Our admissions team is here to help. Review program requirements or contact us directly for personalised guidance.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="rad.html" class="btn-cta-main">View Requirements</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="dp.html">Diploma Program</a></li>
+          <li><a href="avd.html">Advanced Diploma</a></li>
+          <li><a href="pgd.html">Postgraduate Diploma</a></li>
+          <li><a href="mba.html">MBA</a></li>
+          <li><a href="dba.html">DBA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <ul>
+          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="acc.html">Accreditation</a></li>
+          <li><a href="wcs.html">Why Choose Us</a></li>
+          <li><a href="act.html">Academic Tools</a></li>
+          <li><a href="#">News &amp; Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
+          <li><a href="tel:+15052951352">505 295 1352</a></li>
+          <li><a href="app.html">Admissions / Apply</a></li>
+          <li><a href="https://cbsedu.us/cbs/user/">Student Portal</a></li>
+          <li><a href="cm.html">Campus Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="p.html">Privacy Policy</a>
+        <a href="t.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+
+<script>
+// ============ HEADER SCROLL ============
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', function(){
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, {passive: true});
+
+// ============ MOBILE DRAWER ============
+const hamburgerBtn  = document.getElementById('hamburgerBtn');
+const mobileDrawer  = document.getElementById('mobileDrawer');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const drawerClose   = document.getElementById('drawerClose');
+
+function openDrawer(){
+  hamburgerBtn.classList.add('open');
+  mobileDrawer.classList.add('open');
+  mobileOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  hamburgerBtn.setAttribute('aria-expanded','true');
+}
+function closeDrawer(){
+  hamburgerBtn.classList.remove('open');
+  mobileDrawer.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+  hamburgerBtn.setAttribute('aria-expanded','false');
+}
+hamburgerBtn.addEventListener('click', function(){
+  mobileDrawer.classList.contains('open') ? closeDrawer() : openDrawer();
+});
+drawerClose.addEventListener('click', closeDrawer);
+mobileOverlay.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDrawer(); });
+document.querySelectorAll('.drawer-has-sub').forEach(function(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    var parent = this.closest('.drawer-item');
+    var isOpen = parent.classList.contains('open');
+    document.querySelectorAll('.drawer-item').forEach(function(i){ i.classList.remove('open'); });
+    if(!isOpen) parent.classList.add('open');
+  });
+});
+window.addEventListener('resize', function(){
+  if(window.innerWidth > 1050) closeDrawer();
+}, {passive: true});
+
+// ============ STEP MANAGEMENT ============
+var currentStep = 1;
+var totalSteps  = 6;
+
+function goToStep(n){
+  if(n < 1 || n > totalSteps) return;
+  document.querySelectorAll('.step-item').forEach(function(item, i){
+    var s = i + 1;
+    item.classList.remove('active','done');
+    if(s === n)      item.classList.add('active');
+    else if(s < n)   item.classList.add('done');
+  });
+  document.querySelectorAll('.form-panel').forEach(function(p){ p.classList.remove('active'); });
+  var target = document.getElementById('panel-' + n);
+  if(target){
+    target.classList.add('active');
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  currentStep = n;
+  if(n === 6) populateReview();
+}
+
+document.querySelectorAll('.step-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    var s = parseInt(item.dataset.step);
+    if(s <= currentStep) goToStep(s);
+  });
+});
+
+// ============ PROGRAM INFO HINT ============
+var progInfo = {
+  'Diploma Program':                             'Foundation Level · Min. age 18 · High School Diploma or GED required.',
+  'Advanced Diploma Program':                    'Intermediate Level · Min. age 18 · Diploma (CIML or equivalent) required.',
+  'Post Graduate Diploma':                       'Postgraduate Level · Min. age 21 · Bachelor\'s degree or Advanced Diploma required.',
+  'Master of Business Administration (MBA)':     'Masters Level · Min. age 21 · Bachelor\'s degree or PGD required. 60–66 credit hours.',
+  'Doctor of Business Administration (DBA)':     'Doctoral Level · MBA or equivalent required · 5–7 years executive experience. 90–96 credit hours.'
+};
+function updateProgramInfo(sel){
+  var box = document.getElementById('progInfoBox');
+  if(sel.value && progInfo[sel.value]){
+    box.style.display = 'block';
+    box.textContent   = progInfo[sel.value];
+  } else {
+    box.style.display = 'none';
+  }
+}
+
+// ============ ENGLISH SCORE SHOW/HIDE ============
+document.querySelectorAll('input[name="english"]').forEach(function(r){
+  r.addEventListener('change', function(){
+    document.querySelectorAll('.radio-opt').forEach(function(o){ o.classList.remove('selected'); });
+    this.closest('.radio-opt').classList.add('selected');
+    var showScore = (this.value === 'TOEFL' || this.value === 'IELTS');
+    document.getElementById('englishScoreRow').style.display = showScore ? 'grid' : 'none';
+  });
+});
+
+// ============ FILE UPLOAD ============
+function handleFile(input, uploadId, listId){
+  var list  = document.getElementById(listId);
+  var files = Array.from(input.files);
+  list.innerHTML = '';
+  files.forEach(function(file){
+    var item = document.createElement('div');
+    item.className = 'file-item';
+    item.innerHTML = '<span>&#x1F4CE; ' + file.name + ' <span style="opacity:.5;font-size:.7rem">(' + (file.size/1024).toFixed(0) + ' KB)</span></span>'
+                   + '<span class="file-item-remove" onclick="this.parentElement.remove()">&#x2715;</span>';
+    list.appendChild(item);
+  });
+}
+document.querySelectorAll('.file-upload').forEach(function(zone){
+  zone.addEventListener('dragover',  function(e){ e.preventDefault(); zone.classList.add('drag'); });
+  zone.addEventListener('dragleave', function(){  zone.classList.remove('drag'); });
+  zone.addEventListener('drop',      function(){  zone.classList.remove('drag'); });
+});
+
+// ============ REVIEW POPULATE ============
+function populateReview(){
+  var g = function(id){ var el = document.getElementById(id); return el ? (el.value.trim() || '—') : '—'; };
+  document.getElementById('rv-program').textContent    = g('programSelect') || 'Not selected';
+  document.getElementById('rv-spec').textContent       = g('specialization') || 'Not specified';
+  var yr  = g('intakeYear');
+  var sem = g('intakeSem');
+  document.getElementById('rv-intake').textContent     = (yr !== '—' && sem !== '—') ? sem + ' ' + yr : '—';
+  document.getElementById('rv-mode').textContent       = g('studyMode');
+  var t = g('title'), f = g('firstName'), l = g('lastName');
+  document.getElementById('rv-name').textContent       = [t,f,l].filter(function(v){ return v && v !== '—'; }).join(' ') || '—';
+  document.getElementById('rv-dob').textContent        = g('dob');
+  document.getElementById('rv-email').textContent      = g('email');
+  document.getElementById('rv-phone').textContent      = g('phone');
+  document.getElementById('rv-nationality').textContent= g('nationality');
+  document.getElementById('rv-country').textContent    = g('country');
+  document.getElementById('rv-qual').textContent       = g('highestQual');
+  document.getElementById('rv-field').textContent      = g('fieldOfStudy');
+  document.getElementById('rv-inst').textContent       = g('institution1');
+  document.getElementById('rv-gradyr').textContent     = g('gradYear');
+  document.getElementById('rv-job').textContent        = g('jobTitle');
+  document.getElementById('rv-industry').textContent   = g('industry');
+  document.getElementById('rv-exp').textContent        = g('yearsExp');
+  document.getElementById('rv-mgmt').textContent       = g('mgmtExp');
+}
+
+// ============ TOAST ============
+var toast      = document.getElementById('toastPopup');
+var toastTitle = document.getElementById('toastTitle');
+var toastMsg   = document.getElementById('toastMsg');
+var toastIcon  = document.getElementById('toastIcon');
+var toastClose = document.getElementById('toastClose');
+var toastTimer;
+
+function showToast(title, msg, isError){
+  clearTimeout(toastTimer);
+  toastTitle.textContent = title;
+  toastMsg.textContent   = msg;
+  if(isError){
+    toast.classList.add('error-toast');
+    toastIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+  } else {
+    toast.classList.remove('error-toast');
+    toastIcon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+  }
+  toast.classList.add('show');
+  toastTimer = setTimeout(function(){ hideToast(); }, 8000);
+}
+function hideToast(){ toast.classList.remove('show'); }
+toastClose.addEventListener('click', hideToast);
+
+// ============ SUBMIT — AJAX to send_mail_cbs.php ============
+function submitApplication(){
+  var decl = document.getElementById('declarationCheck');
+  if(!decl.checked){
+    showToast('Declaration Required', 'Please read and accept the declaration before submitting.', true);
+    return;
+  }
+
+  var g = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+  // Basic validation
+  if(!g('programSelect')){ showToast('Missing Field', 'Please select a program in Step 1.', true); return; }
+  if(!g('firstName') || !g('lastName')){ showToast('Missing Field', 'Please enter your full name in Step 2.', true); return; }
+  if(!g('email')){ showToast('Missing Field', 'Please enter your email address in Step 2.', true); return; }
+  if(g('email') !== g('emailConfirm')){ showToast('Email Mismatch', 'Your email addresses do not match. Please check Step 2.', true); return; }
+
+  // Generate ref
+  var ref = 'CIML-2026-' + Math.random().toString(36).substring(2,8).toUpperCase();
+
+  // Build FormData with all text fields + files
+  var fd = new FormData();
+  fd.append('ref',            ref);
+  fd.append('programSelect',  g('programSelect'));
+  fd.append('specialization', g('specialization'));
+  fd.append('intakeYear',     g('intakeYear'));
+  fd.append('intakeSem',      g('intakeSem'));
+  fd.append('studyMode',      g('studyMode'));
+  fd.append('referralSource', g('referralSource'));
+  fd.append('title',          g('title'));
+  fd.append('firstName',      g('firstName'));
+  fd.append('lastName',       g('lastName'));
+  fd.append('middleName',     g('middleName'));
+  fd.append('dob',            g('dob'));
+  fd.append('gender',         g('gender'));
+  fd.append('nationality',    g('nationality'));
+  fd.append('passportNum',    g('passportNum'));
+  fd.append('country',        g('country'));
+  fd.append('email',          g('email'));
+  fd.append('phone',          g('phone'));
+  fd.append('whatsapp',       g('whatsapp'));
+  fd.append('address',        g('address'));
+  fd.append('highestQual',    g('highestQual'));
+  fd.append('fieldOfStudy',   g('fieldOfStudy'));
+  fd.append('institution1',   g('institution1'));
+  fd.append('instCountry1',   g('instCountry1'));
+  fd.append('gradYear',       g('gradYear'));
+  fd.append('grade',          g('grade'));
+  fd.append('instrLang',      g('instrLang'));
+  fd.append('qual2',          g('qual2'));
+  fd.append('body2',          g('body2'));
+  fd.append('englishScore',   g('englishScore'));
+  fd.append('englishDate',    g('englishDate'));
+  fd.append('jobTitle',       g('jobTitle'));
+  fd.append('employer',       g('employer'));
+  fd.append('industry',       g('industry'));
+  fd.append('yearsExp',       g('yearsExp'));
+  fd.append('mgmtExp',        g('mgmtExp'));
+  fd.append('motivation',     g('motivation'));
+  fd.append('goals',          g('goals'));
+  fd.append('ref1name',       g('ref1name'));
+  fd.append('ref1email',      g('ref1email'));
+  fd.append('ref1title',      g('ref1title'));
+  fd.append('ref1org',        g('ref1org'));
+
+  // English method from radio
+  var eng = document.querySelector('input[name="english"]:checked');
+  fd.append('englishMethod', eng ? eng.value : 'Not provided');
+
+  // Append files
+  ['upload_id','upload_transcripts','upload_cv','upload_english','upload_refs'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el && el.files[0]) fd.append(id, el.files[0]);
+  });
+
+  // Loading state
+  var btn     = document.getElementById('submitBtn');
+  var btnText = document.getElementById('submitBtnText');
+  var spinner = document.getElementById('submitBtnSpinner');
+  btn.disabled     = true;
+  btnText.style.display  = 'none';
+  spinner.style.display  = 'inline-block';
+
+  fetch('send_mail_cbs.php', {
+    method: 'POST',
+    body: fd
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    btn.disabled          = false;
+    btnText.style.display = 'inline';
+    spinner.style.display = 'none';
+
+    if(data.success){
+      // Toast first
+      showToast(
+        '✅ Application Submitted!',
+        'Your documents and details have been received by CIML Business School. Ref: ' + ref,
+        false
+      );
+      // Then success screen
+      document.getElementById('refNumber').textContent = ref;
+      document.querySelectorAll('.form-panel').forEach(function(p){ p.classList.remove('active'); });
+      document.querySelectorAll('.step-item').forEach(function(i){ i.classList.add('done'); });
+      var success = document.getElementById('successScreen');
+      success.classList.add('show');
+      success.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      showToast(
+        'Submission Failed',
+        data.message || 'Something went wrong. Please try again or email info@cbsedu.us directly.',
+        true
+      );
+    }
+  })
+  .catch(function(){
+    btn.disabled          = false;
+    btnText.style.display = 'inline';
+    spinner.style.display = 'none';
+    showToast(
+      'Connection Error',
+      'Unable to reach the server. Please check your connection or email info@cbsedu.us directly.',
+      true
+    );
+  });
+}
+</script>
+</body>
+</html>

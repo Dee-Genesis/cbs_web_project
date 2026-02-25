@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master of Business Administration (MBA) — CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --sky:#1B3F6E;--sky-deep:#112b4e;--sky-mid:#254f8a;
+  --sky-pale:#EEF3FA;--rust:#8B2000;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Syne",sans-serif;--body:"DM Sans",sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* ── NEWS TICKER ─────────────────────── */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:"\2022";margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── TOP BAR ─────────────────────────── */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85;display:block}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+
+/* ── HEADER ──────────────────────────── */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:260px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover,.drop-panel a.active-sub{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ── MOBILE DRAWER ───────────────────── */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover,.drawer-sub a.active-sub{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+.drawer-btn-gold:hover{background:var(--gold-light)}
+
+/* ── MBA HERO ── (flagship full-bleed split) ── */
+.mba-hero{position:relative;min-height:600px;display:grid;grid-template-columns:55% 45%;overflow:hidden;background:var(--sky-deep)}
+
+/* Left panel */
+.mba-hero-left{position:relative;padding:5rem 5vw 5rem 5vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;z-index:1}
+
+/* Decorative corner accent: large gold arc */
+.mba-hero-left::before{content:"";position:absolute;top:-100px;left:-100px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,168,76,.12);pointer-events:none}
+.mba-hero-left::after{content:"";position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,168,76,.08);pointer-events:none}
+
+/* Vertical gold bar accent */
+.hero-accent-bar{position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent 0%,var(--gold) 30%,var(--gold) 70%,transparent 100%);opacity:.5}
+.hero-accent-bar2{position:absolute;top:0;right:10px;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.3),transparent);opacity:.4}
+
+.mba-hero-inner{max-width:640px;position:relative;z-index:1}
+.prog-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1.75rem}
+.prog-breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
+.prog-breadcrumb a:hover{color:var(--gold)}
+.prog-breadcrumb-sep{color:rgba(255,255,255,.2)}
+.prog-breadcrumb-current{color:var(--gold-light);font-weight:500}
+
+.mba-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.85rem;margin-bottom:1.4rem}
+.mba-label::before{content:"";display:block;width:32px;height:2px;background:var(--gold)}
+
+/* Flagship badge inline with title */
+.mba-flagship-tag{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:.3rem .8rem;margin-bottom:1.1rem;vertical-align:middle}
+
+.mba-hero-title{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4.5rem);color:#fff;line-height:1.0;margin-bottom:1.1rem}
+.mba-hero-title em{color:var(--gold);font-style:italic}
+
+.mba-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:500px;margin-bottom:2.5rem}
+
+.mba-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-mba-primary{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.95rem 2rem;transition:all .25s}
+.btn-mba-primary:hover{background:var(--gold-light)}
+.btn-mba-ghost{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:.95rem 1.75rem;transition:all .25s}
+.btn-mba-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* Right panel — image with diagonal overlay */
+.mba-hero-right{position:relative;overflow:hidden;min-height:500px}
+.mba-hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+/* Strong diagonal bleed from left to right */
+.mba-hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,var(--sky-deep) 0%,rgba(17,43,78,.55) 45%,transparent 70%);z-index:1}
+/* Gold shimmer line across diagonal */
+.mba-hero-right::after{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);z-index:2;opacity:.6}
+
+/* Corner badge */
+.mba-badge{position:absolute;bottom:2.5rem;right:2.5rem;z-index:3}
+.mba-badge-inner{width:110px;height:110px;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-3deg);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.mba-badge-inner span:first-child{font-family:var(--sans);font-size:.48rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.65);margin-bottom:.1rem}
+.mba-badge-inner strong{font-family:var(--serif);font-size:2rem;color:var(--ink);line-height:1}
+.mba-badge-inner span:last-child{font-family:var(--sans);font-size:.45rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.55);margin-top:.2rem;text-align:center;padding:0 .5rem}
+
+/* Stat chips on hero image */
+.mba-hero-stats{position:absolute;top:2.5rem;left:2rem;z-index:3;display:flex;flex-direction:column;gap:.6rem}
+.mba-stat-chip{background:rgba(13,13,13,.7);border:1px solid rgba(201,168,76,.3);backdrop-filter:blur(6px);padding:.5rem 1rem;display:flex;align-items:center;gap:.65rem}
+.mba-stat-chip-num{font-family:var(--serif);font-size:1.35rem;color:var(--gold);line-height:1}
+.mba-stat-chip-label{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.3}
+
+/* ── LEVEL PROGRESS STRIP ─────────────── */
+.prog-level-strip{background:var(--gold);padding:.65rem 5vw}
+.prog-level-strip-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;overflow-x:auto;scrollbar-width:none}
+.prog-level-strip-inner::-webkit-scrollbar{display:none}
+.level-step{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.level-step-dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.45rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);background:transparent;flex-shrink:0}
+.level-step.done .level-step-dot{background:var(--ink);color:var(--gold)}
+.level-step.active .level-step-dot{background:var(--ink);color:var(--gold);box-shadow:0 0 0 3px rgba(13,13,13,.25)}
+.level-step-name{font-family:var(--sans);font-size:.63rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(13,13,13,.55);white-space:nowrap}
+.level-step.done .level-step-name{color:rgba(13,13,13,.7);text-decoration:line-through}
+.level-step.active .level-step-name{color:var(--ink);font-weight:800}
+.level-arrow{color:rgba(13,13,13,.3);font-size:.85rem;flex-shrink:0}
+
+/* ── META STRIP ─────────────────────── */
+.prog-meta-strip{background:var(--sky-deep);border-bottom:3px solid var(--gold)}
+.prog-meta-inner{max-width:1400px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:repeat(4,1fr)}
+.prog-meta-item{padding:1.4rem 1.5rem;display:flex;align-items:center;gap:.85rem;border-right:1px solid rgba(255,255,255,.07)}
+.prog-meta-item:last-child{border-right:none}
+.prog-meta-icon{font-size:1.2rem;flex-shrink:0}
+.prog-meta-text strong{display:block;font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.15rem}
+.prog-meta-text span{font-size:.85rem;color:#fff;font-weight:500}
+
+/* ── MAIN LAYOUT ─────────────────────── */
+.prog-wrap{max-width:1400px;margin:0 auto;padding:5rem 5vw;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
+
+.prog-intro{font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.65;color:var(--sky);border-left:4px solid var(--gold);padding-left:1.75rem;margin-bottom:2.25rem;font-style:italic}
+.prog-body p{font-size:1rem;line-height:1.85;color:rgba(13,13,13,.75);margin-bottom:1.75rem}
+
+/* WHO IS THIS FOR */
+.ideal-section{background:var(--sky-pale);border-left:4px solid var(--gold);padding:2rem 2.25rem;margin-bottom:3rem}
+.ideal-section-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.ideal-section-label::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
+.ideal-list{display:flex;flex-direction:column;gap:.75rem}
+.ideal-item{display:flex;align-items:flex-start;gap:.85rem;font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.6}
+.ideal-item-dot{width:24px;height:24px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.6rem;margin-top:.1rem}
+
+/* ── KEY FEATURES ────────────────────── */
+.features-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.features-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
+.features-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:2rem}
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08);margin-bottom:3.5rem}
+.feature-card{background:#fff;padding:2rem 1.75rem;display:flex;gap:1.25rem;align-items:flex-start;position:relative;overflow:hidden;transition:all .3s var(--ease-out)}
+.feature-card::before{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--sky);transform:scaleX(0);transition:transform .4s var(--ease-out);transform-origin:left}
+.feature-card:hover{background:var(--sky-pale)}
+.feature-card:hover::before{transform:scaleX(1)}
+.feature-card-icon{width:44px;height:44px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;transition:background .3s}
+.feature-card:hover .feature-card-icon{background:var(--gold)}
+.feature-card-body h4{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-bottom:.45rem;transition:color .2s}
+.feature-card:hover .feature-card-body h4{color:var(--sky)}
+.feature-card-body p{font-size:.85rem;color:rgba(13,13,13,.6);line-height:1.65}
+
+/* ── SPECIALIZATIONS ─────────────────── */
+.spec-section{margin-bottom:3.5rem}
+.spec-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.spec-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
+.spec-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:.75rem}
+.spec-desc{font-size:.95rem;color:rgba(13,13,13,.6);line-height:1.7;margin-bottom:2rem;max-width:620px}
+.spec-group{border:1px solid rgba(13,13,13,.1);margin-bottom:.5rem;overflow:hidden}
+.spec-group-header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;background:#fff;cursor:pointer;transition:background .2s;gap:1rem;user-select:none}
+.spec-group-header:hover{background:var(--sky-pale)}
+.spec-group.open .spec-group-header{background:var(--sky);color:#fff}
+.spec-group-left{display:flex;align-items:center;gap:.85rem}
+.spec-group-icon{width:36px;height:36px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;transition:background .2s}
+.spec-group.open .spec-group-icon{background:var(--gold)}
+.spec-group-name{font-family:var(--sans);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);transition:color .2s}
+.spec-group.open .spec-group-name{color:#fff}
+.spec-group-count{font-family:var(--serif);font-size:.8rem;color:rgba(13,13,13,.4);transition:color .2s}
+.spec-group.open .spec-group-count{color:rgba(255,255,255,.5)}
+.spec-group-chevron{width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s}
+.spec-group.open .spec-group-chevron{transform:rotate(180deg)}
+.spec-group-chevron svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.spec-group-body{display:none;padding:1.25rem 1.5rem 1.5rem;background:var(--ivory);border-top:1px solid rgba(13,13,13,.06)}
+.spec-group.open .spec-group-body{display:block}
+.spec-items{display:flex;flex-wrap:wrap;gap:.5rem}
+.spec-item{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.8rem;color:var(--ink);background:#fff;border:1px solid rgba(13,13,13,.1);padding:.4rem .9rem;transition:all .2s}
+.spec-item::before{content:"";width:6px;height:6px;background:var(--sky);border-radius:50%;flex-shrink:0}
+.spec-item:hover{border-color:var(--sky);color:var(--sky);background:var(--sky-pale)}
+
+/* ── OUTCOMES ────────────────────────── */
+.outcomes-section{margin-bottom:3.5rem}
+.outcomes-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.outcomes-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
+.outcomes-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:2rem}
+.outcomes-list{display:flex;flex-direction:column;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.outcome-item{background:#fff;padding:1.5rem 2rem;display:flex;align-items:flex-start;gap:1.25rem;transition:all .3s var(--ease-out);position:relative;overflow:hidden}
+.outcome-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sky);transform:scaleY(0);transition:transform .35s var(--ease-out)}
+.outcome-item:hover{background:var(--sky-pale)}
+.outcome-item:hover::before{transform:scaleY(1)}
+.outcome-check{width:32px;height:32px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.85rem;font-weight:900}
+.outcome-text{font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.65}
+.outcome-text strong{color:var(--ink);display:block;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem}
+
+/* ── ROLES GRADUATES TAKE ────────────── */
+.roles-section{background:var(--ink);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
+.roles-section::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;border:1px solid rgba(255,255,255,.05);border-radius:50%}
+.roles-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.roles-eyebrow::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
+.roles-title{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:1.5rem;line-height:1.2}
+.roles-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.role-chip{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(201,168,76,.25);padding:.4rem .9rem;background:rgba(201,168,76,.06);transition:all .2s}
+.role-chip:hover{background:rgba(201,168,76,.12);border-color:var(--gold)}
+
+/* ── ELIGIBILITY BANNER ──────────────── */
+.eligibility-banner{background:var(--gold);padding:2.75rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem}
+.eligibility-banner-left h3{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:.4rem}
+.eligibility-banner-left p{font-size:.9rem;color:rgba(13,13,13,.65);line-height:1.6;max-width:450px}
+.btn-eligibility-main{display:inline-flex;align-items:center;gap:.65rem;font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;padding:1rem 2rem;transition:all .25s;white-space:nowrap;flex-shrink:0}
+.btn-eligibility-main:hover{background:var(--sky)}
+.btn-eligibility-main svg{width:15px;height:15px;flex-shrink:0}
+
+/* ── SIDEBAR ─────────────────────────── */
+.sidebar-quick-apply{background:var(--sky);padding:2rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.sidebar-quick-apply::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
+.sidebar-quick-apply-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.sidebar-quick-apply-label::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
+.sidebar-quick-apply h3{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:.65rem;line-height:1.2}
+.sidebar-quick-apply p{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:1.5rem}
+.btn-sidebar-eligibility{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.85rem 1.5rem;margin-bottom:.6rem;transition:all .25s}
+.btn-sidebar-eligibility:hover{background:var(--gold-light)}
+.btn-sidebar-apply{display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.85rem 1.5rem;transition:all .25s}
+.btn-sidebar-apply:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.sidebar-info-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
+.sidebar-info-head{background:var(--ink);padding:.85rem 1.25rem}
+.sidebar-info-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.sidebar-info-row{display:flex;align-items:flex-start;gap:.85rem;padding:.9rem 1.25rem;border-bottom:1px solid rgba(13,13,13,.06)}
+.sidebar-info-row:last-child{border-bottom:none}
+.sidebar-info-icon{width:28px;height:28px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem}
+.sidebar-info-text strong{display:block;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.15rem}
+.sidebar-info-text span{font-size:.85rem;color:var(--ink)}
+
+/* Pathway */
+.pathway-section{background:var(--sky-deep);padding:2.5rem;position:relative;overflow:hidden;margin-bottom:1.5rem}
+.pathway-section::before{content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;border:1px solid rgba(255,255,255,.06);border-radius:50%}
+.pathway-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
+.pathway-eyebrow::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
+.pathway-title{font-family:var(--serif);font-size:1.25rem;color:#fff;margin-bottom:1.75rem;line-height:1.2}
+.pathway-steps{display:flex;flex-direction:column;gap:0}
+.pathway-step{display:flex;align-items:center;gap:.85rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.pathway-step:last-child{border-bottom:none;padding-bottom:0}
+.pathway-step-dot{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.pathway-step.done .pathway-step-dot{background:rgba(201,168,76,.2);color:var(--gold);border:1px solid rgba(201,168,76,.4)}
+.pathway-step.current .pathway-step-dot{background:var(--gold);color:var(--ink)}
+.pathway-step:not(.current):not(.done) .pathway-step-dot{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.pathway-step-text strong{display:block;font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;margin-bottom:.1rem}
+.pathway-step.current .pathway-step-text strong{color:var(--gold)}
+.pathway-step.done .pathway-step-text strong{color:rgba(255,255,255,.4);text-decoration:line-through}
+.pathway-step-text span{font-size:.75rem;color:rgba(255,255,255,.45)}
+.pathway-connector{width:1px;height:12px;background:rgba(255,255,255,.15);margin-left:15px}
+
+/* All Programs */
+.sidebar-programs-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
+.sidebar-programs-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
+.sidebar-programs-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.sidebar-programs-head a{font-size:.72rem;color:var(--gold-light);transition:color .2s}
+.sidebar-programs-head a:hover{color:var(--gold)}
+.program-link-item{display:flex;align-items:center;padding:.85rem 1.25rem;border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s;gap:.85rem}
+.program-link-item:last-child{border-bottom:none}
+.program-link-item:hover{background:rgba(201,168,76,.05);padding-left:1.5rem}
+.program-link-item.active-prog{background:var(--sky-pale);border-left:3px solid var(--sky)}
+.program-link-badge{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--sky-mid);color:#fff;padding:.2rem .5rem;flex-shrink:0}
+.program-link-item.active-prog .program-link-badge{background:var(--sky)}
+.program-link-name{font-size:.875rem;color:var(--ink);flex:1;transition:color .2s}
+.program-link-item:hover .program-link-name{color:var(--sky)}
+.program-link-item.active-prog .program-link-name{color:var(--sky);font-weight:600}
+.program-link-arrow{color:var(--gold);font-size:.8rem;opacity:0;transition:all .2s}
+.program-link-item:hover .program-link-arrow{opacity:1}
+
+/* ── CTA STRIP ───────────────────────── */
+.page-cta{background:var(--sky);padding:5rem 5vw;position:relative;overflow:hidden}
+.page-cta::before{content:"";position:absolute;top:-60px;right:-60px;width:300px;height:300px;border:1px solid rgba(255,255,255,.06);border-radius:50%}
+.page-cta::after{content:"";position:absolute;bottom:-80px;left:10%;width:200px;height:200px;border:1px solid rgba(255,255,255,.04);border-radius:50%}
+.page-cta-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;position:relative;z-index:1}
+.page-cta h2{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.75rem);color:#fff;line-height:1.1;margin-bottom:.75rem}
+.page-cta h2 em{color:var(--gold);font-style:italic}
+.page-cta p{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.7;max-width:500px}
+.page-cta-btns{display:flex;flex-direction:column;gap:.75rem;min-width:220px}
+.btn-cta-gold{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-gold:hover{background:var(--gold-light)}
+.btn-cta-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:.9rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ── FOOTER ──────────────────────────── */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8;display:block}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:1100px){
+  .prog-wrap{grid-template-columns:1fr;gap:3rem}
+  .prog-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .sidebar-quick-apply{grid-column:1/-1}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .prog-meta-inner{grid-template-columns:repeat(2,1fr)}
+  .prog-meta-item{border-bottom:1px solid rgba(255,255,255,.07)}
+}
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .mba-hero{grid-template-columns:1fr}
+  .mba-hero-right{display:none}
+  .mba-hero-left{padding:4rem 5vw}
+  .features-grid{grid-template-columns:1fr}
+  .page-cta-inner{grid-template-columns:1fr}
+  .page-cta-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .prog-sidebar{grid-template-columns:1fr}
+  .eligibility-banner{flex-direction:column;gap:1.5rem}
+}
+@media(max-width:600px){
+  .prog-meta-inner{grid-template-columns:1fr 1fr}
+  .page-cta-btns{flex-direction:column}
+  .mba-hero-actions{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>Applications for 2026 intake are now open &mdash; Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 &mdash; Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 &mdash; Congratulations to all graduates</span>
+      <span>Applications for 2026 intake are now open &mdash; Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 &mdash; Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 &mdash; Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15550001234">&#128222; +1 (555) 000-1234</a>
+    <a href="mailto:info@cbsedu.us">&#9993; info@cbsedu.us</a>
+    <a href="cm.html">&#128205; View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name"><span class="logo-name-top">CIML</span><span class="logo-name-bottom">Business School</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop active">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html" class="active-sub">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">&#10005;</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item open">
+      <a href="op.html" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a>
+        <a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a>
+        <a href="mba.html" class="active-sub">MBA</a>
+        <a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="rmba.html" class="drawer-btn drawer-btn-outline">Check Eligibility</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now &#8594;</a>
+  </div>
+</aside>
+
+<!-- ── MBA HERO ── -->
+<section class="mba-hero">
+  <div class="mba-hero-left">
+    <div class="hero-accent-bar"></div>
+    <div class="hero-accent-bar2"></div>
+    <div class="mba-hero-inner">
+      <nav class="prog-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="prog-breadcrumb-sep">&#8250;</span>
+        <a href="op.html">Our Programs</a>
+        <span class="prog-breadcrumb-sep">&#8250;</span>
+        <span class="prog-breadcrumb-current">MBA</span>
+      </nav>
+      <div class="mba-label">Master's Level &middot; Flagship Program</div>
+      <div><span class="mba-flagship-tag">Our Most Sought-After Qualification</span></div>
+      <h1 class="mba-hero-title">Master of<br><em>Business</em><br>Administration</h1>
+      <p class="mba-hero-sub">A globally recognised postgraduate qualification built for professionals ready to step into executive leadership, strategic management, and senior roles across every major industry — with 40+ specializations and a direct pathway to the DBA.</p>
+      <div class="mba-hero-actions">
+        <a href="rmba.html" class="btn-mba-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Check Eligibility
+        </a>
+        <a href="app.html" class="btn-mba-ghost">Apply Now &#8594;</a>
+      </div>
+    </div>
+  </div>
+  <div class="mba-hero-right">
+    <img src="assets/images/offering-mba.jpg" alt="MBA Program — CIML Business School">
+    <!-- Stat chips layered over image -->
+    <div class="mba-hero-stats">
+      <div class="mba-stat-chip">
+        <span class="mba-stat-chip-num">40+</span>
+        <span class="mba-stat-chip-label">Specialization<br>Tracks</span>
+      </div>
+      <div class="mba-stat-chip">
+        <span class="mba-stat-chip-num">94%</span>
+        <span class="mba-stat-chip-label">Graduate<br>Employment</span>
+      </div>
+    </div>
+    <div class="mba-badge">
+      <div class="mba-badge-inner">
+        <span>Level</span><strong>MBA</strong><span>Master's</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVEL PROGRESS STRIP -->
+<div class="prog-level-strip">
+  <div class="prog-level-strip-inner">
+    <div class="level-step done">
+      <div class="level-step-dot">&#10003;</div>
+      <span class="level-step-name">Diploma</span>
+    </div>
+    <span class="level-arrow">&#8594;</span>
+    <div class="level-step done">
+      <div class="level-step-dot">&#10003;</div>
+      <span class="level-step-name">Advanced Diploma</span>
+    </div>
+    <span class="level-arrow">&#8594;</span>
+    <div class="level-step done">
+      <div class="level-step-dot">&#10003;</div>
+      <span class="level-step-name">Postgrad Diploma</span>
+    </div>
+    <span class="level-arrow">&#8594;</span>
+    <div class="level-step active">
+      <div class="level-step-dot">MBA</div>
+      <span class="level-step-name">MBA</span>
+    </div>
+    <span class="level-arrow">&#8594;</span>
+    <div class="level-step">
+      <div class="level-step-dot">DBA</div>
+      <span class="level-step-name">DBA</span>
+    </div>
+  </div>
+</div>
+
+<!-- META STRIP -->
+<div class="prog-meta-strip">
+  <div class="prog-meta-inner">
+    <div class="prog-meta-item"><div class="prog-meta-icon">&#127891;</div><div class="prog-meta-text"><strong>Qualification</strong><span>Master of Business Administration</span></div></div>
+    <div class="prog-meta-item"><div class="prog-meta-icon">&#9203;</div><div class="prog-meta-text"><strong>Duration</strong><span>18&ndash;24 Months</span></div></div>
+    <div class="prog-meta-item"><div class="prog-meta-icon">&#128218;</div><div class="prog-meta-text"><strong>Credit Hours</strong><span>60&ndash;66 Semester Credit Hours</span></div></div>
+    <div class="prog-meta-item"><div class="prog-meta-icon">&#127758;</div><div class="prog-meta-text"><strong>Mode of Study</strong><span>Online, Blended or Full-time</span></div></div>
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT + SIDEBAR ── -->
+<div class="prog-wrap">
+  <main class="prog-main">
+
+    <p class="prog-intro">&ldquo;The MBA at CIML Business School is more than a qualification &mdash; it is the turning point. Where ambition meets academic rigour, and professionals become the leaders their industries demand.&rdquo;</p>
+
+    <div class="prog-body">
+      <p>Designed for professionals and graduates who aspire to advance into executive leadership, strategic management, and specialized industry roles, the CIML MBA delivers a holistic command of modern business practice. Students engage with advanced theoretical frameworks, global case studies, applied research projects, and industry-focused assignments &mdash; developing both intellectual depth and real-world capability.</p>
+      <p>The program places a distinct emphasis on strategic thinking, leadership development, innovation, and global competitiveness &mdash; equipping graduates with the ability to manage change, drive organizational growth, and create sustainable value across diverse industries and geographies.</p>
+    </div>
+
+    <!-- WHO IS THIS FOR -->
+    <div class="ideal-section">
+      <div class="ideal-section-label">Who This Program Is For</div>
+      <div class="ideal-list">
+        <div class="ideal-item">
+          <div class="ideal-item-dot">&#8594;</div>
+          Professionals targeting executive, senior management, or C-suite roles in their organizations.
+        </div>
+        <div class="ideal-item">
+          <div class="ideal-item-dot">&#8594;</div>
+          Graduates seeking a globally recognized master's qualification to accelerate career advancement.
+        </div>
+        <div class="ideal-item">
+          <div class="ideal-item-dot">&#8594;</div>
+          Entrepreneurs and consultants who need the strategic credentials to lead and scale high-impact ventures.
+        </div>
+        <div class="ideal-item">
+          <div class="ideal-item-dot">&#8594;</div>
+          Those planning to continue to the Doctor of Business Administration (DBA) at the doctoral level.
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY FEATURES -->
+    <div class="features-eyebrow">Key Program Features</div>
+    <h2 class="features-title">Executive Depth, <em style="font-style:italic;color:var(--sky)">Global Relevance</em></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon">&#127959;</div>
+        <div class="feature-card-body">
+          <h4>Strategic Leadership Development</h4>
+          <p>Advanced training in corporate strategy, organizational transformation, and leadership in dynamic, high-stakes environments — developing the decision-making capacity that executives need at the top.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">&#127758;</div>
+        <div class="feature-card-body">
+          <h4>Global Orientation</h4>
+          <p>International case studies, cross-cultural management frameworks, and exposure to global economic and business trends ensure graduates lead with confidence across borders and complex international environments.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">&#128300;</div>
+        <div class="feature-card-body">
+          <h4>Applied Research &amp; Practice</h4>
+          <p>Capstone projects, industry-based assignments, and structured opportunities to apply theory to real-world challenges — turning academic insight into professional impact from day one.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">&#128188;</div>
+        <div class="feature-card-body">
+          <h4>Career Advancement</h4>
+          <p>Engineered for professionals seeking senior management, executive, or entrepreneurial leadership positions — with the analytical credibility, strategic depth, and business acumen that top organizations demand.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">&#128640;</div>
+        <div class="feature-card-body">
+          <h4>Direct DBA Progression</h4>
+          <p>The MBA is the gateway to CIML's Doctor of Business Administration — ensuring a seamless, recognized academic pathway to the highest credential available in professional business education.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">&#127942;</div>
+        <div class="feature-card-body">
+          <h4>Globally Validated Credential</h4>
+          <p>MBA certificates are validated by California University FCE and other government-accredited universities worldwide — ensuring your qualification is recognized and equivalent on a global stage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIALIZATIONS -->
+    <div class="spec-section">
+      <div class="spec-eyebrow">Specialization Tracks</div>
+      <h2 class="spec-title">40+ Specializations Across Every Major Industry</h2>
+      <p class="spec-desc">Choose the specialization that maps directly to your sector, ambition, and the executive role you are targeting. Every track delivers MBA-level rigour enriched with deep, field-specific expertise.</p>
+      <div class="spec-accordion">
+
+        <div class="spec-group open">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#127962;</div><span class="spec-group-name">Business &amp; Corporate</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">8 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Business Management</span>
+            <span class="spec-item">Strategic Management and Leadership</span>
+            <span class="spec-item">Strategic &amp; Corporate Management</span>
+            <span class="spec-item">International Business &amp; Global Leadership</span>
+            <span class="spec-item">Project &amp; Innovation Management</span>
+            <span class="spec-item">Technology &amp; Innovation Leadership</span>
+            <span class="spec-item">Boardroom &amp; Governance Leadership</span>
+            <span class="spec-item">Public Administration &amp; Policy Leadership</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#128176;</div><span class="spec-group-name">Finance &amp; Accounting</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">5 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Accounting</span>
+            <span class="spec-item">Financial Management</span>
+            <span class="spec-item">Finance, Accounting &amp; Risk Management</span>
+            <span class="spec-item">Banking &amp; Financial Services Management</span>
+            <span class="spec-item">Insurance &amp; Risk Management</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#128101;</div><span class="spec-group-name">Human Resource &amp; People</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">4 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Human Resource &amp; Organizational Leadership</span>
+            <span class="spec-item">Talent &amp; Succession Planning</span>
+            <span class="spec-item">Community &amp; Social Impact Leadership</span>
+            <span class="spec-item">Women in Leadership &amp; Gender Equity</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#128227;</div><span class="spec-group-name">Marketing &amp; Customer</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">4 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Marketing, Sales &amp; Consumer Strategy</span>
+            <span class="spec-item">Customer Relationship Management (CRM)</span>
+            <span class="spec-item">Media, Entertainment &amp; Communication Leadership</span>
+            <span class="spec-item">Fashion &amp; Luxury Brand Management</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#127973;</div><span class="spec-group-name">Healthcare &amp; Hospitality</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">2 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Healthcare Management &amp; Hospital Administration</span>
+            <span class="spec-item">Hospitality, Tourism &amp; Event Leadership</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#9971;&#65039;</div><span class="spec-group-name">Industry-Specific</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">9 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Oil &amp; Gas Management</span>
+            <span class="spec-item">Energy &amp; Sustainability Management</span>
+            <span class="spec-item">Mining &amp; Natural Resource Management</span>
+            <span class="spec-item">Construction &amp; Infrastructure Management</span>
+            <span class="spec-item">Real Estate &amp; Property Development</span>
+            <span class="spec-item">Maritime &amp; Port Management</span>
+            <span class="spec-item">Aviation &amp; Transport Management</span>
+            <span class="spec-item">Pharmaceutical &amp; Biotechnology Management</span>
+            <span class="spec-item">Agribusiness &amp; Food Industry Management</span>
+          </div></div>
+        </div>
+
+        <div class="spec-group">
+          <div class="spec-group-header" onclick="toggleSpec(this)">
+            <div class="spec-group-left"><div class="spec-group-icon">&#128302;</div><span class="spec-group-name">Emerging &amp; Specialized Leadership</span></div>
+            <div style="display:flex;align-items:center;gap:.75rem"><span class="spec-group-count">5 specializations</span><span class="spec-group-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+          </div>
+          <div class="spec-group-body"><div class="spec-items">
+            <span class="spec-item">Cybersecurity &amp; Digital Business Leadership</span>
+            <span class="spec-item">Ethical &amp; Sustainable Leadership</span>
+            <span class="spec-item">Crisis &amp; Emergency Management</span>
+            <span class="spec-item">Environmental &amp; Sustainability Management</span>
+            <span class="spec-item">Sports Management &amp; Recreation Leadership</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="outcomes-section">
+      <div class="outcomes-eyebrow">What You'll Achieve</div>
+      <h2 class="outcomes-title">Program Outcomes</h2>
+      <div class="outcomes-list">
+        <div class="outcome-item"><div class="outcome-check">&#10003;</div><div class="outcome-text"><strong>Advanced Strategic Expertise</strong>Demonstrate advanced strategic, analytical, and leadership expertise across diverse industries — the hallmark of an executive-ready MBA graduate.</div></div>
+        <div class="outcome-item"><div class="outcome-check">&#10003;</div><div class="outcome-text"><strong>Applied Specialised Knowledge</strong>Apply specialized knowledge across key sectors including strategic management, healthcare, hospitality, oil &amp; gas, finance, CRM, and sports management at a master's level.</div></div>
+        <div class="outcome-item"><div class="outcome-check">&#10003;</div><div class="outcome-text"><strong>Organizational Transformation Leadership</strong>Possess the skills to lead organizational transformation, drive innovation, and build global competitiveness — creating sustainable value in complex, evolving environments.</div></div>
+        <div class="outcome-item"><div class="outcome-check">&#10003;</div><div class="outcome-text"><strong>Executive &amp; Senior Role Readiness</strong>Be positioned for executive-level appointments, including CEO, CFO, COO, Director, Senior Consultant, or Policy Advisor — with the credibility and capability these roles demand.</div></div>
+        <div class="outcome-item"><div class="outcome-check">&#10003;</div><div class="outcome-text"><strong>Direct DBA Progression</strong>Progress seamlessly into the Doctor of Business Administration — continuing your academic journey to the highest level of professional business scholarship.</div></div>
+      </div>
+    </div>
+
+    <!-- ROLES GRADUATES TAKE -->
+    <div class="roles-section">
+      <div class="roles-eyebrow">Where MBA Graduates Go</div>
+      <div class="roles-title">Executive &amp; Senior Roles Our Graduates Occupy</div>
+      <div class="roles-chips">
+        <span class="role-chip">Chief Executive Officer (CEO)</span>
+        <span class="role-chip">Chief Financial Officer (CFO)</span>
+        <span class="role-chip">Chief Operating Officer (COO)</span>
+        <span class="role-chip">Managing Director</span>
+        <span class="role-chip">Senior Consultant</span>
+        <span class="role-chip">Strategy Director</span>
+        <span class="role-chip">Policy Advisor</span>
+        <span class="role-chip">Director of Operations</span>
+        <span class="role-chip">VP of Finance</span>
+        <span class="role-chip">Head of HR</span>
+        <span class="role-chip">Regional Director</span>
+        <span class="role-chip">Entrepreneur &amp; Founder</span>
+      </div>
+    </div>
+
+    <!-- ELIGIBILITY BANNER -->
+    <div class="eligibility-banner">
+      <div class="eligibility-banner-left">
+        <h3>Find out if you qualify for the MBA</h3>
+        <p>Review the entry requirements for the MBA program and take the next step toward executive leadership. Applications for the 2026 intake are now open — limited places available.</p>
+      </div>
+      <a href="rmba.html" class="btn-eligibility-main">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Check Eligibility &amp; Requirements
+      </a>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="prog-sidebar">
+
+    <div class="sidebar-quick-apply">
+      <div class="sidebar-quick-apply-label">MBA Program</div>
+      <h3>Ready to Lead at the Executive Level?</h3>
+      <p>Review entry requirements or apply directly for the 2026 intake. Limited MBA seats available.</p>
+      <a href="rmba.html" class="btn-sidebar-eligibility">&#10003; Check Eligibility</a>
+      <a href="app.html" class="btn-sidebar-apply">Apply Now &#8594;</a>
+    </div>
+
+    <div class="sidebar-info-box">
+      <div class="sidebar-info-head"><h4>Program Details</h4></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#127891;</div><div class="sidebar-info-text"><strong>Award</strong><span>Master of Business Administration</span></div></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#9203;</div><div class="sidebar-info-text"><strong>Duration</strong><span>18&ndash;24 Months</span></div></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#128218;</div><div class="sidebar-info-text"><strong>Credit Hours</strong><span>60&ndash;66 Semester Credit Hours</span></div></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#127758;</div><div class="sidebar-info-text"><strong>Study Mode</strong><span>Online, Blended or Full-time</span></div></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#128200;</div><div class="sidebar-info-text"><strong>Next Level</strong><span>Doctor of Business Administration (DBA)</span></div></div>
+      <div class="sidebar-info-row"><div class="sidebar-info-icon">&#127942;</div><div class="sidebar-info-text"><strong>Recognition</strong><span>Validated via California University FCE</span></div></div>
+    </div>
+
+    <div class="pathway-section">
+      <div class="pathway-eyebrow">Academic Ladder</div>
+      <div class="pathway-title">Your Progression Path</div>
+      <div class="pathway-steps">
+        <div class="pathway-step done"><div class="pathway-step-dot">DP</div><div class="pathway-step-text"><strong>Diploma Program</strong><span>Foundation level</span></div></div>
+        <div class="pathway-connector"></div>
+        <div class="pathway-step done"><div class="pathway-step-dot">AVD</div><div class="pathway-step-text"><strong>Advanced Diploma</strong><span>Intermediate level</span></div></div>
+        <div class="pathway-connector"></div>
+        <div class="pathway-step done"><div class="pathway-step-dot">PGD</div><div class="pathway-step-text"><strong>Postgraduate Diploma</strong><span>Postgrad level</span></div></div>
+        <div class="pathway-connector"></div>
+        <div class="pathway-step current"><div class="pathway-step-dot">MBA</div><div class="pathway-step-text"><strong>Master of Business Admin.</strong><span>You are here &mdash; Master's level</span></div></div>
+        <div class="pathway-connector"></div>
+        <div class="pathway-step"><div class="pathway-step-dot">DBA</div><div class="pathway-step-text"><strong>Doctor of Business Admin.</strong><span>Doctoral level</span></div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-programs-box">
+      <div class="sidebar-programs-head"><h4>All Programs</h4><a href="op.html">View All &#8594;</a></div>
+      <a href="dp.html" class="program-link-item"><span class="program-link-badge">DP</span><span class="program-link-name">Diploma Program</span><span class="program-link-arrow">&#8594;</span></a>
+      <a href="avd.html" class="program-link-item"><span class="program-link-badge">AVD</span><span class="program-link-name">Advanced Diploma</span><span class="program-link-arrow">&#8594;</span></a>
+      <a href="pgd.html" class="program-link-item"><span class="program-link-badge">PGD</span><span class="program-link-name">Postgraduate Diploma</span><span class="program-link-arrow">&#8594;</span></a>
+      <a href="mba.html" class="program-link-item active-prog"><span class="program-link-badge">MBA</span><span class="program-link-name">Master of Business Administration</span></a>
+      <a href="dba.html" class="program-link-item"><span class="program-link-badge">DBA</span><span class="program-link-name">Doctor of Business Administration</span><span class="program-link-arrow">&#8594;</span></a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- CTA STRIP -->
+<section class="page-cta">
+  <div class="page-cta-inner">
+    <div>
+      <h2>Step into the<br><em>MBA Program</em></h2>
+      <p>The CIML MBA is where executive ambition meets world-class academic rigour. With 40+ specializations, a globally validated credential, and a direct pathway to the DBA, your leadership journey begins here. Applications for 2026 are now open.</p>
+    </div>
+    <div class="page-cta-btns">
+      <a href="rmba.html" class="btn-cta-gold">Check Eligibility</a>
+      <a href="app.html" class="btn-cta-ghost">Apply Now &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="dp.html">Diploma Program</a></li>
+        <li><a href="avd.html">Advanced Diploma</a></li>
+        <li><a href="pgd.html">Postgraduate Diploma</a></li>
+        <li><a href="mba.html">MBA</a></li>
+        <li><a href="dba.html">DBA</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Institution</h4><ul>
+        <li><a href="ov.html">Overview</a></li>
+        <li><a href="m.html">Mission</a></li>
+        <li><a href="acc.html">Accreditation</a></li>
+        <li><a href="wcs.html">Why Choose Us</a></li>
+        <li><a href="#">News &amp; Events</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
+        <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
+        <li><a href="app.html">Admissions / Apply</a></li>
+        <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
+        <li><a href="cm.html">Campus Map</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal"><a href="p.html">Privacy Policy</a><a href="t.html">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Header scroll */
+const header=document.getElementById("siteHeader");
+window.addEventListener("scroll",()=>{header.classList.toggle("scrolled",window.scrollY>20)},{passive:true});
+
+/* Mobile drawer */
+const hamburgerBtn=document.getElementById("hamburgerBtn");
+const mobileDrawer=document.getElementById("mobileDrawer");
+const mobileOverlay=document.getElementById("mobileOverlay");
+const drawerClose=document.getElementById("drawerClose");
+function openDrawer(){hamburgerBtn.classList.add("open");mobileDrawer.classList.add("open");mobileOverlay.classList.add("open");document.body.style.overflow="hidden";hamburgerBtn.setAttribute("aria-expanded","true")}
+function closeDrawer(){hamburgerBtn.classList.remove("open");mobileDrawer.classList.remove("open");mobileOverlay.classList.remove("open");document.body.style.overflow="";hamburgerBtn.setAttribute("aria-expanded","false")}
+hamburgerBtn.addEventListener("click",()=>{mobileDrawer.classList.contains("open")?closeDrawer():openDrawer()});
+drawerClose.addEventListener("click",closeDrawer);
+mobileOverlay.addEventListener("click",closeDrawer);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()});
+document.querySelectorAll(".drawer-has-sub").forEach(link=>{
+  link.addEventListener("click",function(e){
+    e.preventDefault();
+    const parent=this.closest(".drawer-item");
+    const isOpen=parent.classList.contains("open");
+    document.querySelectorAll(".drawer-item").forEach(i=>i.classList.remove("open"));
+    if(!isOpen)parent.classList.add("open");
+  });
+});
+window.addEventListener("resize",()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
+
+/* Specialization accordion */
+function toggleSpec(header){
+  const group=header.closest(".spec-group");
+  const isOpen=group.classList.contains("open");
+  document.querySelectorAll(".spec-group").forEach(g=>g.classList.remove("open"));
+  if(!isOpen)group.classList.add("open");
+}
+</script>
+</body>
+</html>

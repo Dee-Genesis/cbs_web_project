@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Tools — CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --rust:#B5451B;--sage:#3D5A4A;--sky:#1B3F6E;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* NEWS TICKER */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:'•';margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TOP BAR */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-contact .tbc-icon{font-size:.85rem}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+
+/* HEADER */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s ease}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE DRAWER */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+
+/* PAGE HERO */
+.page-hero{background:var(--sky);position:relative;overflow:hidden;padding:5rem 5vw 4rem}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('assets/images/hero-lab.jpg') center/cover no-repeat;opacity:.12}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.page-hero-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
+.breadcrumb a,.breadcrumb span{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb .sep{color:rgba(255,255,255,.3);font-size:.65rem}
+.breadcrumb .current{color:var(--gold)}
+.page-hero-tag{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.page-hero-tag::before{content:'';display:block;width:28px;height:2px;background:var(--gold)}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);color:#fff;line-height:1.1;margin-bottom:1rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.82);line-height:1.75;max-width:600px}
+
+/* MAIN WRAPPER */
+.page-body{padding:5rem 5vw;max-width:1400px;margin:0 auto}
+
+/* SECTION EYEBROW */
+.section-eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.section-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--gold)}
+
+/* PROGRAM SYLLABUS CARDS */
+.syllabi-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:4rem}
+.syllabus-card{background:var(--ivory);border:1px solid rgba(13,13,13,.08);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .35s var(--ease-out)}
+.syllabus-card:hover{box-shadow:0 12px 48px rgba(13,13,13,.1)}
+.sc-header{background:var(--sky);padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+.sc-header::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:4px;background:var(--gold)}
+.sc-header-bg{position:absolute;inset:0;opacity:.08;font-family:var(--serif);font-size:9rem;font-weight:700;color:#fff;line-height:1;display:flex;align-items:flex-end;padding:.5rem 1rem;pointer-events:none;letter-spacing:-.02em}
+.sc-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.4);padding:.3rem .85rem;margin-bottom:1.25rem}
+.sc-badge span{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light)}
+.sc-title{font-family:var(--serif);font-size:1.75rem;color:#fff;line-height:1.15;margin-bottom:.5rem;position:relative}
+.sc-subtitle{font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.75);position:relative}
+
+/* SC BODY */
+.sc-body{padding:2rem;flex:1;display:flex;flex-direction:column;gap:1.5rem}
+.sc-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sc-info-item{background:#fff;border:1px solid rgba(13,13,13,.06);padding:1rem 1.15rem}
+.sc-info-label{font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(13,13,13,.45);margin-bottom:.3rem}
+.sc-info-value{font-family:var(--sans);font-size:.875rem;font-weight:700;color:var(--ink)}
+.sc-info-value.gold{color:var(--gold-dark)}
+
+/* MODULE LIST */
+.sc-modules{flex:1}
+.sc-modules-title{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:.85rem;display:flex;align-items:center;gap:.6rem}
+.sc-modules-title::after{content:'';flex:1;height:1px;background:rgba(13,13,13,.1)}
+.module-list{display:flex;flex-direction:column;gap:.4rem}
+.module-item{display:flex;align-items:flex-start;gap:.65rem;padding:.55rem .75rem;background:#fff;border:1px solid rgba(13,13,13,.05);transition:all .2s}
+.module-item:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
+.module-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.4rem}
+.module-text{font-size:.825rem;color:rgba(13,13,13,.75);line-height:1.4}
+
+/* SPECIALIZATIONS PREVIEW */
+.sc-specs{background:#fff;border:1px solid rgba(13,13,13,.06);padding:1.15rem}
+.sc-specs-title{font-family:var(--sans);font-size:.63rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(13,13,13,.45);margin-bottom:.75rem}
+.spec-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.spec-tag{font-family:var(--body);font-size:.72rem;color:var(--sky);background:rgba(27,63,110,.07);border:1px solid rgba(27,63,110,.15);padding:.25rem .65rem;line-height:1.3;transition:all .2s}
+.spec-tag:hover{background:var(--sky);color:#fff}
+.spec-tag.more{color:var(--gold-dark);background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.25);font-weight:700}
+
+/* DOWNLOAD SECTION */
+.sc-download{margin-top:.5rem}
+.download-btn{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--gold);color:var(--ink);padding:1.1rem 1.5rem;font-family:var(--sans);font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .3s var(--ease-out);position:relative;overflow:hidden;gap:1rem}
+.download-btn::before{content:'';position:absolute;inset:0;background:var(--ink);transform:translateX(-100%);transition:transform .35s var(--ease-out)}
+.download-btn:hover::before{transform:translateX(0)}
+.download-btn:hover{color:#fff}
+.download-btn-left{display:flex;align-items:center;gap:.85rem;position:relative;z-index:1}
+.download-btn-icon{width:36px;height:36px;background:rgba(13,13,13,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;transition:background .3s}
+.download-btn:hover .download-btn-icon{background:rgba(201,168,76,.25)}
+.download-btn-text{}
+.download-btn-title{display:block;font-size:.8rem;line-height:1.2}
+.download-btn-meta{display:block;font-family:var(--body);font-size:.7rem;font-weight:400;opacity:.7;text-transform:none;letter-spacing:0;margin-top:.15rem}
+.download-btn-arrow{position:relative;z-index:1;font-size:1.3rem;transition:transform .3s}
+.download-btn:hover .download-btn-arrow{transform:translateY(2px)}
+
+/* TOOLS GRID — OTHER RESOURCES */
+.tools-section{margin-top:2rem}
+.tools-section-header{margin-bottom:2rem}
+.tools-section-title{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.25rem);color:var(--ink);line-height:1.2}
+
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.resource-card{background:var(--paper);border:1px solid rgba(13,13,13,.07);padding:1.75rem;display:flex;flex-direction:column;gap:1rem;transition:all .3s var(--ease-out);position:relative;overflow:hidden}
+.resource-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .3s var(--ease-out);transform-origin:bottom}
+.resource-card:hover{background:#fff;box-shadow:0 8px 32px rgba(13,13,13,.08)}
+.resource-card:hover::before{transform:scaleY(1)}
+.rc-icon{width:44px;height:44px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.resource-card h3{font-family:var(--serif);font-size:1.05rem;color:var(--ink);line-height:1.2}
+.resource-card p{font-size:.825rem;color:rgba(13,13,13,.6);line-height:1.6;flex:1}
+.rc-link{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark);display:flex;align-items:center;gap:.4rem;transition:gap .2s}
+.resource-card:hover .rc-link{gap:.65rem}
+
+/* CTA BANNER */
+.cta-banner{position:relative;padding:5rem 5vw;overflow:hidden;background:var(--sky);margin-top:2rem}
+.cta-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12}
+.cta-banner-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);color:#fff;line-height:1.1;margin-bottom:.75rem}
+.cta-banner-title em{color:var(--gold);font-style:italic}
+.cta-banner-sub{font-size:1rem;color:rgba(255,255,255,.85);line-height:1.6;max-width:500px}
+.cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:200px}
+.btn-cta-main{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-main:hover{background:var(--gold-light)}
+.btn-cta-sec{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-sec:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* FOOTER */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .syllabi-grid{grid-template-columns:1fr}
+  .resources-grid{grid-template-columns:1fr 1fr}
+  .cta-banner-inner{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  .sc-info-grid{grid-template-columns:1fr}
+  .resources-grid{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:column}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>MBA graduation ceremony for Class of 2025 — Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15052951352"><span class="tbc-icon">📞</span> 505 295 1352</a>
+    <a href="mailto:info@cbsedu.us"><span class="tbc-icon">✉</span> info@cbsedu.us</a>
+    <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School Logo" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name">
+        <span class="logo-name-top">CIML</span>
+        <span class="logo-name-bottom">Business School</span>
+      </span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a>
+            <a href="m.html">Mission</a>
+            <a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a>
+            <a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a>
+            <a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a>
+            <a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a>
+            <a href="rmba.html">MBA</a>
+            <a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li class="active"><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="https://cbsedu.us/cbs/user/" class="drawer-btn drawer-btn-outline">Student Verification and Result Portal</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now →</a>
+  </div>
+</aside>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Academic Tools</span>
+    </nav>
+    <div class="page-hero-tag">Resources &amp; Downloads</div>
+    <h1>Academic <em>Tools</em></h1>
+    <p>Access official program syllabi, curriculum guides, and academic resources for all CIML Business School programs. Download the full PDF syllabus for your program below.</p>
+  </div>
+</section>
+
+<!-- MAIN PAGE BODY -->
+<div class="page-body">
+
+  <!-- SYLLABI CARDS -->
+  <div class="section-eyebrow">Program Syllabi</div>
+  <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.5rem);color:var(--ink);line-height:1.15;margin-bottom:2.5rem">Download Full Curriculum Guides</h2>
+
+  <div class="syllabi-grid">
+
+    <!-- MBA CARD -->
+    <div class="syllabus-card">
+      <div class="sc-header">
+        <div class="sc-header-bg">MBA</div>
+        <div class="sc-badge"><span>Masters Level</span></div>
+        <h2 class="sc-title">Master of Business<br>Administration</h2>
+        <p class="sc-subtitle">MBA — Full Syllabus & Curriculum</p>
+      </div>
+      <div class="sc-body">
+
+        <!-- FIXED: Info grid with accurate content from the MBA syllabus -->
+        <div class="sc-info-grid">
+          <div class="sc-info-item">
+            <div class="sc-info-label">Program Level</div>
+            <div class="sc-info-value gold">Masters (Postgraduate)</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Capstone / Thesis</div>
+            <div class="sc-info-value">Applied Research Project</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Core Modules</div>
+            <div class="sc-info-value gold">6 Core + Specialization</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Specializations</div>
+            <div class="sc-info-value">30+ Pathways Available</div>
+          </div>
+        </div>
+
+        <div class="sc-modules">
+          <div class="sc-modules-title">Core Modules Include</div>
+          <div class="module-list">
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Strategic Management & Leadership</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Corporate Finance & Financial Strategy</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Marketing Strategy & Consumer Behaviour</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Global Business Environment</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Human Resource & Organizational Leadership</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Business Ethics & Corporate Governance</span></div>
+          </div>
+        </div>
+
+        <div class="sc-specs">
+          <div class="sc-specs-title">Specialization Pathways</div>
+          <div class="spec-tags">
+            <span class="spec-tag">Finance</span>
+            <span class="spec-tag">Marketing</span>
+            <span class="spec-tag">HR Management</span>
+            <span class="spec-tag">International Business</span>
+            <span class="spec-tag">Healthcare</span>
+            <span class="spec-tag">Project Management</span>
+            <span class="spec-tag">Technology</span>
+            <span class="spec-tag more">+ Many More</span>
+          </div>
+        </div>
+
+        <div class="sc-download">
+          <a href="assets/documents/Master of Business Administration (MBA) - Full Syllabus.pdf" class="download-btn" download>
+            <div class="download-btn-left">
+              <div class="download-btn-icon">⬇</div>
+              <div class="download-btn-text">
+                <span class="download-btn-title">Download MBA Full Syllabus</span>
+                <span class="download-btn-meta">PDF Document — Official CIML Curriculum Guide</span>
+              </div>
+            </div>
+            <span class="download-btn-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DBA CARD -->
+    <div class="syllabus-card">
+      <div class="sc-header" style="background:var(--ink)">
+        <div class="sc-header-bg">DBA</div>
+        <div class="sc-badge" style="background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.5)"><span>Doctoral Level</span></div>
+        <h2 class="sc-title">Doctor of Business<br>Administration</h2>
+        <p class="sc-subtitle">DBA — Full Syllabus & Curriculum</p>
+      </div>
+      <div class="sc-body">
+        <div class="sc-info-grid">
+          <div class="sc-info-item">
+            <div class="sc-info-label">Program Level</div>
+            <div class="sc-info-value gold">Doctoral (Level 8)</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Entry Requirement</div>
+            <div class="sc-info-value">MBA or Equivalent</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Dissertation</div>
+            <div class="sc-info-value">Original Research</div>
+          </div>
+          <div class="sc-info-item">
+            <div class="sc-info-label">Focus</div>
+            <div class="sc-info-value gold">Practitioner Research</div>
+          </div>
+        </div>
+
+        <div class="sc-modules">
+          <div class="sc-modules-title">Core Doctoral Modules</div>
+          <div class="module-list">
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Advanced Research Methods & Design</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Applied Business Analytics & Data Interpretation</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Global Strategic Management & Policy</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Corporate Governance & Boardroom Leadership</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Innovation, Technology & Change Management</span></div>
+            <div class="module-item"><div class="module-dot"></div><span class="module-text">Doctoral Dissertation Seminar</span></div>
+          </div>
+        </div>
+
+        <div class="sc-specs">
+          <div class="sc-specs-title">Specialization Pathways</div>
+          <div class="spec-tags">
+            <span class="spec-tag">Strategic Leadership</span>
+            <span class="spec-tag">Finance & Risk</span>
+            <span class="spec-tag">International Business</span>
+            <span class="spec-tag">Healthcare Admin</span>
+            <span class="spec-tag">Oil & Gas</span>
+            <span class="spec-tag">Cybersecurity</span>
+            <span class="spec-tag">Aviation</span>
+            <span class="spec-tag more">+ 30+ More</span>
+          </div>
+        </div>
+
+        <div class="sc-download">
+          <a href="assets/documents/Doctor of Business Administration (DBA)- Full Syllabus.pdf" class="download-btn" download>
+            <div class="download-btn-left">
+              <div class="download-btn-icon">⬇</div>
+              <div class="download-btn-text">
+                <span class="download-btn-title">Download DBA Full Syllabus</span>
+                <span class="download-btn-meta">PDF Document — Official CIML Curriculum Guide</span>
+              </div>
+            </div>
+            <span class="download-btn-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /syllabi-grid -->
+
+  <!-- ADDITIONAL RESOURCES -->
+  <div class="tools-section">
+    <div class="section-eyebrow">More Resources</div>
+    <div class="tools-section-header">
+      <h2 class="tools-section-title">Additional Academic Resources</h2>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="rc-icon">🎓</div>
+        <h3>Admissions Requirements</h3>
+        <p>Review the entry requirements, eligibility criteria, and application process for each of our programs before you apply.</p>
+        <a href="rad.html" class="rc-link">View Admissions →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">📋</div>
+        <h3>Grading & Assessment</h3>
+        <p>Understand how modules are assessed, GPA requirements, honours distinctions, and what is expected across all programs.</p>
+        <a href="mba.html" class="rc-link">Learn More →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">🏛️</div>
+        <h3>Student Portal</h3>
+        <p>Access your student dashboard, verify your enrollment, and retrieve official academic results and credentials.</p>
+        <a href="https://cbsedu.us/cbs/user/" class="rc-link">Access Portal →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">🌍</div>
+        <h3>Accreditation & Recognition</h3>
+        <p>Learn about CIML's global accreditations, international recognition, and how our qualifications are validated worldwide.</p>
+        <a href="acc.html" class="rc-link">View Accreditation →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">📚</div>
+        <h3>Program Overviews</h3>
+        <p>Explore all available programs from Diploma to Doctoral level and find the right qualification for your career goals.</p>
+        <a href="op.html" class="rc-link">All Programs →</a>
+      </div>
+      <div class="resource-card">
+        <div class="rc-icon">✉️</div>
+        <h3>Contact Admissions</h3>
+        <p>Have questions about program entry, curriculum content, or scheduling? Reach our admissions team directly.</p>
+        <a href="mailto:info@cbsedu.us" class="rc-link">Get in Touch →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <img src="assets/images/offering-mba.jpg" alt="" class="cta-banner-img">
+  <div class="cta-banner-inner">
+    <div>
+      <h2 class="cta-banner-title">Ready to take the<br><em>next step?</em></h2>
+      <p class="cta-banner-sub">Applications for the 2026 MBA and DBA intakes are now open. Limited places are available — secure yours today.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="app.html" class="btn-cta-main">Apply for 2026</a>
+      <a href="op.html" class="btn-cta-sec">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="dp.html">Diploma Program</a></li>
+          <li><a href="avd.html">Advanced Diploma</a></li>
+          <li><a href="pgd.html">Postgraduate Diploma</a></li>
+          <li><a href="mba.html">MBA</a></li>
+          <li><a href="dba.html">DBA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <ul>
+          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="acc.html">Accreditation</a></li>
+          <li><a href="wcs.html">Why Choose Us</a></li>
+          <li><a href="act.html">Academic Tools</a></li>
+          <li><a href="#">News &amp; Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
+          <li><a href="tel:+15052951352">505 295 1352</a></li>
+          <li><a href="app.html">Admissions / Apply</a></li>
+          <li><a href="https://cbsedu.us/cbs/user/">Student Portal</a></li>
+          <li><a href="cm.html">Campus Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="p.html">Privacy Policy</a>
+        <a href="t.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll effect
+const header=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+
+// Hamburger / drawer
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileDrawer=document.getElementById('mobileDrawer');
+const mobileOverlay=document.getElementById('mobileOverlay');
+const drawerClose=document.getElementById('drawerClose');
+function openDrawer(){hamburgerBtn.classList.add('open');mobileDrawer.classList.add('open');mobileOverlay.classList.add('open');document.body.style.overflow='hidden';hamburgerBtn.setAttribute('aria-expanded','true')}
+function closeDrawer(){hamburgerBtn.classList.remove('open');mobileDrawer.classList.remove('open');mobileOverlay.classList.remove('open');document.body.style.overflow='';hamburgerBtn.setAttribute('aria-expanded','false')}
+hamburgerBtn.addEventListener('click',()=>{mobileDrawer.classList.contains('open')?closeDrawer():openDrawer()});
+drawerClose.addEventListener('click',closeDrawer);
+mobileOverlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+document.querySelectorAll('.drawer-has-sub').forEach(link=>{
+  link.addEventListener('click',function(e){
+    e.preventDefault();
+    const parent=this.closest('.drawer-item');
+    const isOpen=parent.classList.contains('open');
+    document.querySelectorAll('.drawer-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)parent.classList.add('open');
+  });
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
+</script>
+</body>
+</html>

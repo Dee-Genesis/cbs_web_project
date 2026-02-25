@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor of Business Administration (DBA) — Admissions | CIML Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0D0D0D;--paper:#F5F0E8;--ivory:#FAF7F2;
+  --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
+  --rust:#B5451B;--sage:#3D5A4A;--sky:#1B3F6E;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:#fff;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font-family:inherit}
+
+/* NEWS TICKER */
+.news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
+.ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
+.ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
+.ticker-track span::before{content:'•';margin-right:1rem;color:var(--gold)}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TOP BAR */
+.top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.1)}
+.top-bar-contact{display:flex;gap:2rem;align-items:center}
+.top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.top-bar-contact a:hover{color:var(--gold)}
+.top-bar-contact .tbc-icon{font-size:.85rem}
+.top-bar-social{display:flex;gap:.6rem;align-items:center}
+.top-bar-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85}
+.top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.top-bar-social a:hover img{opacity:1}
+
+/* HEADER */
+.site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s ease}
+.site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.primary-nav ul{display:flex;align-items:center}
+.primary-nav li{position:relative}
+.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
+.primary-nav li:hover>a{color:var(--gold-dark)}
+.primary-nav li:hover>a::after{transform:scaleX(1)}
+.chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
+.has-drop:hover>a .chevron{transform:rotate(180deg)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
+.header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal:hover{background:var(--ink);color:#fff}
+.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply:hover{background:var(--gold-dark);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
+.hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
+.hamburger.open i:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open i:nth-child(2){opacity:0}
+.hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* MOBILE DRAWER */
+.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-overlay.open{opacity:1;pointer-events:all}
+.mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
+.mobile-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
+.drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.drawer-body{flex:1;padding:1.5rem}
+.drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link:hover{color:var(--gold)}
+.drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
+.drawer-item.open .drawer-plus{transform:rotate(45deg)}
+.drawer-sub{display:none;padding-bottom:.75rem}
+.drawer-item.open .drawer-sub{display:block}
+.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
+.drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.drawer-btn-outline:hover{border-color:#fff}
+.drawer-btn-gold{background:var(--gold);color:var(--ink)}
+.drawer-btn-gold:hover{background:var(--gold-light)}
+
+/* PAGE HERO — full-dark, most elevated of all pages */
+.page-hero{position:relative;background:#06101e;min-height:500px;display:flex;align-items:flex-end;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.15;filter:grayscale(.4)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,16,30,.98) 30%,rgba(13,13,13,.85) 100%)}
+.page-hero-gold-stripe{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--gold),var(--gold-dark));z-index:3}
+.page-hero-decor{position:absolute;right:4vw;top:50%;transform:translateY(-50%);width:420px;height:420px;border:1px solid rgba(201,168,76,.1);border-radius:50%}
+.page-hero-decor2{position:absolute;right:6vw;top:50%;transform:translateY(-50%);width:290px;height:290px;border:1px solid rgba(201,168,76,.07);border-radius:50%}
+.page-hero-terminal{position:absolute;top:2.5rem;right:5vw;z-index:3;text-align:right}
+.page-hero-terminal-label{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-bottom:.3rem}
+.page-hero-terminal-title{font-family:var(--serif);font-size:1.1rem;color:var(--gold);line-height:1.2}
+.page-hero-inner{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:4.5rem 5vw 4.5rem;width:100%}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
+.breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb-sep{color:rgba(255,255,255,.2)}
+.breadcrumb-current{color:var(--gold)}
+.page-hero-eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.page-hero-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--gold)}
+.page-hero-title{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4.75rem);color:#fff;line-height:1.05;margin-bottom:1.25rem}
+.page-hero-title em{color:var(--gold);font-style:italic}
+.page-hero-desc{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:600px;margin-bottom:2rem}
+.page-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-hero-primary{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.95rem 2.25rem;transition:all .25s}
+.btn-hero-primary:hover{background:var(--gold-light)}
+.btn-hero-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.3);padding:.95rem 2.25rem;transition:all .25s}
+.btn-hero-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* PATHWAY STRIP */
+.pathway-strip{background:var(--gold);padding:1.25rem 5vw}
+.pathway-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.pathway-label{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.6);margin-right:.5rem}
+.pathway-step{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding:.35rem .85rem;background:rgba(13,13,13,.08);transition:background .2s}
+.pathway-step.active{background:var(--ink);color:var(--gold)}
+.pathway-step:hover:not(.active){background:rgba(13,13,13,.15)}
+.pathway-arrow{color:rgba(13,13,13,.4);font-size:.8rem}
+
+/* MAIN LAYOUT */
+.adm-layout{display:grid;grid-template-columns:1fr 340px;gap:4rem;max-width:1400px;margin:0 auto;padding:5rem 5vw}
+
+/* SECTIONS */
+.section-eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.section-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--gold)}
+.section-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:1.75rem}
+
+/* ELIGIBILITY */
+.eligibility-section{margin-bottom:4rem}
+.eligibility-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.elig-card{background:#fff;padding:2rem 1.75rem;position:relative;overflow:hidden}
+.elig-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.elig-icon{width:44px;height:44px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
+.elig-card h3{font-family:var(--sans);font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.85rem}
+.elig-card ul li{font-size:.9rem;color:rgba(13,13,13,.75);line-height:1.6;padding:.35rem 0;border-bottom:1px solid rgba(13,13,13,.05);display:flex;gap:.65rem;align-items:flex-start}
+.elig-card ul li:last-child{border-bottom:none}
+.elig-card ul li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.5rem}
+.elig-note{background:rgba(13,13,13,.04);border-left:3px solid var(--ink);padding:.85rem 1.25rem;margin-top:1rem;font-size:.83rem;color:rgba(13,13,13,.7);line-height:1.6}
+.elig-note strong{color:var(--ink)}
+
+/* ADDITIONAL CONSIDERATIONS */
+.considerations-section{margin-bottom:4rem}
+.considerations-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.consideration-card{background:var(--ink);padding:1.85rem}
+.consideration-card-num{font-family:var(--serif);font-size:2rem;color:rgba(201,168,76,.15);line-height:1;margin-bottom:-.25rem}
+.consideration-card h4{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid rgba(201,168,76,.2)}
+.consideration-card p{font-size:.875rem;color:rgba(255,255,255,.7);line-height:1.65}
+
+/* GRADUATION REQS */
+.req-bar{display:flex;align-items:stretch;background:var(--ink);border:1px solid var(--ink);margin-bottom:2rem;overflow:hidden;border-top:3px solid var(--gold)}
+.req-bar-item{flex:1;padding:1.5rem;border-right:1px solid rgba(255,255,255,.08)}
+.req-bar-item:last-child{border-right:none}
+.req-bar-label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.4rem}
+.req-bar-val{font-family:var(--serif);font-size:1.7rem;color:var(--gold);line-height:1}
+.req-bar-desc{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:.25rem}
+
+/* GRADING */
+.grading-section{margin-bottom:4rem}
+.grading-table-wrap{border:1px solid rgba(13,13,13,.08);overflow:hidden;margin-bottom:1.5rem}
+.grading-table{width:100%;border-collapse:collapse}
+.grading-table thead tr{background:var(--ink)}
+.grading-table thead th{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:.85rem 1.25rem;text-align:left}
+.grading-table tbody tr{border-bottom:1px solid rgba(13,13,13,.06);transition:background .2s}
+.grading-table tbody tr:last-child{border-bottom:none}
+.grading-table tbody tr:hover{background:rgba(201,168,76,.04)}
+.grading-table td{font-size:.875rem;color:var(--ink);padding:.85rem 1.25rem;line-height:1.5}
+.grading-table td:first-child{font-family:var(--sans);font-weight:700;font-size:.8rem}
+.grade-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px}
+.grade-a{background:rgba(61,90,74,.12);color:var(--sage)}
+.grade-b{background:rgba(27,63,110,.1);color:var(--sky)}
+.grade-c{background:rgba(201,168,76,.15);color:var(--gold-dark)}
+.grade-f{background:rgba(13,13,13,.08);color:rgba(13,13,13,.55)}
+
+.honors-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.honor-card{background:var(--ink);padding:1.85rem 1.25rem;text-align:center;border-top:3px solid var(--gold)}
+.honor-card-gpa{font-family:var(--serif);font-size:1.65rem;color:var(--gold);margin-bottom:.35rem}
+.honor-card-title{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:.3rem}
+.honor-card-sub{font-size:.78rem;color:rgba(255,255,255,.4)}
+
+/* ACADEMIC INFO */
+.academic-section{margin-bottom:4rem}
+.academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+.acad-block{background:var(--ivory);border:1px solid rgba(13,13,13,.07);padding:1.75rem}
+.acad-block-icon{font-size:1.5rem;margin-bottom:.85rem}
+.acad-block h4{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold)}
+.acad-block ul li{font-size:.875rem;color:rgba(13,13,13,.75);line-height:1.6;padding:.3rem 0;display:flex;gap:.6rem;align-items:flex-start}
+.acad-block ul li::before{content:'→';color:var(--gold);font-size:.8rem;flex-shrink:0;margin-top:.05rem}
+.acad-full{grid-column:1/-1}
+
+/* CREDIT BREAKDOWN — doctoral scale */
+.credit-visual{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
+.credit-block{background:#fff;padding:1.5rem;text-align:center}
+.credit-block-num{font-family:var(--serif);font-size:2.1rem;color:var(--ink);line-height:1;margin-bottom:.3rem}
+.credit-block-label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.45);line-height:1.4}
+.credit-block.total{background:var(--ink)}
+.credit-block.total .credit-block-num{color:var(--gold);font-size:2.5rem}
+.credit-block.total .credit-block-label{color:rgba(255,255,255,.5)}
+.credit-block.dissertation{background:var(--paper)}
+.credit-block.dissertation .credit-block-num{color:var(--gold-dark)}
+
+/* ASSESSMENT — doctoral three-way */
+.assessment-triple{display:grid;grid-template-columns:3fr 2fr 5fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.assess-third{background:#fff;padding:1.75rem}
+.assess-third h5{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:.65rem}
+.assess-pct{font-family:var(--serif);font-size:3rem;color:var(--gold);line-height:1;margin-bottom:.35rem}
+.assess-desc{font-size:.82rem;color:rgba(13,13,13,.6);line-height:1.55}
+.assess-bar{height:4px;background:rgba(13,13,13,.08);margin-top:1rem}
+.assess-bar-fill{height:100%;background:var(--gold)}
+.assess-third.dissertation-block{background:var(--ink)}
+.assess-third.dissertation-block h5{color:var(--gold)}
+.assess-third.dissertation-block .assess-pct{color:var(--gold-light);font-size:3.5rem}
+.assess-third.dissertation-block .assess-desc{color:rgba(255,255,255,.65)}
+.assess-third.dissertation-block .assess-bar{background:rgba(255,255,255,.1)}
+.assess-third.dissertation-block .assess-bar-fill{background:var(--gold)}
+
+/* OTHER ACADEMIC REQUIREMENTS */
+.other-reqs-section{margin-bottom:4rem}
+.reqs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
+.req-card{background:#fff;padding:1.75rem;border-left:3px solid var(--gold)}
+.req-card h4{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.65rem}
+.req-card p{font-size:.875rem;color:rgba(13,13,13,.7);line-height:1.65}
+
+/* CERTIFICATION */
+.cert-section{margin-bottom:4rem}
+.cert-box{background:var(--ink);padding:3rem;position:relative;overflow:hidden;border-top:4px solid var(--gold)}
+.cert-box-decor{position:absolute;right:-50px;top:-50px;width:260px;height:260px;border:1px solid rgba(201,168,76,.1);border-radius:50%}
+.cert-box-decor2{position:absolute;right:-20px;bottom:-70px;width:180px;height:180px;border:1px solid rgba(201,168,76,.07);border-radius:50%}
+.cert-box-inner{position:relative;z-index:1}
+.cert-box h3{font-family:var(--serif);font-size:1.75rem;color:#fff;margin-bottom:1rem;line-height:1.15}
+.cert-box h3 em{color:var(--gold);font-style:italic}
+.cert-box p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:1.25rem}
+.cert-box ul li{font-size:.875rem;color:rgba(255,255,255,.7);padding:.5rem 0;display:flex;gap:.65rem;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.07)}
+.cert-box ul li:last-child{border-bottom:none}
+.cert-box ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+.pathway-cta{margin-top:1.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);padding:1.5rem}
+.pathway-cta p{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.06em;color:rgba(201,168,76,.7);margin-bottom:.75rem;text-transform:uppercase}
+.pathway-prog{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.prog-chip{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12);padding:.3rem .75rem}
+.prog-chip.current{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.prog-chip.terminal{background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.4);font-style:italic}
+.prog-arrow{color:rgba(255,255,255,.25);font-size:.85rem}
+
+/* SIDEBAR */
+.sidebar-box{background:var(--ivory);border:1px solid rgba(13,13,13,.07);margin-bottom:2rem;overflow:hidden}
+.sidebar-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold)}
+.sidebar-head h4{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.sidebar-head a{font-family:var(--body);font-size:.72rem;color:var(--gold-light);transition:color .2s}
+.sidebar-head a:hover{color:#fff}
+.sidebar-body{padding:1.25rem}
+.sidebar-apply{background:var(--ink);padding:1.75rem;text-align:center;border-top:3px solid var(--gold)}
+.sidebar-apply h4{font-family:var(--serif);font-size:1.45rem;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.sidebar-apply p{font-size:.825rem;color:rgba(255,255,255,.6);margin-bottom:1.25rem;line-height:1.55}
+.btn-apply-full{display:block;font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem;text-align:center;transition:all .25s}
+.btn-apply-full:hover{background:var(--gold-light)}
+.sidebar-deadline{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.75rem}
+.sidebar-deadline strong{color:var(--gold)}
+.info-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid rgba(13,13,13,.06);font-size:.855rem}
+.info-row:last-child{border-bottom:none}
+.info-row-label{color:rgba(13,13,13,.5);font-size:.78rem;flex-shrink:0;margin-right:.5rem}
+.info-row-val{font-weight:500;text-align:right;color:var(--ink);max-width:170px}
+.quick-sidebar-link{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;font-family:var(--body);font-size:.875rem;color:var(--ink);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
+.quick-sidebar-link:last-child{border-bottom:none}
+.quick-sidebar-link:hover{background:rgba(201,168,76,.07);color:var(--sky);padding-left:1.5rem}
+.quick-sidebar-link span{color:var(--gold);font-size:.9rem}
+.contact-block{padding:1.25rem}
+.contact-block p{font-size:.875rem;color:rgba(13,13,13,.7);line-height:1.6;margin-bottom:1rem}
+.contact-item{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:var(--sky);margin-bottom:.5rem}
+
+/* CTA BANNER */
+.cta-banner{position:relative;padding:7rem 5vw;overflow:hidden;background:#06101e}
+.cta-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.1;filter:grayscale(.5)}
+.cta-banner-gold-top{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold),var(--gold-dark),transparent)}
+.cta-banner-inner{position:relative;z-index:1;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.cta-banner-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,4.25rem);color:#fff;line-height:1.06;margin-bottom:.85rem}
+.cta-banner-title em{color:var(--gold);font-style:italic}
+.cta-banner-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:540px}
+.cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:220px}
+.btn-cta-main{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-main:hover{background:var(--gold-light)}
+.btn-cta-sec{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.2);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-sec:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+.site-footer{background:#111;padding:4rem 5vw 2rem}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
+.footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+.footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
+.footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
+.footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
+.footer-social-link:hover img{opacity:1}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col ul li{margin-bottom:.7rem}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{font-size:.8rem;color:#888}
+.footer-legal{display:flex;gap:1.25rem}
+.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a:hover{color:#ccc}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .adm-layout{grid-template-columns:1fr}
+  .adm-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .adm-sidebar .sidebar-box:first-child{grid-column:1/-1}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .credit-visual{grid-template-columns:1fr 1fr}
+  .credit-block.total{grid-column:1/-1}
+}
+@media(max-width:1050px){
+  .top-bar{display:none}
+  .primary-nav{display:none}
+  .header-actions .btn-portal,.header-actions .btn-apply{display:none}
+  .hamburger{display:flex}
+  .eligibility-grid{grid-template-columns:1fr}
+  .academic-grid{grid-template-columns:1fr}
+  .acad-full{grid-column:auto}
+  .assessment-triple{grid-template-columns:1fr}
+  .honors-cards{grid-template-columns:1fr 1fr}
+  .req-bar{flex-direction:column}
+  .req-bar-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .req-bar-item:last-child{border-bottom:none}
+  .reqs-grid{grid-template-columns:1fr}
+  .considerations-grid{grid-template-columns:1fr}
+  .cta-banner-inner{grid-template-columns:1fr}
+  .cta-banner-btns{flex-direction:row}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .page-hero-terminal{display:none}
+}
+@media(max-width:540px){
+  .honors-cards{grid-template-columns:1fr}
+  .credit-visual{grid-template-columns:1fr}
+  .credit-block.total{grid-column:auto}
+  .cta-banner-btns{flex-direction:column}
+  .adm-sidebar{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker">
+  <div class="ticker-label">Latest News</div>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>DBA Class of 2025 graduation ceremony held — Congratulations to all graduates</span>
+      <span>New DBA cohort begins September 2026 — Apply now to secure your place</span>
+      <span>Applications for 2026 intake are now open — Limited places available</span>
+      <span>Scholarship applications close March 31, 2026</span>
+      <span>CIML Business School ranked Top 5% globally for professional education</span>
+      <span>DBA Class of 2025 graduation ceremony held — Congratulations to all graduates</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-contact">
+    <a href="tel:+15550001234"><span class="tbc-icon">📞</span> +1 (555) 000-1234</a>
+    <a href="/cdn-cgi/l/email-protection#d6bfb8b0b996b5b4a5b3b2a3f8a3a5"><span class="tbc-icon">✉</span> <span class="__cf_email__" data-cfemail="0c65626a634c6f6e7f69687922797f">[email&#160;protected]</span></a>
+    <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
+  </div>
+  <div class="top-bar-social">
+    <a href="https://www.linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://www.x.com" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.instagram.com" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.youtube.com" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.facebook.com" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="CIML Business School Home">
+      <img src="assets/logo/cbs-logo.png" alt="CIML Business School Logo" class="logo-img" onerror="this.style.display='none';">
+      <div class="logo-divider"></div>
+      <span class="logo-name">
+        <span class="logo-name-top">CIML</span>
+        <span class="logo-name-bottom">Business School</span>
+      </span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="#">About Us <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="ov.html">Overview</a>
+            <a href="m.html">Mission</a>
+            <a href="v.html">Vision</a>
+            <a href="cv.html">Core Values</a>
+            <a href="obj.html">Objectives</a>
+            <a href="acc.html">Accreditation</a>
+            <a href="wcs.html">Why Choose Us</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Our Programs <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="dp.html">Diploma Program</a>
+            <a href="avd.html">Advanced Diploma</a>
+            <a href="pgd.html">Postgraduate Diploma</a>
+            <a href="mba.html">Master of Business Administration (MBA)</a>
+            <a href="dba.html">Doctor of Business Administration (DBA)</a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <a href="#">Admissions <span class="chevron"></span></a>
+          <div class="drop-panel">
+            <a href="rdp.html">Diploma Program</a>
+            <a href="ravd.html">Advanced Diploma</a>
+            <a href="rpgd.html">Postgraduate Diploma</a>
+            <a href="rmba.html">MBA</a>
+            <a href="rdba.html">DBA</a>
+          </div>
+        </li>
+        <li><a href="act.html">Academic Tools</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://cbsedu.us/cbs/user/" class="btn-portal">Verification &amp; Result Portal</a>
+      <a href="app.html" class="btn-apply">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-head">
+    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-item"><a href="index.html" class="drawer-link">Home</a></div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">About Us <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="ov.html">Overview</a><a href="m.html">Mission</a><a href="v.html">Vision</a>
+        <a href="cv.html">Core Values</a><a href="obj.html">Objectives</a>
+        <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
+        <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Admissions <span class="drawer-plus">+</span></a>
+      <div class="drawer-sub">
+        <a href="rdp.html">Diploma Program</a><a href="ravd.html">Advanced Diploma</a>
+        <a href="rpgd.html">Postgraduate Diploma</a><a href="rmba.html">MBA</a><a href="rdba.html">DBA</a>
+      </div>
+    </div>
+    <div class="drawer-item"><a href="act.html" class="drawer-link">Academic Tools</a></div>
+  </div>
+  <div class="drawer-foot">
+    <a href="https://cbsedu.us/cbs/user/" class="drawer-btn drawer-btn-outline">Student Verification and Result Portal</a>
+    <a href="app.html" class="drawer-btn drawer-btn-gold">Apply Now →</a>
+  </div>
+</aside>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <img src="assets/images/hero-lab.jpg" alt="DBA Program" class="page-hero-bg">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-gold-stripe"></div>
+  <div class="page-hero-decor"></div>
+  <div class="page-hero-decor2"></div>
+  <div class="page-hero-terminal">
+    <div class="page-hero-terminal-label">Terminal Professional Doctorate</div>
+    <div class="page-hero-terminal-title">Doctor of Business<br>Administration</div>
+  </div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="#">Admissions</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">DBA</span>
+    </div>
+    <div class="page-hero-eyebrow">Admissions Guide</div>
+    <h1 class="page-hero-title">Doctor of Business<br><em>Administration</em> (DBA)</h1>
+    <p class="page-hero-desc">The pinnacle of professional business education. Eligibility requirements, academic structure, research expectations, and certification details for the CIML DBA program.</p>
+    <div class="page-hero-actions">
+      <a href="app.html" class="btn-hero-primary">Apply Now</a>
+      <a href="dba.html" class="btn-hero-ghost">View Program Details</a>
+    </div>
+  </div>
+</section>
+
+<!-- PATHWAY STRIP -->
+<div class="pathway-strip">
+  <div class="pathway-inner">
+    <span class="pathway-label">Program Pathway:</span>
+    <a href="rdp.html" class="pathway-step">Diploma</a>
+    <span class="pathway-arrow">→</span>
+    <a href="ravd.html" class="pathway-step">Advanced Diploma</a>
+    <span class="pathway-arrow">→</span>
+    <a href="rpgd.html" class="pathway-step">Postgrad Diploma</a>
+    <span class="pathway-arrow">→</span>
+    <a href="rmba.html" class="pathway-step">MBA</a>
+    <span class="pathway-arrow">→</span>
+    <span class="pathway-step active">DBA</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="adm-layout">
+  <main>
+
+    <!-- ELIGIBILITY -->
+    <div class="eligibility-section">
+      <div class="section-eyebrow">Who Can Apply</div>
+      <h2 class="section-title">Eligibility Criteria</h2>
+      <div class="eligibility-grid">
+        <div class="elig-card">
+          <div class="elig-icon">🎓</div>
+          <h3>Academic Requirements</h3>
+          <ul>
+            <li>A Master's degree (MBA or equivalent) from a recognized institution</li>
+            <li>Alternative pathway: Completion of the CIML MBA with strong academic performance</li>
+            <li>Minimum GPA of 3.0 (B average) at the Master's level</li>
+          </ul>
+          <div class="elig-note"><strong>Note:</strong> The DBA is a terminal professional doctorate requiring prior postgraduate academic achievement. All candidates must demonstrate readiness for doctoral-level independent research.</div>
+        </div>
+        <div class="elig-card">
+          <div class="elig-icon">💼</div>
+          <h3>Professional Experience</h3>
+          <ul>
+            <li>At least 5–7 years of managerial or executive-level experience</li>
+            <li>Evidence of leadership capacity and professional achievements</li>
+            <li>Industry relevance in business, government, non-profit, or specialized sectors</li>
+          </ul>
+        </div>
+        <div class="elig-card">
+          <div class="elig-icon">🌐</div>
+          <h3>Language Proficiency</h3>
+          <ul>
+            <li>Prior education completed in English, or</li>
+            <li>Standardized tests (TOEFL, IELTS, or equivalent), or</li>
+            <li>Internal English proficiency assessment conducted by CIML Business School</li>
+          </ul>
+        </div>
+        <div class="elig-card">
+          <div class="elig-icon">📋</div>
+          <h3>Age &amp; Entry Standard</h3>
+          <ul>
+            <li>Applicants are typically senior professionals aged 28 or above</li>
+            <li>Doctoral entry is assessed holistically — academic record, experience, and research readiness are all considered</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADDITIONAL CONSIDERATIONS -->
+    <div class="considerations-section">
+      <div class="section-eyebrow">Application Requirements</div>
+      <h2 class="section-title">Additional Considerations</h2>
+      <div class="considerations-grid">
+        <div class="consideration-card">
+          <div class="consideration-card-num">01</div>
+          <h4>Research Proposal</h4>
+          <p>A preliminary research proposal outlining the intended doctoral study topic, research questions, and methodological approach is required. This is a core component of the DBA application and will be reviewed by the academic panel.</p>
+        </div>
+        <div class="consideration-card">
+          <div class="consideration-card-num">02</div>
+          <h4>References</h4>
+          <p>Academic or professional references are required to support the application. Referees should be able to speak directly to the candidate's intellectual capabilities, leadership experience, and suitability for doctoral-level study.</p>
+        </div>
+        <div class="consideration-card">
+          <div class="consideration-card-num">03</div>
+          <h4>Statement of Purpose</h4>
+          <p>A detailed personal statement describing career goals, motivation for pursuing the DBA, and the specific research areas or business challenges the candidate intends to address through doctoral study.</p>
+        </div>
+        <div class="consideration-card">
+          <div class="consideration-card-num">04</div>
+          <h4>Admissions Interview</h4>
+          <p>An interview may be required where applicable, conducted to assess the candidate's readiness for doctoral-level study, the viability of their research proposal, and their capacity to contribute to the doctoral community.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRADUATION REQUIREMENTS -->
+    <div class="grading-section">
+      <div class="section-eyebrow">Academic Standards</div>
+      <h2 class="section-title">Graduation Requirements</h2>
+      <div class="req-bar">
+        <div class="req-bar-item">
+          <div class="req-bar-label">Minimum Overall GPA</div>
+          <div class="req-bar-val">3.0</div>
+          <div class="req-bar-desc">B average throughout the program</div>
+        </div>
+        <div class="req-bar-item">
+          <div class="req-bar-label">Minimum Grade Per Module</div>
+          <div class="req-bar-val">C (70%)</div>
+          <div class="req-bar-desc">Required in each module to pass</div>
+        </div>
+        <div class="req-bar-item">
+          <div class="req-bar-label">Total Credit Hours</div>
+          <div class="req-bar-val">90–96</div>
+          <div class="req-bar-desc">Semester credit hours</div>
+        </div>
+        <div class="req-bar-item">
+          <div class="req-bar-label">Dissertation</div>
+          <div class="req-bar-val">Defense</div>
+          <div class="req-bar-desc">Public oral defense required</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRADING TABLE -->
+    <div class="grading-section">
+      <div class="section-eyebrow">Grading System</div>
+      <h2 class="section-title">Grade Scale</h2>
+      <div class="grading-table-wrap">
+        <table class="grading-table">
+          <thead>
+            <tr>
+              <th>Grade</th>
+              <th>Percentage Range</th>
+              <th>GPA Points</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="grade-badge grade-a">A</span></td>
+              <td>90% – 100%</td>
+              <td>4.0</td>
+              <td>Excellent — Outstanding doctoral-level performance</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-a">A−</span></td>
+              <td>85% – 89%</td>
+              <td>3.7</td>
+              <td>Excellent — Very high standard of scholarly work</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-b">B+</span></td>
+              <td>80% – 84%</td>
+              <td>3.3</td>
+              <td>Good — Above average doctoral performance</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-b">B</span></td>
+              <td>75% – 79%</td>
+              <td>3.0</td>
+              <td>Good — Meets DBA graduation standard</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-b">B−</span></td>
+              <td>70% – 74%</td>
+              <td>2.7</td>
+              <td>Satisfactory — Adequate doctoral performance</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-c">C</span></td>
+              <td>70%</td>
+              <td>2.0</td>
+              <td>Module pass threshold — Minimum required per module</td>
+            </tr>
+            <tr>
+              <td><span class="grade-badge grade-f">F</span></td>
+              <td>Below 70%</td>
+              <td>0.0</td>
+              <td>Fail — Module not passed; reassessment required</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- HONORS -->
+      <div class="section-eyebrow" style="margin-top:2.5rem">Honors Distinctions</div>
+      <h2 class="section-title">Academic Honors</h2>
+      <div class="honors-cards">
+        <div class="honor-card">
+          <div class="honor-card-gpa">3.5 – 3.69</div>
+          <div class="honor-card-title">Cum Laude</div>
+          <div class="honor-card-sub">With Honour</div>
+        </div>
+        <div class="honor-card">
+          <div class="honor-card-gpa">3.7 – 3.89</div>
+          <div class="honor-card-title">Magna Cum Laude</div>
+          <div class="honor-card-sub">With Great Honour</div>
+        </div>
+        <div class="honor-card">
+          <div class="honor-card-gpa">3.9 – 4.0</div>
+          <div class="honor-card-title">Summa Cum Laude</div>
+          <div class="honor-card-sub">With Highest Honour</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACADEMIC INFO -->
+    <div class="academic-section">
+      <div class="section-eyebrow">Program Structure</div>
+      <h2 class="section-title">Credit Units &amp; Study Structure</h2>
+
+      <!-- CREDIT VISUAL -->
+      <div class="credit-visual">
+        <div class="credit-block total">
+          <div class="credit-block-num">90–96</div>
+          <div class="credit-block-label">Total Credit Hours</div>
+        </div>
+        <div class="credit-block">
+          <div class="credit-block-num">30–36</div>
+          <div class="credit-block-label">Doctoral Coursework</div>
+        </div>
+        <div class="credit-block">
+          <div class="credit-block-num">24–30</div>
+          <div class="credit-block-label">Specialization Modules</div>
+        </div>
+        <div class="credit-block dissertation">
+          <div class="credit-block-num">30</div>
+          <div class="credit-block-label">Doctoral Dissertation</div>
+        </div>
+      </div>
+
+      <div class="academic-grid">
+        <div class="acad-block">
+          <div class="acad-block-icon">📅</div>
+          <h4>Study Load</h4>
+          <ul>
+            <li>Each module equals 3 credit hours</li>
+            <li>Candidates typically complete 3–4 modules per semester</li>
+            <li>Dissertation preparation runs alongside coursework throughout</li>
+            <li>Research proposal must be approved before dissertation work begins</li>
+          </ul>
+        </div>
+        <div class="acad-block">
+          <div class="acad-block-icon">🔬</div>
+          <h4>Doctoral Coursework Focus</h4>
+          <ul>
+            <li>Advanced seminars in strategy and governance</li>
+            <li>Leadership and organisational theory</li>
+            <li>Doctoral-level research methods and design</li>
+            <li>Industry-specific doctoral seminars (specialization)</li>
+          </ul>
+        </div>
+        <div class="acad-block acad-full">
+          <div class="acad-block-icon">📝</div>
+          <h4>Assessment Methods</h4>
+          <div class="assessment-triple">
+            <div class="assess-third">
+              <h5>Coursework</h5>
+              <div class="assess-pct">30%</div>
+              <div class="assess-desc">Assignments, case studies, presentations, and applied projects completed throughout doctoral seminars.</div>
+              <div class="assess-bar"><div class="assess-bar-fill" style="width:30%"></div></div>
+            </div>
+            <div class="assess-third">
+              <h5>Comprehensive Exams</h5>
+              <div class="assess-pct">20%</div>
+              <div class="assess-desc">Written and oral examinations testing mastery of core and specialization modules before dissertation.</div>
+              <div class="assess-bar"><div class="assess-bar-fill" style="width:20%"></div></div>
+            </div>
+            <div class="assess-third dissertation-block">
+              <h5>Doctoral Dissertation</h5>
+              <div class="assess-pct">50%</div>
+              <div class="assess-desc">Proposal development, original research execution, dissertation writing, and public oral defense before an academic panel.</div>
+              <div class="assess-bar"><div class="assess-bar-fill" style="width:50%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER ACADEMIC REQUIREMENTS -->
+    <div class="other-reqs-section">
+      <div class="section-eyebrow">Doctoral Requirements</div>
+      <h2 class="section-title">Other Academic Requirements</h2>
+      <div class="reqs-grid">
+        <div class="req-card">
+          <h4>🏛 Residency Requirement</h4>
+          <p>A minimum of 60 credit hours must be completed at CIML Business School. This ensures candidates benefit fully from the doctoral community, faculty mentorship, and institutional research resources.</p>
+        </div>
+        <div class="req-card">
+          <h4>📄 Research Proposal Approval</h4>
+          <p>An approved research proposal is required before dissertation work formally begins. The proposal is reviewed by the academic panel and must demonstrate scholarly rigor, originality, and practical relevance.</p>
+        </div>
+        <div class="req-card">
+          <h4>🎤 Dissertation Defense</h4>
+          <p>Candidates must complete a public oral defense of their dissertation before an academic panel. The defense assesses the depth, originality, and contribution of the research to the field of business administration.</p>
+        </div>
+        <div class="req-card">
+          <h4>📰 Publication Encouragement</h4>
+          <p>Candidates are strongly encouraged to publish at least one peer-reviewed article or conference paper based on their dissertation research, contributing to academic knowledge and professional standing.</p>
+        </div>
+        <div class="req-card" style="grid-column:1/-1">
+          <h4>🌐 Professional Development</h4>
+          <p>Active participation in doctoral seminars, leadership forums, and academic workshops is expected throughout the program. These engagements enrich the doctoral experience and build the professional networks appropriate to senior executive scholarship.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATION -->
+    <div class="cert-section">
+      <div class="section-eyebrow">Credential &amp; Recognition</div>
+      <h2 class="section-title">Certification &amp; Validation</h2>
+      <div class="cert-box">
+        <div class="cert-box-decor"></div>
+        <div class="cert-box-decor2"></div>
+        <div class="cert-box-inner">
+          <h3>Your <em>DBA</em> credential — the terminal doctorate</h3>
+          <p>The Doctor of Business Administration is the highest professional qualification in business. DBA graduates receive an internationally recognised terminal doctorate, benchmarked against rigorous U.S. academic standards and validated through CIML's global academic partnerships.</p>
+          <ul>
+            <li>Doctor of Business Administration (DBA) certificate issued by CIML Business School</li>
+            <li>Validated by California University FCE and benchmarked against U.S. academic standards</li>
+            <li>CIML collaborates with government-accredited universities and institutions worldwide to ensure recognition and equivalency</li>
+            <li>Internationally recognised as a terminal professional doctorate in business and management</li>
+            <li>Opens pathways to academic careers, executive consulting, and the highest levels of organisational leadership</li>
+          </ul>
+          <div class="pathway-cta">
+            <p>The summit of the CIML academic journey</p>
+            <div class="pathway-prog">
+              <span class="prog-chip">Diploma</span>
+              <span class="prog-arrow">→</span>
+              <span class="prog-chip">Adv. Diploma</span>
+              <span class="prog-arrow">→</span>
+              <span class="prog-chip">PGD</span>
+              <span class="prog-arrow">→</span>
+              <span class="prog-chip">MBA</span>
+              <span class="prog-arrow">→</span>
+              <span class="prog-chip current">DBA</span>
+              <span class="prog-arrow">→</span>
+              <span class="prog-chip terminal">Terminal Doctorate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="adm-sidebar">
+    <div class="sidebar-box">
+      <div class="sidebar-apply">
+        <h4>Pursue the Pinnacle of Business Education</h4>
+        <p>Applications for the 2026 DBA cohort are now open. Places are strictly limited.</p>
+        <a href="app.html" class="btn-apply-full">Apply for 2026 →</a>
+        <div class="sidebar-deadline">Deadline: <strong>March 31, 2026</strong></div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-head"><h4>Program Snapshot</h4></div>
+      <div class="sidebar-body">
+        <div class="info-row">
+          <span class="info-row-label">Qualification</span>
+          <span class="info-row-val">Terminal Professional Doctorate</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Total Credits</span>
+          <span class="info-row-val">90–96 Credit Hours</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Dissertation Credits</span>
+          <span class="info-row-val">30 Credit Hours</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Modules/Semester</span>
+          <span class="info-row-val">3–4 Modules</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Min. GPA to Graduate</span>
+          <span class="info-row-val">3.0 (B Average)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Min. Pass Per Module</span>
+          <span class="info-row-val">C (70%)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Residency Requirement</span>
+          <span class="info-row-val">60 Credit Hours at CIML</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Work Experience</span>
+          <span class="info-row-val">5–7 Years Executive Level</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Entry Requirement</span>
+          <span class="info-row-val">Master's Degree (MBA or Equivalent)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Master's Min. GPA</span>
+          <span class="info-row-val">3.0 (B Average)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Validated By</span>
+          <span class="info-row-val">California University FCE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-head"><h4>Admissions Links</h4></div>
+      <a href="rdp.html" class="quick-sidebar-link">Diploma Admissions <span>→</span></a>
+      <a href="ravd.html" class="quick-sidebar-link">Advanced Diploma Admissions <span>→</span></a>
+      <a href="rpgd.html" class="quick-sidebar-link">Postgrad Diploma Admissions <span>→</span></a>
+      <a href="rmba.html" class="quick-sidebar-link">MBA Admissions <span>→</span></a>
+      <a href="rdba.html" class="quick-sidebar-link">DBA Admissions <span>→</span></a>
+    </div>
+
+    <div class="sidebar-box">
+      <div class="sidebar-head"><h4>Need Assistance?</h4></div>
+      <div class="contact-block">
+        <p>Our doctoral admissions team is available to discuss your eligibility, research proposal, and the application process in detail.</p>
+        <div class="contact-item">📞 <a href="tel:+15550001234" style="color:var(--sky)">+1 (555) 000-1234</a></div>
+        <div class="contact-item">✉ <a href="/cdn-cgi/l/email-protection#7e171018113e1d1c0d1b1a0b500b0d" style="color:var(--sky)"><span class="__cf_email__" data-cfemail="640d0a020b240706170100114a1117">[email&#160;protected]</span></a></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <img src="assets/images/offering-dba.jpg" alt="" class="cta-banner-img">
+  <div class="cta-banner-gold-top"></div>
+  <div class="cta-banner-inner">
+    <div>
+      <h2 class="cta-banner-title">The highest credential<br>in business.<br><em>The DBA.</em></h2>
+      <p class="cta-banner-sub">Designed for senior executives and leaders who are ready to engage with scholarship, drive original research, and shape their industries from the very top. Applications for the 2026 cohort are now open — places are strictly limited.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="app.html" class="btn-cta-main">Apply for 2026</a>
+      <a href="dba.html" class="btn-cta-sec">Explore the DBA</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo-wrap">
+          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML<small>Business School</small></div>
+        </div>
+        <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" class="footer-social-link" aria-label="LinkedIn"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
+          <a href="https://www.x.com" class="footer-social-link" aria-label="Twitter"><img src="assets/icons/twitter.jpg" alt="Twitter"></a>
+          <a href="https://www.instagram.com" class="footer-social-link" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com" class="footer-social-link" aria-label="YouTube"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com" class="footer-social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="dp.html">Diploma Program</a></li>
+          <li><a href="avd.html">Advanced Diploma</a></li>
+          <li><a href="pgd.html">Postgraduate Diploma</a></li>
+          <li><a href="mba.html">MBA</a></li>
+          <li><a href="dba.html">DBA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Institution</h4>
+        <ul>
+          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="ov.html">Overview</a></li>
+          <li><a href="acc.html">Accreditation</a></li>
+          <li><a href="wcs.html">Why Choose Us</a></li>
+          <li><a href="#">News &amp; Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="/cdn-cgi/l/email-protection#88e1BVTrB47erypG3tevi1U9Fv6BbNUBEiuiX"><span class="__cf_email__" data-cfemail="c0a9aea6af80a3a2b3a5a4b5eeb5b3">[email&#160;protected]</span></a></li>
+          <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
+          <li><a href="app.html">Admissions / Apply</a></li>
+          <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
+          <li><a href="cm.html">Campus Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CIML Business School. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="p.html">Privacy Policy</a>
+        <a href="t.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const header=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+
+const hamburgerBtn=document.getElementById('hamburgerBtn');
+const mobileDrawer=document.getElementById('mobileDrawer');
+const mobileOverlay=document.getElementById('mobileOverlay');
+const drawerClose=document.getElementById('drawerClose');
+
+function openDrawer(){hamburgerBtn.classList.add('open');mobileDrawer.classList.add('open');mobileOverlay.classList.add('open');document.body.style.overflow='hidden';hamburgerBtn.setAttribute('aria-expanded','true')}
+function closeDrawer(){hamburgerBtn.classList.remove('open');mobileDrawer.classList.remove('open');mobileOverlay.classList.remove('open');document.body.style.overflow='';hamburgerBtn.setAttribute('aria-expanded','false')}
+
+hamburgerBtn.addEventListener('click',()=>{mobileDrawer.classList.contains('open')?closeDrawer():openDrawer()});
+drawerClose.addEventListener('click',closeDrawer);
+mobileOverlay.addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+
+document.q
