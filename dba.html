@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doctor of Business Administration (DBA) — CIML Business School</title>
+<title>Doctor of Business Administration (DBA) — CIML Business School | Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -14,11 +14,10 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --sky:#1B3F6E;--sky-deep:#112b4e;--sky-mid:#254f8a;
   --sky-pale:#EEF3FA;
-  /* DBA-specific deep prestige tones */
   --dba-deep:#0A0A14;--dba-dark:#13131F;--dba-mid:#1C1C2E;
-  --dba-accent:#7B61FF;/* subtle violet for doctoral distinction */
+  --dba-accent:#7B61FF;
   --serif:"DM Serif Display",Georgia,serif;
-  --sans:"Syne",sans-serif;--body:"DM Sans",sans-serif;
+  --sans:'Cambria','Georgia',serif;--body:"DM Sans",sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -28,7 +27,6 @@ img{display:block;max-width:100%}
 ul{list-style:none}
 button{cursor:pointer;background:none;border:none;font-family:inherit}
 
-/* ── NEWS TICKER ─────────────────────── */
 .news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
 .ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
 .ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
@@ -37,7 +35,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .ticker-track span::before{content:"\2022";margin-right:1rem;color:var(--gold)}
 @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── TOP BAR ─────────────────────────── */
 .top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}
 .top-bar-contact{display:flex;gap:2rem;align-items:center}
 .top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
@@ -47,7 +44,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85;display:block}
 .top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 
-/* ── HEADER ──────────────────────────── */
 .site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s}
 .site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
@@ -56,10 +52,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
 .logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
 .logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
@@ -67,12 +63,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:260px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover,.drop-panel a.active-sub{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.5rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.5rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -80,7 +76,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .hamburger.open i:nth-child(2){opacity:0}
 .hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-/* ── MOBILE DRAWER ───────────────────── */
 .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
 .mobile-overlay.open{opacity:1;pointer-events:all}
 .mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
@@ -98,7 +93,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover,.drawer-sub a.active-sub{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
 .drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
@@ -106,70 +101,45 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-btn-gold{background:var(--gold);color:var(--ink)}
 .drawer-btn-gold:hover{background:var(--gold-light)}
 
-/* ═══════════════════════════════════════
-   DBA HERO — full-bleed dark prestige
-═══════════════════════════════════════ */
 .dba-hero{position:relative;min-height:640px;background:var(--dba-deep);overflow:hidden;display:grid;grid-template-columns:55% 45%}
-
-/* Abstract doctoral "seal" geometry in background */
 .dba-hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .dba-hero-bg::before{content:"";position:absolute;top:-120px;left:-120px;width:700px;height:700px;border-radius:50%;border:1px solid rgba(201,168,76,.06)}
 .dba-hero-bg::after{content:"";position:absolute;top:-80px;left:-80px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,168,76,.04)}
-/* Inner rings */
 .dba-ring-1{position:absolute;bottom:-180px;right:42%;width:600px;height:600px;border-radius:50%;border:1px solid rgba(201,168,76,.05);pointer-events:none;z-index:0}
 .dba-ring-2{position:absolute;bottom:-120px;right:40%;width:400px;height:400px;border-radius:50%;border:1px solid rgba(201,168,76,.04);pointer-events:none;z-index:0}
-
-/* Left panel */
 .dba-hero-left{position:relative;padding:5.5rem 5vw 5.5rem 5vw;display:flex;flex-direction:column;justify-content:center;z-index:2}
-
-/* Vertical gold accent bar */
 .dba-accent-bar{position:absolute;top:0;right:0;width:3px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold) 30%,var(--gold) 70%,transparent);opacity:.45}
 .dba-accent-bar2{position:absolute;top:0;right:9px;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.25),transparent);opacity:.35}
-
 .dba-hero-inner{max-width:640px;position:relative;z-index:1}
 .prog-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:1.75rem}
 .prog-breadcrumb a{color:rgba(255,255,255,.35);transition:color .2s}
 .prog-breadcrumb a:hover{color:var(--gold)}
 .prog-breadcrumb-sep{color:rgba(255,255,255,.18)}
 .prog-breadcrumb-current{color:var(--gold-light);font-weight:500}
-
 .dba-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.85rem;margin-bottom:1.4rem}
 .dba-label::before{content:"";display:block;width:32px;height:2px;background:var(--gold)}
-
-/* Terminal doctorate tag */
 .dba-terminal-tag{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.35);font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:.3rem .9rem;margin-bottom:1.2rem}
-
 .dba-hero-title{font-family:var(--serif);font-size:clamp(2.4rem,4.5vw,4.2rem);color:#fff;line-height:1.0;margin-bottom:1.1rem}
 .dba-hero-title em{color:var(--gold);font-style:italic}
-
 .dba-hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.8;max-width:500px;margin-bottom:2.5rem}
-
 .dba-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-dba-primary{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.95rem 2rem;transition:all .25s}
 .btn-dba-primary:hover{background:var(--gold-light)}
 .btn-dba-ghost{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.35);padding:.95rem 1.75rem;transition:all .25s}
 .btn-dba-ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.06)}
-
-/* Right panel */
 .dba-hero-right{position:relative;overflow:hidden;min-height:500px;z-index:1}
 .dba-hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.65) contrast(1.05)}
-/* Dark diagonal overlay */
 .dba-hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,var(--dba-deep) 0%,rgba(10,10,20,.6) 50%,transparent 80%);z-index:1}
-
-/* Stat chips */
 .dba-hero-stats{position:absolute;top:2.5rem;left:2rem;z-index:3;display:flex;flex-direction:column;gap:.6rem}
 .dba-stat-chip{background:rgba(10,10,20,.75);border:1px solid rgba(201,168,76,.25);backdrop-filter:blur(8px);padding:.55rem 1.1rem;display:flex;align-items:center;gap:.65rem}
 .dba-stat-chip-num{font-family:var(--serif);font-size:1.4rem;color:var(--gold);line-height:1}
 .dba-stat-chip-label{font-family:var(--sans);font-size:.54rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);line-height:1.35}
-
-/* Doctoral badge — square rotated */
 .dba-badge{position:absolute;bottom:2.5rem;right:2.5rem;z-index:3}
 .dba-badge-inner{width:115px;height:115px;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-3deg);box-shadow:0 10px 40px rgba(0,0,0,.45)}
 .dba-badge-inner span:first-child{font-family:var(--sans);font-size:.46rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.6);margin-bottom:.1rem}
 .dba-badge-inner strong{font-family:var(--serif);font-size:2.2rem;color:var(--ink);line-height:1}
 .dba-badge-inner span:last-child{font-family:var(--sans);font-size:.44rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.55);margin-top:.2rem;text-align:center;padding:0 .4rem}
 
-/* ── LEVEL PROGRESS STRIP ─────────────── */
 .prog-level-strip{background:var(--gold);padding:.65rem 5vw}
 .prog-level-strip-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;overflow-x:auto;scrollbar-width:none}
 .prog-level-strip-inner::-webkit-scrollbar{display:none}
@@ -182,7 +152,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .level-step.active .level-step-name{color:var(--ink);font-weight:800}
 .level-arrow{color:rgba(13,13,13,.3);font-size:.85rem;flex-shrink:0}
 
-/* ── META STRIP ─────────────────────── */
 .prog-meta-strip{background:var(--dba-dark);border-bottom:3px solid var(--gold)}
 .prog-meta-inner{max-width:1400px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:repeat(4,1fr)}
 .prog-meta-item{padding:1.4rem 1.5rem;display:flex;align-items:center;gap:.85rem;border-right:1px solid rgba(255,255,255,.06)}
@@ -191,13 +160,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .prog-meta-text strong{display:block;font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.15rem}
 .prog-meta-text span{font-size:.85rem;color:#fff;font-weight:500}
 
-/* ── MAIN LAYOUT ─────────────────────── */
 .prog-wrap{max-width:1400px;margin:0 auto;padding:5rem 5vw;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
-
 .prog-intro{font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.65;color:var(--sky);border-left:4px solid var(--gold);padding-left:1.75rem;margin-bottom:2.25rem;font-style:italic}
 .prog-body p{font-size:1rem;line-height:1.85;color:rgba(13,13,13,.75);margin-bottom:1.75rem}
 
-/* DBA vs PhD distinction callout */
 .distinction-box{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08);margin-bottom:3rem}
 .distinction-col{padding:2rem 1.75rem;background:#fff}
 .distinction-col:first-child{background:var(--dba-mid)}
@@ -214,7 +180,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .distinction-dot-dba{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:.45rem}
 .distinction-dot-phd{width:6px;height:6px;background:var(--sky);border-radius:50%;flex-shrink:0;margin-top:.45rem}
 
-/* WHO IS THIS FOR */
 .ideal-section{background:var(--sky-pale);border-left:4px solid var(--gold);padding:2rem 2.25rem;margin-bottom:3rem}
 .ideal-section-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
 .ideal-section-label::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
@@ -222,7 +187,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .ideal-item{display:flex;align-items:flex-start;gap:.85rem;font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.6}
 .ideal-item-dot{width:24px;height:24px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.6rem;margin-top:.1rem}
 
-/* ── KEY FEATURES ────────────────────── */
 .features-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .features-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
 .features-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:2rem}
@@ -237,7 +201,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .feature-card:hover .feature-card-body h4{color:var(--sky)}
 .feature-card-body p{font-size:.85rem;color:rgba(13,13,13,.6);line-height:1.65}
 
-/* ── SPECIALIZATIONS ─────────────────── */
 .spec-section{margin-bottom:3.5rem}
 .spec-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .spec-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
@@ -264,7 +227,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .spec-item::before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
 .spec-item:hover{border-color:var(--gold-dark);color:var(--ink);background:var(--paper)}
 
-/* ── PROGRAM OBJECTIVES ──────────────── */
 .outcomes-section{margin-bottom:3.5rem}
 .outcomes-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .outcomes-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
@@ -278,7 +240,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .outcome-text{font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.65}
 .outcome-text strong{color:var(--ink);display:block;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem}
 
-/* ── THOUGHT LEADER ROLES ────────────── */
 .roles-section{background:var(--dba-deep);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
 .roles-section::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;border:1px solid rgba(201,168,76,.06);border-radius:50%}
 .roles-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
@@ -288,7 +249,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .role-chip{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(201,168,76,.22);padding:.4rem .9rem;background:rgba(201,168,76,.05);transition:all .2s}
 .role-chip:hover{background:rgba(201,168,76,.1);border-color:var(--gold)}
 
-/* ── ELIGIBILITY BANNER ──────────────── */
 .eligibility-banner{background:var(--gold);padding:2.75rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem}
 .eligibility-banner-left h3{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:.4rem}
 .eligibility-banner-left p{font-size:.9rem;color:rgba(13,13,13,.65);line-height:1.6;max-width:450px}
@@ -296,7 +256,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .btn-eligibility-main:hover{background:var(--sky)}
 .btn-eligibility-main svg{width:15px;height:15px;flex-shrink:0}
 
-/* ── SIDEBAR ─────────────────────────── */
 .sidebar-quick-apply{background:var(--dba-dark);padding:2rem;margin-bottom:1.5rem;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
 .sidebar-quick-apply::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:1px solid rgba(201,168,76,.08);border-radius:50%}
 .sidebar-quick-apply-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
@@ -316,7 +275,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .sidebar-info-text strong{display:block;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.15rem}
 .sidebar-info-text span{font-size:.85rem;color:var(--ink)}
 
-/* Pathway */
 .pathway-section{background:var(--dba-mid);padding:2.5rem;position:relative;overflow:hidden;margin-bottom:1.5rem;border-top:3px solid var(--gold)}
 .pathway-section::before{content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;border:1px solid rgba(201,168,76,.07);border-radius:50%}
 .pathway-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
@@ -335,7 +293,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .pathway-step-text span{font-size:.75rem;color:rgba(255,255,255,.4)}
 .pathway-connector{width:1px;height:12px;background:rgba(255,255,255,.12);margin-left:15px}
 
-/* All Programs */
 .sidebar-programs-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
 .sidebar-programs-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
 .sidebar-programs-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
@@ -353,7 +310,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .program-link-arrow{color:var(--gold);font-size:.8rem;opacity:0;transition:all .2s}
 .program-link-item:hover .program-link-arrow{opacity:1}
 
-/* ── CTA STRIP ── DBA gets darkest/most prestigious CTA ─── */
 .page-cta{background:var(--dba-deep);padding:5rem 5vw;position:relative;overflow:hidden;border-top:3px solid var(--gold)}
 .page-cta::before{content:"";position:absolute;top:-80px;right:-80px;width:400px;height:400px;border:1px solid rgba(201,168,76,.05);border-radius:50%}
 .page-cta::after{content:"";position:absolute;bottom:-100px;left:8%;width:300px;height:300px;border:1px solid rgba(201,168,76,.04);border-radius:50%}
@@ -367,7 +323,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .btn-cta-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.3);padding:.9rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-ghost:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
 
-/* ── FOOTER ──────────────────────────── */
 .site-footer{background:#111;padding:4rem 5vw 2rem}
 .footer-inner{max-width:1400px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
@@ -390,7 +345,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
-/* ── RESPONSIVE ──────────────────────── */
 @media(max-width:1100px){
   .prog-wrap{grid-template-columns:1fr;gap:3rem}
   .prog-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -425,7 +379,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 </head>
 <body>
 
-<!-- NEWS TICKER -->
 <div class="news-ticker">
   <div class="ticker-label">Latest News</div>
   <div class="ticker-track-wrap">
@@ -444,10 +397,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234">&#128222; +1 (555) 000-1234</a>
     <a href="mailto:info@cbsedu.us">&#9993; info@cbsedu.us</a>
     <a href="cm.html">&#128205; View Campus Map</a>
   </div>
@@ -460,7 +411,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a href="index.html" class="logo" aria-label="CIML Business School Home">
@@ -523,8 +473,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
       </div>
     </div>
-    <div class="drawer-item open">
-      <a href="op.html" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
       <div class="drawer-sub">
         <a href="dp.html">Diploma Program</a>
         <a href="avd.html">Advanced Diploma</a>
@@ -548,12 +498,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </aside>
 
-<!-- ═══ DBA HERO ═══ -->
 <section class="dba-hero">
   <div class="dba-hero-bg"></div>
   <div class="dba-ring-1"></div>
   <div class="dba-ring-2"></div>
-
   <div class="dba-hero-left">
     <div class="dba-accent-bar"></div>
     <div class="dba-accent-bar2"></div>
@@ -578,22 +526,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
   </div>
-
   <div class="dba-hero-right">
     <img src="assets/images/offering-dba.jpg" alt="Doctor of Business Administration — CIML Business School">
     <div class="dba-hero-stats">
-      <div class="dba-stat-chip">
-        <span class="dba-stat-chip-num">3–5</span>
-        <span class="dba-stat-chip-label">Year<br>Program</span>
-      </div>
-      <div class="dba-stat-chip">
-        <span class="dba-stat-chip-num">90+</span>
-        <span class="dba-stat-chip-label">Credit<br>Hours</span>
-      </div>
-      <div class="dba-stat-chip">
-        <span class="dba-stat-chip-num">40+</span>
-        <span class="dba-stat-chip-label">Research<br>Specializations</span>
-      </div>
+      <div class="dba-stat-chip"><span class="dba-stat-chip-num">3–5</span><span class="dba-stat-chip-label">Year<br>Program</span></div>
+      <div class="dba-stat-chip"><span class="dba-stat-chip-num">90+</span><span class="dba-stat-chip-label">Credit<br>Hours</span></div>
+      <div class="dba-stat-chip"><span class="dba-stat-chip-num">40+</span><span class="dba-stat-chip-label">Research<br>Specializations</span></div>
     </div>
     <div class="dba-badge">
       <div class="dba-badge-inner">
@@ -603,37 +541,20 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </section>
 
-<!-- LEVEL PROGRESS STRIP -->
 <div class="prog-level-strip">
   <div class="prog-level-strip-inner">
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Advanced Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Advanced Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Postgrad Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Postgrad Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">MBA</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">MBA</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step active">
-      <div class="level-step-dot">DBA</div>
-      <span class="level-step-name">DBA — Doctoral Level</span>
-    </div>
+    <div class="level-step active"><div class="level-step-dot">DBA</div><span class="level-step-name">DBA — Doctoral Level</span></div>
   </div>
 </div>
 
-<!-- META STRIP -->
 <div class="prog-meta-strip">
   <div class="prog-meta-inner">
     <div class="prog-meta-item"><div class="prog-meta-icon">&#127891;</div><div class="prog-meta-text"><strong>Qualification</strong><span>Doctor of Business Administration</span></div></div>
@@ -643,7 +564,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- ═══ MAIN CONTENT + SIDEBAR ═══ -->
 <div class="prog-wrap">
   <main class="prog-main">
 
@@ -654,7 +574,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <p>Internationally benchmarked and validated, the DBA is structured to provide the highest level of expertise in strategic management, corporate governance, and industry-specific leadership — while equipping candidates with advanced research capabilities recognized across academic, corporate, and government institutions worldwide.</p>
     </div>
 
-    <!-- DBA vs PhD -->
     <div class="distinction-box">
       <div class="distinction-col">
         <div class="distinction-col-label">DBA &mdash; Professional Doctorate</div>
@@ -678,78 +597,45 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- WHO IS THIS FOR -->
     <div class="ideal-section">
       <div class="ideal-section-label">Who This Program Is For</div>
       <div class="ideal-list">
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          CEOs, Managing Directors, and C-suite executives seeking the highest academic credential while remaining in practice.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Senior consultants and policymakers who want to drive evidence-based change at national and international levels.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          MBA graduates ready to elevate their expertise to doctoral-level applied research and strategic scholarship.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Professionals aspiring to thought leadership in academia, consulting, or executive practice within their chosen industry.
-        </div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>CEOs, Managing Directors, and C-suite executives seeking the highest academic credential while remaining in practice.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Senior consultants and policymakers who want to drive evidence-based change at national and international levels.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>MBA graduates ready to elevate their expertise to doctoral-level applied research and strategic scholarship.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Professionals aspiring to thought leadership in academia, consulting, or executive practice within their chosen industry.</div>
       </div>
     </div>
 
-    <!-- KEY FEATURES -->
     <div class="features-eyebrow">Key Program Features</div>
     <h2 class="features-title">Applied Doctoral Rigour, <em style="font-style:italic;color:var(--gold-dark)">Real-World Impact</em></h2>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-card-icon">&#128270;</div>
-        <div class="feature-card-body">
-          <h4>Applied Doctoral Research</h4>
-          <p>Candidates conduct original research addressing real-world business challenges, producing dissertations that create direct organizational and industry impact — advancing both knowledge and professional practice.</p>
-        </div>
+        <div class="feature-card-body"><h4>Applied Doctoral Research</h4><p>Candidates conduct original research addressing real-world business challenges, producing dissertations that create direct organizational and industry impact — advancing both knowledge and professional practice.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon">&#127959;</div>
-        <div class="feature-card-body">
-          <h4>Executive Leadership Development</h4>
-          <p>Advanced training in board-level governance, strategic management, and organizational transformation at the highest tier — designed for those who lead, not those who aspire to lead.</p>
-        </div>
+        <div class="feature-card-body"><h4>Executive Leadership Development</h4><p>Advanced training in board-level governance, strategic management, and organizational transformation at the highest tier — designed for those who lead, not those who aspire to lead.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon">&#127758;</div>
-        <div class="feature-card-body">
-          <h4>Global Orientation</h4>
-          <p>International case studies, comparative doctoral research methodologies, and cross-cultural leadership perspectives ensure graduates are equipped to influence business and policy across borders.</p>
-        </div>
+        <div class="feature-card-body"><h4>Global Orientation</h4><p>International case studies, comparative doctoral research methodologies, and cross-cultural leadership perspectives ensure graduates are equipped to influence business and policy across borders.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon">&#128188;</div>
-        <div class="feature-card-body">
-          <h4>Professional Relevance</h4>
-          <p>Designed expressly for CEOs, senior managers, consultants, policymakers, and entrepreneurs — candidates are not required to leave their roles to pursue the DBA.</p>
-        </div>
+        <div class="feature-card-body"><h4>Professional Relevance</h4><p>Designed expressly for CEOs, senior managers, consultants, policymakers, and entrepreneurs — candidates are not required to leave their roles to pursue the DBA.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon">&#128218;</div>
-        <div class="feature-card-body">
-          <h4>Doctoral Research Mastery</h4>
-          <p>Comprehensive training in advanced research methods, academic writing, and doctoral-level inquiry — building the investigative capacity required to contribute original knowledge to a global field.</p>
-        </div>
+        <div class="feature-card-body"><h4>Doctoral Research Mastery</h4><p>Comprehensive training in advanced research methods, academic writing, and doctoral-level inquiry — building the investigative capacity required to contribute original knowledge to a global field.</p></div>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon">&#127942;</div>
-        <div class="feature-card-body">
-          <h4>Globally Validated Credential</h4>
-          <p>DBA certificates are validated by California University FCE and other government-accredited universities worldwide, ensuring the qualification is recognized and equivalent across academic, government, and corporate institutions.</p>
-        </div>
+        <div class="feature-card-body"><h4>Globally Validated Credential</h4><p>DBA certificates are validated by California University FCE and other government-accredited universities worldwide, ensuring the qualification is recognized and equivalent across academic, government, and corporate institutions.</p></div>
       </div>
     </div>
 
-    <!-- SPECIALIZATIONS -->
     <div class="spec-section">
       <div class="spec-eyebrow">Research Specialization Tracks</div>
       <h2 class="spec-title">40+ Applied Research Pathways</h2>
@@ -853,7 +739,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- PROGRAM OBJECTIVES / OUTCOMES -->
     <div class="outcomes-section">
       <div class="outcomes-eyebrow">Program Objectives</div>
       <h2 class="outcomes-title">What DBA Graduates Achieve</h2>
@@ -866,7 +751,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- ROLES & TITLES -->
     <div class="roles-section">
       <div class="roles-eyebrow">Where DBA Graduates Lead</div>
       <div class="roles-title">Titles &amp; Platforms Occupied by DBA Holders</div>
@@ -885,7 +769,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- ELIGIBILITY BANNER -->
     <div class="eligibility-banner">
       <div class="eligibility-banner-left">
         <h3>Find out if you qualify for the DBA</h3>
@@ -899,7 +782,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
   </main>
 
-  <!-- SIDEBAR -->
   <aside class="prog-sidebar">
 
     <div class="sidebar-quick-apply">
@@ -948,12 +830,11 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </aside>
 </div>
 
-<!-- CTA STRIP -->
 <section class="page-cta">
   <div class="page-cta-inner">
     <div>
       <h2>Reach the <em>Highest Level</em><br>of Business Leadership</h2>
-      <p>The CIML DBA is the terminal credential for those who lead, research, and shape industries. With 40+ applied research specializations, a globally validated doctoral award, and a cohort of senior executives and scholars, your doctoral journey begins here. Applications for 2026 are now open.</p>
+      <p>The CIML Business School DBA is the terminal credential for those who lead, research, and shape industries. With 40+ applied research specializations, a globally validated doctoral award, and a cohort of senior executives and scholars, your doctoral journey begins here. Applications for 2026 are now open.</p>
     </div>
     <div class="page-cta-btns">
       <a href="rdba.html" class="btn-cta-gold">Check Eligibility</a>
@@ -962,14 +843,13 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School<small>Shaping Tomorrow</small></div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -996,7 +876,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </ul></div>
       <div class="footer-col"><h4>Contact</h4><ul>
         <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
-        <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
         <li><a href="app.html">Admissions / Apply</a></li>
         <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
         <li><a href="cm.html">Campus Map</a></li>

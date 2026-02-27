@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accreditation & Recognition — CIML Business School</title>
+<title>Accreditation & Recognition — CIML Business School — Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +14,7 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --sky:#1B3F6E;--sky-deep:#112b4e;
   --serif:'DM Serif Display',Georgia,serif;
-  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --sans:'Cambria','Georgia',serif;--body:'DM Sans',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -54,10 +54,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
 .logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
 .logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after{transform:scaleX(1)}
@@ -67,12 +67,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover,.drop-panel a.active-sub{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.5rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.5rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -87,7 +87,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .mobile-drawer.open{transform:translateX(0)}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
 .drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
-.drawer-logo-text em{color:var(--gold);font-style:normal}
 .drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
 .drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .drawer-body{flex:1;padding:1.5rem}
@@ -98,7 +97,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover,.drawer-sub a.active-sub{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
 .drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
@@ -193,7 +192,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .sidebar-programs-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
 .sidebar-programs-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
 .sidebar-programs-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
-.sidebar-programs-head a{font-size:.72rem;color:var(--gold-light);transition:color .2s}
+.sidebar-programs-head a{font-family:var(--sans);font-size:.72rem;color:var(--gold-light);transition:color .2s}
 .sidebar-programs-head a:hover{color:var(--gold)}
 .program-link-item{display:flex;align-items:center;padding:.9rem 1.25rem;border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s;gap:.85rem}
 .program-link-item:last-child{border-bottom:none}
@@ -208,7 +207,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .sidebar-nav-box{border:1px solid rgba(13,13,13,.08)}
 .sidebar-nav-head{background:var(--gold);padding:.85rem 1.25rem}
 .sidebar-nav-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-.sidebar-nav-link{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;font-size:.875rem;color:rgba(13,13,13,.65);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
+.sidebar-nav-link{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;font-family:var(--sans);font-size:.875rem;color:rgba(13,13,13,.65);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
 .sidebar-nav-link:last-child{border-bottom:none}
 .sidebar-nav-link:hover{background:rgba(201,168,76,.07);color:var(--sky);font-weight:500;padding-left:1.5rem}
 .sidebar-nav-link.active{border-left:3px solid var(--gold);padding-left:1.1rem;color:var(--ink);font-weight:600}
@@ -233,7 +232,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
 .footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
-.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
 .footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
 .footer-social{display:flex;gap:.6rem}
 .footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
@@ -243,12 +241,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-social-link:hover img{opacity:1}
 .footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
 .footer-col ul li{margin-bottom:.7rem}
-.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a{font-family:var(--sans);font-size:.875rem;color:#b8b8b8;transition:all .2s}
 .footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom p{font-size:.8rem;color:#888}
+.footer-bottom p{font-family:var(--sans);font-size:.8rem;color:#888}
 .footer-legal{display:flex;gap:1.25rem}
-.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a{font-family:var(--sans);font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
 /* RESPONSIVE */
@@ -300,7 +298,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234">📞 +1 (555) 000-1234</a>
     <a href="mailto:info@cbsedu.us">✉ info@cbsedu.us</a>
     <a href="cm.html">📍 View Campus Map</a>
   </div>
@@ -375,7 +372,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <aside class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-head">
-    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <span class="drawer-logo-text">CIML Business School</span>
     <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-body">
@@ -433,7 +430,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     </nav>
     <div class="page-hero-label">About Us</div>
     <h1 class="page-hero-title">Accreditation<br>&amp; <em>Recognition</em></h1>
-    <p class="page-hero-sub">Our legal standing, validation partnerships, and commitment to ensuring every CIML qualification is globally understood, respected, and valued by employers worldwide.</p>
+    <p class="page-hero-sub">Our legal standing, validation partnerships, and commitment to ensuring every CIML Business School qualification is globally understood, respected, and valued by employers worldwide.</p>
   </div>
   <div class="page-hero-bar"></div>
 </section>
@@ -544,7 +541,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
           <div class="commitment-check">✓</div>
           <div class="commitment-text">
             <strong>Excellence, Ethics &amp; Lifelong Learning</strong>
-            Our focus remains on academic excellence, ethical leadership, and lifelong learning — ensuring CIML graduates are competitive, respected, and impactful wherever their careers take them.
+            Our focus remains on academic excellence, ethical leadership, and lifelong learning — ensuring CIML Business School graduates are competitive, respected, and impactful wherever their careers take them.
           </div>
         </div>
 
@@ -659,8 +656,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School</div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -695,7 +692,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
-          <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
           <li><a href="app.html">Admissions / Apply</a></li>
           <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
           <li><a href="cm.html">Campus Map</a></li>

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Diploma — Admissions | CIML Business School</title>
+<title>CIML Business School — Shaping Tomorrow | Postgraduate Diploma Admissions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +14,8 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --rust:#B5451B;--sage:#3D5A4A;--sky:#1B3F6E;
   --serif:'DM Serif Display',Georgia,serif;
-  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --sans:'Cambria','Georgia',serif;
+  --body:'DM Sans',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -26,7 +27,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
 /* NEWS TICKER */
 .news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
-.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
 .ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
 .ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
 .ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
@@ -52,25 +53,25 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
 .logo-img{height:42px;width:auto;object-fit:contain}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
-.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
-.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.3}
+.logo-name-top{font-size:.9rem;font-weight:700;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:700;letter-spacing:.08em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after{transform:scaleX(1)}
 .chevron{display:inline-block;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;transition:transform .3s}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
-.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:260px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.5rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.5rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -84,29 +85,28 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-drawer.open{transform:translateX(0)}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
-.drawer-logo-text em{color:var(--gold);font-style:normal}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.04em;text-transform:uppercase}
 .drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
 .drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .drawer-body{flex:1;padding:1.5rem}
 .drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
-.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
 .drawer-link:hover{color:var(--gold)}
 .drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.9rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
-.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.85rem;transition:all .2s}
 .drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
 .drawer-btn-outline:hover{border-color:#fff}
 .drawer-btn-gold{background:var(--gold);color:var(--ink)}
 .drawer-btn-gold:hover{background:var(--gold-light)}
 
 /* PAGE HERO */
-.page-hero{position:relative;background:var(--sky);min-height:420px;display:flex;align-items:flex-end;overflow:hidden}
+.page-hero{position:relative;background:var(--sky);min-height:460px;display:flex;align-items:flex-end;overflow:hidden}
 .page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18}
 .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,63,110,.97) 40%,rgba(27,63,110,.7) 100%)}
 .page-hero-decor{position:absolute;right:6vw;bottom:0;width:380px;height:380px;border:1px solid rgba(201,168,76,.15);border-radius:50%;transform:translateY(40%)}
@@ -121,21 +121,45 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .page-hero-eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--gold)}
 .page-hero-title{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4rem);color:#fff;line-height:1.08;margin-bottom:1.25rem}
 .page-hero-title em{color:var(--gold);font-style:italic}
-.page-hero-desc{font-size:1rem;color:rgba(255,255,255,.8);line-height:1.75;max-width:560px;margin-bottom:2rem}
+.page-hero-tagline{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.85rem;display:flex;align-items:center;gap:.6rem}
+.page-hero-tagline::before{content:'';display:block;width:16px;height:1px;background:var(--gold-light)}
+.page-hero-desc{font-size:1rem;color:rgba(255,255,255,.8);line-height:1.75;max-width:580px;margin-bottom:2rem}
 .page-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-hero-primary{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;transition:all .25s}
+.btn-hero-primary{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;transition:all .25s}
 .btn-hero-primary:hover{background:var(--gold-light)}
-.btn-hero-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:.9rem 2rem;transition:all .25s}
+.btn-hero-ghost{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:.9rem 2rem;transition:all .25s}
 .btn-hero-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+/* HERO STAT STRIP */
+.hero-stats{position:relative;z-index:2;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);border-top:1px solid rgba(201,168,76,.2);padding:1.25rem 5vw}
+.hero-stats-inner{max-width:1400px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap}
+.hero-stat{flex:1;min-width:160px;padding:0 1.5rem;border-right:1px solid rgba(255,255,255,.12);text-align:center}
+.hero-stat:first-child{padding-left:0;text-align:left}
+.hero-stat:last-child{border-right:none}
+.hero-stat-val{font-family:var(--serif);font-size:1.8rem;color:var(--gold);line-height:1}
+.hero-stat-label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.3rem}
 
 /* PATHWAY STRIP */
 .pathway-strip{background:var(--gold);padding:1.25rem 5vw}
 .pathway-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-.pathway-label{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.6);margin-right:.5rem}
-.pathway-step{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding:.35rem .85rem;background:rgba(13,13,13,.08);transition:background .2s}
+.pathway-label{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.6);margin-right:.5rem}
+.pathway-step{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:.35rem .85rem;background:rgba(13,13,13,.08);transition:background .2s}
 .pathway-step.active{background:var(--ink);color:var(--gold)}
 .pathway-step:hover:not(.active){background:rgba(13,13,13,.15)}
 .pathway-arrow{color:rgba(13,13,13,.4);font-size:.8rem}
+
+/* INTRO BAND */
+.intro-band{background:var(--ivory);border-bottom:1px solid rgba(13,13,13,.07);padding:3rem 5vw}
+.intro-band-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.intro-band-text .intro-band-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem}
+.intro-band-text h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--sky);line-height:1.15;margin-bottom:1rem}
+.intro-band-text h2 em{color:var(--gold);font-style:italic}
+.intro-band-text p{font-size:.95rem;color:rgba(13,13,13,.7);line-height:1.8}
+.intro-band-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.intro-feat{background:#fff;border:1px solid rgba(13,13,13,.07);border-left:3px solid var(--gold);padding:1.1rem 1.25rem}
+.intro-feat-icon{font-size:1.3rem;margin-bottom:.5rem}
+.intro-feat-title{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.3rem}
+.intro-feat-desc{font-size:.82rem;color:rgba(13,13,13,.6);line-height:1.5}
 
 /* MAIN LAYOUT */
 .adm-layout{display:grid;grid-template-columns:1fr 340px;gap:4rem;max-width:1400px;margin:0 auto;padding:5rem 5vw}
@@ -151,58 +175,70 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .elig-card{background:#fff;padding:2rem 1.75rem;position:relative;overflow:hidden}
 .elig-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
 .elig-icon{width:44px;height:44px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem}
-.elig-card h3{font-family:var(--sans);font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:.85rem}
+.elig-card h3{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.85rem}
 .elig-card ul li{font-size:.9rem;color:rgba(13,13,13,.75);line-height:1.6;padding:.35rem 0;border-bottom:1px solid rgba(13,13,13,.05);display:flex;gap:.65rem;align-items:flex-start}
 .elig-card ul li:last-child{border-bottom:none}
 .elig-card ul li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.5rem}
+.elig-card .elig-note{font-size:.78rem;color:rgba(13,13,13,.45);font-style:italic;margin-top:.85rem;padding-top:.85rem;border-top:1px solid rgba(13,13,13,.06)}
 
 /* GRADING */
 .grading-section{margin-bottom:4rem}
 .grading-table-wrap{border:1px solid rgba(13,13,13,.08);overflow:hidden;margin-bottom:1.5rem}
 .grading-table{width:100%;border-collapse:collapse}
 .grading-table thead tr{background:var(--sky)}
-.grading-table thead th{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:.85rem 1.25rem;text-align:left}
+.grading-table thead th{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:.85rem 1.25rem;text-align:left}
 .grading-table tbody tr{border-bottom:1px solid rgba(13,13,13,.06);transition:background .2s}
 .grading-table tbody tr:last-child{border-bottom:none}
 .grading-table tbody tr:hover{background:rgba(201,168,76,.05)}
 .grading-table td{font-size:.875rem;color:var(--ink);padding:.85rem 1.25rem;line-height:1.5}
-.grading-table td:first-child{font-family:var(--sans);font-weight:700;font-size:.8rem}
-.grade-badge{display:inline-block;font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px}
+.grading-table td:first-child{font-family:var(--sans);font-weight:700;font-size:.85rem}
+.grade-badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px}
 .grade-a{background:rgba(61,90,74,.12);color:var(--sage)}
 .grade-b{background:rgba(27,63,110,.1);color:var(--sky)}
 .grade-c{background:rgba(201,168,76,.15);color:var(--gold-dark)}
 .grade-d{background:rgba(181,69,27,.1);color:var(--rust)}
 .grade-f{background:rgba(13,13,13,.08);color:rgba(13,13,13,.55)}
+
+/* HONORS */
 .honors-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
-.honor-card{background:var(--ivory);padding:1.5rem 1.25rem;text-align:center}
-.honor-card-gpa{font-family:var(--serif);font-size:1.6rem;color:var(--gold);margin-bottom:.35rem}
-.honor-card-title{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:.3rem}
+.honor-card{background:var(--ivory);padding:1.75rem 1.25rem;text-align:center;position:relative;overflow:hidden}
+.honor-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold)}
+.honor-card-gpa{font-family:var(--serif);font-size:1.7rem;color:var(--gold);margin-bottom:.35rem}
+.honor-card-title{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:.3rem}
 .honor-card-sub{font-size:.78rem;color:rgba(13,13,13,.55)}
 
 /* GRADUATION REQS */
-.req-bar{display:flex;align-items:stretch;gap:0;background:var(--paper);border:1px solid rgba(13,13,13,.08);margin-bottom:2rem;overflow:hidden}
-.req-bar-item{flex:1;padding:1.25rem 1.5rem;border-right:1px solid rgba(13,13,13,.08)}
+.req-bar{display:flex;align-items:stretch;gap:0;background:var(--sky);margin-bottom:2rem;overflow:hidden}
+.req-bar-item{flex:1;padding:1.5rem 1.75rem;border-right:1px solid rgba(255,255,255,.12)}
 .req-bar-item:last-child{border-right:none}
-.req-bar-label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:.4rem}
-.req-bar-val{font-family:var(--serif);font-size:1.6rem;color:var(--sky);line-height:1}
-.req-bar-desc{font-size:.78rem;color:rgba(13,13,13,.6);margin-top:.25rem}
+.req-bar-label{font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.4rem}
+.req-bar-val{font-family:var(--serif);font-size:1.8rem;color:var(--gold);line-height:1}
+.req-bar-desc{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:.25rem}
 
 /* ACADEMIC INFO */
 .academic-section{margin-bottom:4rem}
 .academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
 .acad-block{background:var(--ivory);border:1px solid rgba(13,13,13,.07);padding:1.75rem}
 .acad-block-icon{font-size:1.5rem;margin-bottom:.85rem}
-.acad-block h4{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold)}
+.acad-block h4{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold)}
 .acad-block ul li{font-size:.875rem;color:rgba(13,13,13,.75);line-height:1.6;padding:.3rem 0;display:flex;gap:.6rem;align-items:flex-start}
 .acad-block ul li::before{content:'→';color:var(--gold);font-size:.8rem;flex-shrink:0;margin-top:.05rem}
 .acad-full{grid-column:1/-1}
 .assessment-split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(13,13,13,.08);border:1px solid rgba(13,13,13,.08)}
 .assess-half{background:#fff;padding:1.75rem}
-.assess-half h5{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:.65rem}
+.assess-half h5{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.65rem}
 .assess-pct{font-family:var(--serif);font-size:3rem;color:var(--gold);line-height:1;margin-bottom:.35rem}
 .assess-desc{font-size:.82rem;color:rgba(13,13,13,.6);line-height:1.55}
 .assess-bar{height:4px;background:rgba(13,13,13,.08);margin-top:1rem;position:relative}
 .assess-bar-fill{height:100%;background:var(--gold);transition:width 1s var(--ease-out)}
+
+/* QUOTE BLOCK */
+.quote-block{background:var(--sky);padding:2.5rem 3rem;margin-bottom:4rem;position:relative;overflow:hidden}
+.quote-block::before{content:'\201C';font-family:var(--serif);font-size:8rem;color:rgba(201,168,76,.15);position:absolute;top:-1rem;left:1.5rem;line-height:1}
+.quote-block-inner{position:relative;z-index:1}
+.quote-block p{font-family:var(--serif);font-size:1.3rem;color:#fff;line-height:1.65;font-style:italic;margin-bottom:1rem}
+.quote-block p em{color:var(--gold);font-style:normal}
+.quote-block-attr{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 
 /* CERTIFICATION */
 .cert-section{margin-bottom:4rem}
@@ -219,36 +255,44 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .pathway-cta{margin-top:1.5rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);padding:1.25rem}
 .pathway-cta p{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--gold-light);margin-bottom:.65rem;text-transform:uppercase}
 .pathway-prog{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-.prog-chip{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.3rem .75rem}
+.prog-chip{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:.3rem .75rem}
 .prog-chip.current{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .prog-arrow{color:rgba(255,255,255,.4);font-size:.85rem}
 
 /* SIDEBAR */
-.adm-sidebar{}
 .sidebar-box{background:var(--ivory);border:1px solid rgba(13,13,13,.07);margin-bottom:2rem;overflow:hidden}
 .sidebar-head{background:var(--sky);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
-.sidebar-head h4{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
-.sidebar-head a{font-family:var(--body);font-size:.72rem;color:var(--gold-light);transition:color .2s}
-.sidebar-head a:hover{color:#fff}
+.sidebar-head h4{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff}
 .sidebar-body{padding:1.25rem}
 .sidebar-apply{background:var(--gold);padding:1.75rem;text-align:center}
 .sidebar-apply h4{font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:.5rem;line-height:1.2}
 .sidebar-apply p{font-size:.825rem;color:rgba(13,13,13,.7);margin-bottom:1.25rem;line-height:1.55}
-.btn-apply-full{display:block;font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.9rem;text-align:center;transition:all .25s}
+.btn-apply-full{display:block;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.9rem;text-align:center;transition:all .25s}
 .btn-apply-full:hover{background:var(--sky)}
 .sidebar-deadline{font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-top:.75rem}
 .sidebar-deadline strong{color:var(--rust)}
 .info-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid rgba(13,13,13,.06);font-size:.855rem}
 .info-row:last-child{border-bottom:none}
-.info-row-label{color:rgba(13,13,13,.5);font-size:.78rem}
-.info-row-val{font-weight:500;text-align:right;color:var(--ink);max-width:160px}
-.quick-sidebar-link{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;font-family:var(--body);font-size:.875rem;color:var(--ink);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
+.info-row-label{color:rgba(13,13,13,.5);font-size:.78rem;font-family:var(--sans)}
+.info-row-val{font-weight:500;text-align:right;color:var(--ink);max-width:160px;font-family:var(--sans)}
+.quick-sidebar-link{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;font-family:var(--sans);font-size:.875rem;color:var(--ink);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
 .quick-sidebar-link:last-child{border-bottom:none}
 .quick-sidebar-link:hover{background:rgba(201,168,76,.07);color:var(--sky);padding-left:1.5rem}
 .quick-sidebar-link span{color:var(--gold);font-size:.9rem}
 .contact-block{padding:1.25rem}
 .contact-block p{font-size:.875rem;color:rgba(13,13,13,.7);line-height:1.6;margin-bottom:1rem}
-.contact-item{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:var(--sky);margin-bottom:.5rem}
+.contact-item{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:var(--sky);margin-bottom:.5rem;font-family:var(--sans)}
+
+/* WHY PGD STRIP */
+.why-strip{background:var(--paper);border-top:1px solid rgba(13,13,13,.07);border-bottom:1px solid rgba(13,13,13,.07);padding:3rem 5vw;margin-bottom:4rem}
+.why-strip h3{font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.8rem);color:var(--sky);margin-bottom:1.75rem}
+.why-strip h3 em{color:var(--gold);font-style:italic}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{background:#fff;border:1px solid rgba(13,13,13,.07);padding:1.5rem;position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.why-card-num{font-family:var(--serif);font-size:2.5rem;color:rgba(201,168,76,.2);line-height:1;margin-bottom:.5rem}
+.why-card h4{font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);margin-bottom:.5rem}
+.why-card p{font-size:.855rem;color:rgba(13,13,13,.65);line-height:1.6}
 
 /* CTA BANNER */
 .cta-banner{position:relative;padding:5rem 5vw;overflow:hidden;background:var(--sky)}
@@ -258,9 +302,9 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .cta-banner-title em{color:var(--gold);font-style:italic}
 .cta-banner-sub{font-size:1rem;color:rgba(255,255,255,.85);line-height:1.6;max-width:500px}
 .cta-banner-btns{display:flex;flex-direction:column;gap:.75rem;min-width:200px}
-.btn-cta-main{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-main{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:1rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-main:hover{background:var(--gold-light)}
-.btn-cta-sec{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:1rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-sec{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:1rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-sec:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
 /* FOOTER */
@@ -269,22 +313,22 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
 .footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
-.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
-.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.3}
+.footer-brand-name small{display:block;font-size:.75rem;letter-spacing:.08em;color:var(--gold)}
 .footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
 .footer-social{display:flex;gap:.6rem}
 .footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
 .footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
 .footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 .footer-social-link:hover img{opacity:1}
-.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col h4{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
 .footer-col ul li{margin-bottom:.7rem}
-.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a{font-size:.875rem;color:#b8b8b8;font-family:var(--sans);transition:all .2s}
 .footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom p{font-size:.8rem;color:#888}
+.footer-bottom p{font-size:.8rem;color:#888;font-family:var(--sans)}
 .footer-legal{display:flex;gap:1.25rem}
-.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a{font-size:.8rem;color:#888;font-family:var(--sans);transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
 /* RESPONSIVE */
@@ -293,6 +337,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   .adm-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
   .adm-sidebar .sidebar-box:first-child{grid-column:1/-1}
   .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .intro-band-inner{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:1050px){
   .top-bar{display:none}
@@ -304,18 +350,26 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   .acad-full{grid-column:auto}
   .honors-cards{grid-template-columns:1fr 1fr}
   .req-bar{flex-direction:column}
-  .req-bar-item{border-right:none;border-bottom:1px solid rgba(13,13,13,.08)}
+  .req-bar-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
   .req-bar-item:last-child{border-bottom:none}
   .cta-banner-inner{grid-template-columns:1fr}
   .cta-banner-btns{flex-direction:row}
   .footer-top{grid-template-columns:1fr;gap:2rem}
   .footer-bottom{flex-direction:column;text-align:center}
+  .hero-stats-inner{gap:0}
+  .hero-stat{min-width:120px}
+}
+@media(max-width:700px){
+  .why-grid{grid-template-columns:1fr}
+  .honors-cards{grid-template-columns:1fr}
 }
 @media(max-width:540px){
-  .honors-cards{grid-template-columns:1fr}
   .assessment-split{grid-template-columns:1fr}
   .cta-banner-btns{flex-direction:column}
   .adm-sidebar{grid-template-columns:1fr}
+  .hero-stats-inner{flex-wrap:wrap}
+  .hero-stat{min-width:45%}
+  .intro-band-features{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -343,7 +397,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234"><span class="tbc-icon">📞</span> +1 (555) 000-1234</a>
     <a href="mailto:info@cbsedu.us"><span class="tbc-icon">✉</span> info@cbsedu.us</a>
     <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
   </div>
@@ -418,7 +471,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <aside class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-head">
-    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <span class="drawer-logo-text">CIML Business School</span>
     <button class="drawer-close" id="drawerClose">✕</button>
   </div>
   <div class="drawer-body">
@@ -455,7 +508,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <img src="assets/images/hero-study.jpg" alt="Advanced Diploma Program" class="page-hero-bg">
+  <img src="assets/images/hero-study.jpg" alt="Postgraduate Diploma Program" class="page-hero-bg">
   <div class="page-hero-overlay"></div>
   <div class="page-hero-decor"></div>
   <div class="page-hero-decor2"></div>
@@ -465,14 +518,39 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <span class="breadcrumb-sep">›</span>
       <a href="#">Admissions</a>
       <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-current">Advanced Diploma</span>
+      <span class="breadcrumb-current">Postgraduate Diploma</span>
     </div>
     <div class="page-hero-eyebrow">Admissions Guide</div>
-    <h1 class="page-hero-title">Advanced Diploma<br><em>Program</em></h1>
-    <p class="page-hero-desc">Eligibility requirements, grading structure, academic credit information, and certification details for the CIML Business School Advanced Diploma Program.</p>
+    <h1 class="page-hero-title">Postgraduate Diploma<br><em>Program</em></h1>
+    <div class="page-hero-tagline">Where Expertise Meets Executive Vision</div>
+    <p class="page-hero-desc">Step into a qualification designed for serious professionals. The CIML Business School Postgraduate Diploma bridges deep academic rigour with real-world executive practice — your decisive move toward the MBA and beyond.</p>
     <div class="page-hero-actions">
       <a href="app.html" class="btn-hero-primary">Apply Now</a>
-      <a href="avd.html" class="btn-hero-ghost">View Program Details</a>
+      <a href="pgd.html" class="btn-hero-ghost">View Program Details</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hero-stat">
+        <div class="hero-stat-val">42–48</div>
+        <div class="hero-stat-label">Credit Hours</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">2.5</div>
+        <div class="hero-stat-label">Min. GPA to Graduate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">21+</div>
+        <div class="hero-stat-label">Minimum Entry Age</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">100%</div>
+        <div class="hero-stat-label">English Instruction</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">MBA</div>
+        <div class="hero-stat-label">Direct Pathway</div>
+      </div>
     </div>
   </div>
 </section>
@@ -483,13 +561,46 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <span class="pathway-label">Program Pathway:</span>
     <a href="rdp.html" class="pathway-step">Diploma</a>
     <span class="pathway-arrow">→</span>
-    <span class="pathway-step active">Advanced Diploma</span>
+    <a href="ravd.html" class="pathway-step">Advanced Diploma</a>
     <span class="pathway-arrow">→</span>
-    <a href="rpgd.html" class="pathway-step">Postgrad Diploma</a>
+    <span class="pathway-step active">Postgrad Diploma</span>
     <span class="pathway-arrow">→</span>
     <a href="rmba.html" class="pathway-step">MBA</a>
     <span class="pathway-arrow">→</span>
     <a href="rdba.html" class="pathway-step">DBA</a>
+  </div>
+</div>
+
+<!-- INTRO BAND -->
+<div class="intro-band">
+  <div class="intro-band-inner">
+    <div class="intro-band-text">
+      <div class="intro-band-eyebrow">Why the Postgraduate Diploma?</div>
+      <h2>Elevate your thinking.<br><em>Lead with authority.</em></h2>
+      <p>The Postgraduate Diploma is not simply another qualification — it is a strategic inflection point in your career. Designed for ambitious graduates and seasoned professionals alike, this program equips you with the analytical depth, leadership acumen, and global business perspective that distinguish truly transformational leaders.</p>
+    </div>
+    <div class="intro-band-features">
+      <div class="intro-feat">
+        <div class="intro-feat-icon">🎯</div>
+        <div class="intro-feat-title">Precision Learning</div>
+        <div class="intro-feat-desc">Focused specialization modules tailored to your chosen career pathway</div>
+      </div>
+      <div class="intro-feat">
+        <div class="intro-feat-icon">🌍</div>
+        <div class="intro-feat-title">Global Recognition</div>
+        <div class="intro-feat-desc">Credentials validated by California University FCE and recognised internationally</div>
+      </div>
+      <div class="intro-feat">
+        <div class="intro-feat-icon">⚡</div>
+        <div class="intro-feat-title">Flexible Delivery</div>
+        <div class="intro-feat-desc">Structured for working professionals without compromising academic rigour</div>
+      </div>
+      <div class="intro-feat">
+        <div class="intro-feat-icon">🏆</div>
+        <div class="intro-feat-title">MBA Gateway</div>
+        <div class="intro-feat-desc">The definitive academic bridge to the Master of Business Administration</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -499,17 +610,18 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
     <!-- ELIGIBILITY -->
     <div class="eligibility-section">
-      <div class="section-eyebrow">Who Can Apply</div>
+      <div class="section-eyebrow">Who Qualifies</div>
       <h2 class="section-title">Eligibility Criteria</h2>
       <div class="eligibility-grid">
         <div class="elig-card">
           <div class="elig-icon">🎓</div>
           <h3>Academic Background</h3>
           <ul>
-            <li>High School Diploma or GED</li>
-            <li>Completion of CIML Business School Diploma (or equivalent qualification)</li>
-            <li>Mature entry may be considered for applicants with substantial professional experience</li>
+            <li>A Bachelor's degree (or equivalent qualification) from a recognised institution</li>
+            <li>Alternatively, completion of the CIML Business School Advanced Diploma with strong academic performance</li>
+            <li>Mature entry may be considered for professionals with substantial managerial experience</li>
           </ul>
+          <div class="elig-note">Exceptional candidates from industry leadership roles are encouraged to apply under the mature entry pathway — your professional track record speaks powerfully.</div>
         </div>
         <div class="elig-card">
           <div class="elig-icon">🌐</div>
@@ -518,15 +630,37 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
             <li>Instruction is conducted entirely in English</li>
             <li>Prior education completed in English, or</li>
             <li>Standardized test results (e.g., TOEFL, IELTS), or</li>
-            <li>Successful completion of CIML's internal English assessment</li>
+            <li>Successful completion of CIML Business School's internal English assessment</li>
           </ul>
         </div>
         <div class="elig-card" style="grid-column:1/-1">
           <div class="elig-icon">📋</div>
           <h3>Age Requirement</h3>
           <ul>
-            <li>Minimum age of 18 years at the time of admission</li>
+            <li>Minimum age of 21 years at the time of admission — reflecting the program's postgraduate and professional character</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY PGD STRIP -->
+    <div class="why-strip">
+      <h3>Three reasons the PGD <em>changes everything</em></h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-num">01</div>
+          <h4>Postgraduate Credibility</h4>
+          <p>Gain a credential that signals genuine postgraduate-level mastery — recognised by employers, academic institutions, and professional bodies worldwide.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-num">02</div>
+          <h4>The MBA Within Reach</h4>
+          <p>The PGD is the most direct academic bridge to the MBA at CIML Business School. Graduate with momentum and step straight into master's-level study.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-num">03</div>
+          <h4>Real-World Specialisation</h4>
+          <p>Choose a specialisation pathway that maps directly to your industry ambitions — from global business management to entrepreneurship and beyond.</p>
         </div>
       </div>
     </div>
@@ -538,8 +672,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <div class="req-bar">
         <div class="req-bar-item">
           <div class="req-bar-label">Minimum Overall GPA</div>
-          <div class="req-bar-val">2.0</div>
-          <div class="req-bar-desc">C average required to graduate</div>
+          <div class="req-bar-val">2.5</div>
+          <div class="req-bar-desc">C+ average required to graduate</div>
         </div>
         <div class="req-bar-item">
           <div class="req-bar-label">Minimum Grade Per Module</div>
@@ -548,7 +682,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         </div>
         <div class="req-bar-item">
           <div class="req-bar-label">Total Credit Hours</div>
-          <div class="req-bar-val">36–42</div>
+          <div class="req-bar-val">42–48</div>
           <div class="req-bar-desc">Semester credit hours</div>
         </div>
       </div>
@@ -634,7 +768,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
 
       <!-- HONORS -->
-      <div class="section-eyebrow" style="margin-top:2.5rem">Honors Distinctions</div>
+      <div class="section-eyebrow" style="margin-top:2.5rem">Distinctions of Excellence</div>
       <h2 class="section-title">Academic Honors</h2>
       <div class="honors-cards">
         <div class="honor-card">
@@ -655,6 +789,14 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
+    <!-- QUOTE BLOCK -->
+    <div class="quote-block">
+      <div class="quote-block-inner">
+        <p>The Postgraduate Diploma is where intellectual ambition meets <em>professional destiny</em> — the credential that tells the world you are ready to lead at the highest level.</p>
+        <div class="quote-block-attr">CIML Business School — Academic Philosophy</div>
+      </div>
+    </div>
+
     <!-- ACADEMIC INFO -->
     <div class="academic-section">
       <div class="section-eyebrow">Program Structure</div>
@@ -664,9 +806,9 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
           <div class="acad-block-icon">📐</div>
           <h4>Credit Hours Breakdown</h4>
           <ul>
-            <li>Total: 36–42 semester credit hours</li>
-            <li>Core Modules: 18–21 credit hours</li>
-            <li>Specialization Modules: 18–21 credit hours (depending on chosen pathway)</li>
+            <li>Total: 42–48 semester credit hours</li>
+            <li>Core Modules: 21–24 credit hours</li>
+            <li>Specialization Modules: 21–24 credit hours (depending on chosen pathway)</li>
             <li>Each module equals 3 credit hours</li>
           </ul>
         </div>
@@ -686,13 +828,13 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
             <div class="assess-half">
               <h5>Continuous Assessment</h5>
               <div class="assess-pct">40%</div>
-              <div class="assess-desc">Assignments, projects, and case studies submitted throughout the semester to assess ongoing understanding and application.</div>
+              <div class="assess-desc">Assignments, projects, case studies, and research papers submitted throughout the semester — assessing ongoing analytical and applied thinking.</div>
               <div class="assess-bar"><div class="assess-bar-fill" style="width:40%"></div></div>
             </div>
             <div class="assess-half">
               <h5>Final Examination</h5>
               <div class="assess-pct">60%</div>
-              <div class="assess-desc">End-of-module examination assessing comprehensive knowledge and critical thinking across all covered topics.</div>
+              <div class="assess-desc">End-of-module examination assessing comprehensive knowledge, strategic reasoning, and critical thinking across all covered topics.</div>
               <div class="assess-bar"><div class="assess-bar-fill" style="width:60%"></div></div>
             </div>
           </div>
@@ -708,22 +850,23 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <div class="cert-box-decor"></div>
         <div class="cert-box-decor2"></div>
         <div class="cert-box-inner">
-          <h3>Your <em>Advanced Diploma</em> credential</h3>
-          <p>Graduates of the Advanced Diploma program receive an internationally recognised credential, benchmarked against rigorous U.S. academic standards and validated through our global academic partnerships.</p>
+          <h3>A credential the world <em>recognises</em></h3>
+          <p>Your Postgraduate Diploma from CIML Business School is more than a certificate — it is a globally validated testament to your intellectual depth, professional capability, and readiness for executive-level leadership.</p>
           <ul>
-            <li>Advanced Diploma certificate issued by CIML Business School</li>
-            <li>Validated by California University FCE and benchmarked against U.S. academic standards</li>
-            <li>CIML collaborates with government-accredited universities and institutions worldwide to ensure recognition and equivalency</li>
-            <li>Internationally recognised credential accepted by employers and academic institutions globally</li>
+            <li>Postgraduate Diploma certificate issued by CIML Business School</li>
+            <li>Validated by California University FCE and benchmarked against rigorous U.S. academic standards</li>
+            <li>CIML Business School collaborates with government-accredited universities and institutions worldwide to ensure recognition and equivalency</li>
+            <li>Internationally recognised credential accepted by employers and academic institutions across the globe</li>
+            <li>The PGD serves as the definitive gateway to the MBA — and from there, to the DBA</li>
           </ul>
           <div class="pathway-cta">
-            <p>Your pathway to higher qualifications</p>
+            <p>Your complete pathway to academic and professional excellence</p>
             <div class="pathway-prog">
               <span class="prog-chip">Diploma</span>
               <span class="prog-arrow">→</span>
-              <span class="prog-chip current">Advanced Diploma</span>
+              <span class="prog-chip">Adv. Diploma</span>
               <span class="prog-arrow">→</span>
-              <span class="prog-chip">PGD</span>
+              <span class="prog-chip current">PGD</span>
               <span class="prog-arrow">→</span>
               <span class="prog-chip">MBA</span>
               <span class="prog-arrow">→</span>
@@ -740,8 +883,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   <aside class="adm-sidebar">
     <div class="sidebar-box">
       <div class="sidebar-apply">
-        <h4>Ready to Advance Your Career?</h4>
-        <p>Applications for the 2026 Advanced Diploma intake are now open. Secure your place today.</p>
+        <h4>Your Next Chapter Begins Here</h4>
+        <p>Applications for the 2026 Postgraduate Diploma intake are now open. Secure your place and take the decisive step forward.</p>
         <a href="app.html" class="btn-apply-full">Apply for 2026 →</a>
         <div class="sidebar-deadline">Deadline: <strong>March 31, 2026</strong></div>
       </div>
@@ -756,7 +899,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         </div>
         <div class="info-row">
           <span class="info-row-label">Total Credits</span>
-          <span class="info-row-val">36–42 Credit Hours</span>
+          <span class="info-row-val">42–48 Credit Hours</span>
         </div>
         <div class="info-row">
           <span class="info-row-label">Modules/Semester</span>
@@ -764,7 +907,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         </div>
         <div class="info-row">
           <span class="info-row-label">Min. GPA to Graduate</span>
-          <span class="info-row-val">2.0 (C Average)</span>
+          <span class="info-row-val">2.5 (C+ Average)</span>
         </div>
         <div class="info-row">
           <span class="info-row-label">Min. Pass Per Module</span>
@@ -776,7 +919,11 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         </div>
         <div class="info-row">
           <span class="info-row-label">Minimum Age</span>
-          <span class="info-row-val">18 Years</span>
+          <span class="info-row-val">21 Years</span>
+        </div>
+        <div class="info-row">
+          <span class="info-row-label">Entry Requirement</span>
+          <span class="info-row-val">Bachelor's Degree or CIML Advanced Diploma</span>
         </div>
         <div class="info-row">
           <span class="info-row-label">Validated By</span>
@@ -797,8 +944,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <div class="sidebar-box">
       <div class="sidebar-head"><h4>Need Assistance?</h4></div>
       <div class="contact-block">
-        <p>Our admissions team is available to guide you through the application process and answer any questions.</p>
-        <div class="contact-item">📞 <a href="tel:+15550001234" style="color:var(--sky)">+1 (555) 000-1234</a></div>
+        <p>Our admissions team is ready to guide you through every step of the application process. Reach out — we are here for you.</p>
         <div class="contact-item">✉ <a href="mailto:info@cbsedu.us" style="color:var(--sky)">info@cbsedu.us</a></div>
       </div>
     </div>
@@ -810,12 +956,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   <img src="assets/images/offering-mba.jpg" alt="" class="cta-banner-img">
   <div class="cta-banner-inner">
     <div>
-      <h2 class="cta-banner-title">Your pathway to leadership<br>starts <em>here</em></h2>
-      <p class="cta-banner-sub">The Advanced Diploma is your next step toward the Postgraduate Diploma, MBA, and beyond. Apply for the 2026 intake and accelerate your professional journey.</p>
+      <h2 class="cta-banner-title">The MBA is closer<br>than you <em>think</em></h2>
+      <p class="cta-banner-sub">The Postgraduate Diploma is your most powerful step toward the MBA and a career defined by impact. Apply for the 2026 intake and let your ambition set the pace.</p>
     </div>
     <div class="cta-banner-btns">
       <a href="app.html" class="btn-cta-main">Apply for 2026</a>
-      <a href="avd.html" class="btn-cta-sec">Explore Program</a>
+      <a href="pgd.html" class="btn-cta-sec">Explore Program</a>
     </div>
   </div>
 </section>
@@ -826,8 +972,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School<small>Shaping Tomorrow</small></div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -851,7 +997,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <div class="footer-col">
         <h4>Institution</h4>
         <ul>
-          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="ov.html">About CIML Business School</a></li>
           <li><a href="ov.html">Overview</a></li>
           <li><a href="acc.html">Accreditation</a></li>
           <li><a href="wcs.html">Why Choose Us</a></li>
@@ -862,7 +1008,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <h4>Contact</h4>
         <ul>
           <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
-          <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
           <li><a href="app.html">Admissions / Apply</a></li>
           <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
           <li><a href="cm.html">Campus Map</a></li>
@@ -908,7 +1053,6 @@ document.querySelectorAll('.drawer-has-sub').forEach(link=>{
 
 window.addEventListener('resize',()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
 
-// Animate assessment bars on scroll
 const bars = document.querySelectorAll('.assess-bar-fill');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

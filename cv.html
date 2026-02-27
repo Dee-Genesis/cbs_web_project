@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Core Values — CIML Business School</title>
+<title>Core Values — CIML Business School — Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
@@ -14,7 +14,7 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --sky:#1B3F6E;--sky-deep:#112b4e;
   --serif:'DM Serif Display',Georgia,serif;
-  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --sans:'Cambria','Georgia',serif;--body:'DM Sans',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -52,12 +52,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
 .logo-img{height:42px;width:auto;object-fit:contain}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
-.logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
-.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name{display:flex;flex-direction:column;font-family:'Cambria','Georgia',serif;text-transform:uppercase;line-height:1.2}
+.logo-name-top{font-size:.9rem;font-weight:700;letter-spacing:.08em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:700;letter-spacing:.1em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:'Cambria','Georgia',serif;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after{transform:scaleX(1)}
@@ -67,12 +67,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:'Cambria','Georgia',serif;font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover,.drop-panel a.active-sub{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:'Cambria','Georgia',serif;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:var(--ink);border:2px solid var(--ink);padding:.45rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:'Cambria','Georgia',serif;font-size:.8rem;font-weight:700;letter-spacing:.01em;background:var(--gold);color:var(--ink);padding:.45rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -86,22 +86,22 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-drawer.open{transform:translateX(0)}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text{font-family:'Cambria','Georgia',serif;font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .drawer-logo-text em{color:var(--gold);font-style:normal}
 .drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
 .drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .drawer-body{flex:1;padding:1.5rem}
 .drawer-item{border-bottom:1px solid rgba(255,255,255,.1)}
-.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:.875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
+.drawer-link{display:flex;align-items:center;justify-content:space-between;font-family:'Cambria','Georgia',serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:1rem 0;transition:color .2s}
 .drawer-link:hover{color:var(--gold)}
 .drawer-plus{color:var(--gold);font-size:1.2rem;transition:transform .3s}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:'Cambria','Georgia',serif;font-size:1rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover,.drawer-sub a.active-sub{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
-.drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
+.drawer-btn{display:block;text-align:center;font-family:'Cambria','Georgia',serif;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
 .drawer-btn-outline{color:#fff;border:1.5px solid rgba(255,255,255,.4)}
 .drawer-btn-outline:hover{border-color:#fff}
 .drawer-btn-gold{background:var(--gold);color:var(--ink)}
@@ -160,25 +160,25 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 /* SIDEBAR */
 .sidebar-info-box{background:var(--sky);padding:2rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
 .sidebar-info-box::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
-.sidebar-info-box-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.sidebar-info-box-label{font-family:'Cambria','Georgia',serif;font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
 .sidebar-info-box-label::before{content:'';display:block;width:16px;height:2px;background:var(--gold)}
 .sidebar-info-box h3{font-family:var(--serif);font-size:1.3rem;color:#fff;line-height:1.25;margin-bottom:.85rem}
 .sidebar-info-box p{font-size:.875rem;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1.25rem}
-.value-pill{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);padding:.4rem .8rem;margin:.25rem .25rem .25rem 0;border:1px solid rgba(255,255,255,.12);border-radius:0;transition:all .2s}
+.value-pill{display:inline-flex;align-items:center;gap:.5rem;font-family:'Cambria','Georgia',serif;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);padding:.4rem .8rem;margin:.25rem .25rem .25rem 0;border:1px solid rgba(255,255,255,.12);border-radius:0;transition:all .2s}
 .value-pill:hover{background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.4);color:#fff}
 .value-pill-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0}
 
 /* PROGRAMS BOX */
 .sidebar-programs-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
 .sidebar-programs-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
-.sidebar-programs-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
-.sidebar-programs-head a{font-size:.72rem;color:var(--gold-light);transition:color .2s}
+.sidebar-programs-head h4{font-family:'Cambria','Georgia',serif;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.sidebar-programs-head a{font-family:'Cambria','Georgia',serif;font-size:.95rem;color:var(--gold-light);transition:color .2s}
 .sidebar-programs-head a:hover{color:var(--gold)}
 .program-link-item{display:flex;align-items:center;padding:.9rem 1.25rem;border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s;gap:.85rem}
 .program-link-item:last-child{border-bottom:none}
 .program-link-item:hover{background:rgba(201,168,76,.05);padding-left:1.5rem}
-.program-link-badge{font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--sky);color:#fff;padding:.2rem .5rem;flex-shrink:0}
-.program-link-name{font-size:.875rem;color:var(--ink);flex:1;transition:color .2s}
+.program-link-badge{font-family:'Cambria','Georgia',serif;font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--sky);color:#fff;padding:.2rem .5rem;flex-shrink:0}
+.program-link-name{font-family:'Cambria','Georgia',serif;font-size:.875rem;color:var(--ink);flex:1;transition:color .2s}
 .program-link-item:hover .program-link-name{color:var(--sky)}
 .program-link-arrow{color:var(--gold);font-size:.8rem;opacity:0;transition:all .2s}
 .program-link-item:hover .program-link-arrow{opacity:1}
@@ -186,8 +186,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 /* ABOUT NAV */
 .sidebar-nav-box{border:1px solid rgba(13,13,13,.08)}
 .sidebar-nav-head{background:var(--gold);padding:.85rem 1.25rem}
-.sidebar-nav-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-.sidebar-nav-link{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;font-size:.875rem;color:rgba(13,13,13,.65);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
+.sidebar-nav-head h4{font-family:'Cambria','Georgia',serif;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.sidebar-nav-link{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;font-family:'Cambria','Georgia',serif;font-size:.875rem;color:rgba(13,13,13,.65);border-bottom:1px solid rgba(13,13,13,.06);transition:all .2s}
 .sidebar-nav-link:last-child{border-bottom:none}
 .sidebar-nav-link:hover{background:rgba(201,168,76,.07);color:var(--sky);font-weight:500;padding-left:1.5rem}
 .sidebar-nav-link.active{border-left:3px solid var(--gold);padding-left:1.1rem;color:var(--ink);font-weight:600}
@@ -200,9 +200,9 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .page-cta h2 em{color:var(--gold-dark);font-style:italic}
 .page-cta p{font-size:.95rem;color:rgba(13,13,13,.6);line-height:1.65;max-width:500px}
 .page-cta-btns{display:flex;flex-direction:column;gap:.75rem;min-width:190px}
-.btn-cta-gold{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-gold{font-family:'Cambria','Georgia',serif;font-size:.95rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.9rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-gold:hover{background:var(--gold-dark);color:#fff}
-.btn-cta-outline{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.9rem 2rem;text-align:center;transition:all .25s}
+.btn-cta-outline{font-family:'Cambria','Georgia',serif;font-size:.95rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.9rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-outline:hover{background:var(--ink);color:#fff}
 
 /* FOOTER */
@@ -211,8 +211,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
 .footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
-.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
-.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand-name{font-family:'Cambria','Georgia',serif;font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
+.footer-brand-name small{display:block;font-size:1.15rem;letter-spacing:.12em;color:var(--gold)}
 .footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
 .footer-social{display:flex;gap:.6rem}
 .footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
@@ -220,14 +220,14 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-social-link img[src$=".jpg"]{mix-blend-mode:screen;}
 .footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 .footer-social-link:hover img{opacity:1}
-.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col h4{font-family:'Cambria','Georgia',serif;font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
 .footer-col ul li{margin-bottom:.7rem}
-.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a{font-family:'Cambria','Georgia',serif;font-size:.875rem;color:#b8b8b8;transition:all .2s}
 .footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom p{font-size:.8rem;color:#888}
+.footer-bottom p{font-family:'Cambria','Georgia',serif;font-size:.8rem;color:#888}
 .footer-legal{display:flex;gap:1.25rem}
-.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a{font-family:'Cambria','Georgia',serif;font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
 /* RESPONSIVE */
@@ -278,8 +278,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234">📞 +1 (555) 000-1234</a>
-    <a href="mailto:info@cbsedu.us">✉ info@cbsedu.us</a>
+     <a href="mailto:info@cbsedu.us">✉ info@cbsedu.us</a>
+
     <a href="cm.html">📍 View Campus Map</a>
   </div>
   <div class="top-bar-social">
@@ -428,7 +428,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
     <div class="cv-body">
       <p>
-        These principles reflect our unwavering commitment to excellence, integrity, and innovation. They shape the culture of our institution, inform the design of our programs, and define the character of our graduates. At CIML, values are not words on a wall — they are lived every day by our faculty, staff, and students.
+        These principles reflect our unwavering commitment to excellence, integrity, and innovation. They shape the culture of our institution, inform the design of our programs, and define the character of our graduates. At CIML Business School, values are not words on a wall — they are lived every day by our faculty, staff, and students.
       </p>
     </div>
 
@@ -479,7 +479,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
     <!-- CLOSING STATEMENT -->
     <div class="cv-closing">
-      <p>By living these values, <strong>CIML Business School</strong> ensures that our graduates are not only skilled professionals but also responsible leaders who contribute positively to society and the world. These principles are our promise to every student who chooses CIML.</p>
+      <p>By living these values, <strong>CIML Business School</strong> ensures that our graduates are not only skilled professionals but also responsible leaders who contribute positively to society and the world. These principles are our promise to every student who chooses CIML Business School.</p>
     </div>
 
   </main>
@@ -570,8 +570,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School</div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -605,8 +605,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
-          <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#a0c9cec6cfe0c3c2d3c5c4d58ed5d3"><span class="__cf_email__" data-cfemail="0a63646c654a6968796f6e7f247f79">[email&#160;protected]</span></a></li>
           <li><a href="app.html">Admissions / Apply</a></li>
           <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
           <li><a href="cm.html">Campus Map</a></li>
@@ -623,7 +622,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const header=document.getElementById('siteHeader');
 window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
 
@@ -643,14 +642,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
 document.querySelectorAll('.drawer-has-sub').forEach(link=>{
   link.addEventListener('click',function(e){
     e.preventDefault();
-    const parent=this.closest('.drawer-item');
-    const isOpen=parent.classList.contains('open');
-    document.querySelectorAll('.drawer-item').forEach(i=>i.classList.remove('open'));
-    if(!isOpen)parent.classList.add('open');
-  });
-});
-
-window.addEventListener('resize',()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
-</script>
-</body>
-</html>
+    c

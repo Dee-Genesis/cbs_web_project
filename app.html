@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apply Now — CIML Business School</title>
+<title>Apply Now — CIML Business School — Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +14,7 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --sky:#1B3F6E;--sky-light:#2A5BA3;
   --serif:'DM Serif Display',Georgia,serif;
-  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --sans:'Cambria','Georgia',serif;--body:'DM Sans',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
   --red:#C0392B;--green:#27AE60;
 }
@@ -55,10 +55,10 @@ input,select,textarea{font-family:var(--body)}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
 .logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
 .logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
@@ -66,12 +66,12 @@ input,select,textarea{font-family:var(--body)}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.5rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.5rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -97,7 +97,7 @@ input,select,textarea{font-family:var(--body)}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
 .drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
@@ -289,12 +289,12 @@ input,select,textarea{font-family:var(--body)}
 .footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 .footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
 .footer-col ul li{margin-bottom:.7rem}
-.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a{font-family:var(--sans);font-size:.875rem;color:#b8b8b8;transition:all .2s}
 .footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom p{font-size:.8rem;color:#888}
+.footer-bottom p{font-size:.8rem;color:#888;font-family:var(--sans)}
 .footer-legal{display:flex;gap:1.25rem}
-.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a{font-family:var(--sans);font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
 /* ── TOAST POPUP ── */
@@ -395,7 +395,6 @@ input,select,textarea{font-family:var(--body)}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15052951352"><span class="tbc-icon">📞</span> 505 295 1352</a>
     <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
   </div>
   <div class="top-bar-social">
@@ -469,7 +468,7 @@ input,select,textarea{font-family:var(--body)}
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <aside class="mobile-drawer" id="mobileDrawer">
   <div class="drawer-head">
-    <span class="drawer-logo-text">CIML <em>Business School</em></span>
+    <span class="drawer-logo-text">CIML Business School</span>
     <button class="drawer-close" id="drawerClose">&#x2715;</button>
   </div>
   <div class="drawer-body">
@@ -517,7 +516,7 @@ input,select,textarea{font-family:var(--body)}
       </nav>
       <div class="page-hero-tag">Application Portal — 2026 Intake</div>
       <h1>Begin Your <em>Application</em></h1>
-      <p>Complete the form below to apply for your chosen CIML program. Applications are reviewed on a rolling basis — early applicants receive priority consideration.</p>
+      <p>Complete the form below to apply for your chosen CIML Business School program. Applications are reviewed on a rolling basis — early applicants receive priority consideration.</p>
     </div>
   </div>
 </section>
@@ -633,9 +632,9 @@ input,select,textarea{font-family:var(--body)}
           <label>Study Mode <span class="req">*</span></label>
           <select id="studyMode" required>
             <option value="">Select Mode</option>
-            <option value="Full-Time">Full-Time</option>
-            <option value="Part-Time">Part-Time</option>
-            <option value="Online / Distance">Online / Distance</option>
+            <option value="Self-Study">Self-Study</option>
+            <option value="Online">Online</option>
+            <option value="Distant Learning">Distant Learning</option>
           </select>
         </div>
       </div>
@@ -661,7 +660,7 @@ input,select,textarea{font-family:var(--body)}
           </select>
         </div>
         <div class="field">
-          <label>How did you hear about CIML?</label>
+          <label>How did you hear about CIML Business School?</label>
           <select id="referralSource">
             <option value="">Select Source</option>
             <option>Search Engine (Google, Bing)</option>
@@ -787,9 +786,9 @@ input,select,textarea{font-family:var(--body)}
           <select id="highestQual" required>
             <option value="">Select Qualification</option>
             <option>High School Diploma / GED</option>
-            <option>Diploma (CIML or equivalent)</option>
-            <option>Advanced Diploma (CIML or equivalent)</option>
-            <option>Postgraduate Diploma (CIML or equivalent)</option>
+            <option>Diploma (CIML Business School or equivalent)</option>
+            <option>Advanced Diploma (CIML Business School or equivalent)</option>
+            <option>Postgraduate Diploma (CIML Business School or equivalent)</option>
             <option>Bachelor's Degree (B.Sc, B.A, B.Eng, etc.)</option>
             <option>Master's Degree (MBA, MSc, MA, etc.)</option>
             <option>Doctoral Degree (PhD, DBA, etc.)</option>
@@ -849,7 +848,7 @@ input,select,textarea{font-family:var(--body)}
           <label class="radio-opt"><input type="radio" name="english" value="Prior Education in English"> Prior education in English</label>
           <label class="radio-opt"><input type="radio" name="english" value="TOEFL"> TOEFL</label>
           <label class="radio-opt"><input type="radio" name="english" value="IELTS"> IELTS</label>
-          <label class="radio-opt"><input type="radio" name="english" value="Internal Assessment"> CIML Internal Assessment</label>
+          <label class="radio-opt"><input type="radio" name="english" value="Internal Assessment"> CIML Business School Internal Assessment</label>
           <label class="radio-opt"><input type="radio" name="english" value="Native Speaker"> Native English Speaker</label>
         </div>
       </div>
@@ -1166,8 +1165,8 @@ input,select,textarea{font-family:var(--body)}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School</div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -1191,7 +1190,7 @@ input,select,textarea{font-family:var(--body)}
       <div class="footer-col">
         <h4>Institution</h4>
         <ul>
-          <li><a href="ov.html">About CIML</a></li>
+          <li><a href="ov.html">About CIML Business School</a></li>
           <li><a href="acc.html">Accreditation</a></li>
           <li><a href="wcs.html">Why Choose Us</a></li>
           <li><a href="act.html">Academic Tools</a></li>
@@ -1301,7 +1300,7 @@ document.querySelectorAll('.step-item').forEach(function(item){
 // ============ PROGRAM INFO HINT ============
 var progInfo = {
   'Diploma Program':                             'Foundation Level · Min. age 18 · High School Diploma or GED required.',
-  'Advanced Diploma Program':                    'Intermediate Level · Min. age 18 · Diploma (CIML or equivalent) required.',
+  'Advanced Diploma Program':                    'Intermediate Level · Min. age 18 · Diploma (CIML Business School or equivalent) required.',
   'Post Graduate Diploma':                       'Postgraduate Level · Min. age 21 · Bachelor\'s degree or Advanced Diploma required.',
   'Master of Business Administration (MBA)':     'Masters Level · Min. age 21 · Bachelor\'s degree or PGD required. 60–66 credit hours.',
   'Doctor of Business Administration (DBA)':     'Doctoral Level · MBA or equivalent required · 5–7 years executive experience. 90–96 credit hours.'

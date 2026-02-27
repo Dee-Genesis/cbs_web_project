@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Master of Business Administration (MBA) — CIML Business School</title>
+<title>Master of Business Administration (MBA) — CIML Business School | Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -15,7 +15,7 @@
   --sky:#1B3F6E;--sky-deep:#112b4e;--sky-mid:#254f8a;
   --sky-pale:#EEF3FA;--rust:#8B2000;
   --serif:"DM Serif Display",Georgia,serif;
-  --sans:"Syne",sans-serif;--body:"DM Sans",sans-serif;
+  --sans:'Cambria','Georgia',serif;--body:"DM Sans",sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -25,7 +25,6 @@ img{display:block;max-width:100%}
 ul{list-style:none}
 button{cursor:pointer;background:none;border:none;font-family:inherit}
 
-/* ── NEWS TICKER ─────────────────────── */
 .news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
 .ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
 .ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
@@ -34,7 +33,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .ticker-track span::before{content:"\2022";margin-right:1rem;color:var(--gold)}
 @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── TOP BAR ─────────────────────────── */
 .top-bar{background:#1e2a3a;padding:.6rem 5vw;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}
 .top-bar-contact{display:flex;gap:2rem;align-items:center}
 .top-bar-contact a{font-family:var(--body);font-size:.8rem;color:#e0e0e0;display:flex;align-items:center;gap:.4rem;transition:color .2s}
@@ -44,7 +42,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .top-bar-social a img{width:13px;height:13px;object-fit:contain;filter:invert(1);opacity:.85;display:block}
 .top-bar-social a:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 
-/* ── HEADER ──────────────────────────── */
 .site-header{background:#fff;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:900;transition:box-shadow .3s}
 .site-header.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.1)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:0 3vw;height:80px;max-width:1600px;margin:0 auto;gap:1rem}
@@ -53,10 +50,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
 .logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
 .logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a,.primary-nav li.active>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after,.primary-nav li.active>a::after{transform:scaleX(1)}
@@ -64,12 +61,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:260px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover,.drop-panel a.active-sub{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.5rem .75rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.5rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -77,7 +74,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .hamburger.open i:nth-child(2){opacity:0}
 .hamburger.open i:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
-/* ── MOBILE DRAWER ───────────────────── */
 .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:850;opacity:0;pointer-events:none;transition:opacity .3s}
 .mobile-overlay.open{opacity:1;pointer-events:all}
 .mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
@@ -95,7 +91,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover,.drawer-sub a.active-sub{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
 .drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
@@ -103,66 +99,43 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-btn-gold{background:var(--gold);color:var(--ink)}
 .drawer-btn-gold:hover{background:var(--gold-light)}
 
-/* ── MBA HERO ── (flagship full-bleed split) ── */
 .mba-hero{position:relative;min-height:600px;display:grid;grid-template-columns:55% 45%;overflow:hidden;background:var(--sky-deep)}
-
-/* Left panel */
 .mba-hero-left{position:relative;padding:5rem 5vw 5rem 5vw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;z-index:1}
-
-/* Decorative corner accent: large gold arc */
 .mba-hero-left::before{content:"";position:absolute;top:-100px;left:-100px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,168,76,.12);pointer-events:none}
 .mba-hero-left::after{content:"";position:absolute;top:-60px;left:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,168,76,.08);pointer-events:none}
-
-/* Vertical gold bar accent */
 .hero-accent-bar{position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent 0%,var(--gold) 30%,var(--gold) 70%,transparent 100%);opacity:.5}
 .hero-accent-bar2{position:absolute;top:0;right:10px;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.3),transparent);opacity:.4}
-
 .mba-hero-inner{max-width:640px;position:relative;z-index:1}
 .prog-breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1.75rem}
 .prog-breadcrumb a{color:rgba(255,255,255,.4);transition:color .2s}
 .prog-breadcrumb a:hover{color:var(--gold)}
 .prog-breadcrumb-sep{color:rgba(255,255,255,.2)}
 .prog-breadcrumb-current{color:var(--gold-light);font-weight:500}
-
 .mba-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.85rem;margin-bottom:1.4rem}
 .mba-label::before{content:"";display:block;width:32px;height:2px;background:var(--gold)}
-
-/* Flagship badge inline with title */
 .mba-flagship-tag{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);font-family:var(--sans);font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:.3rem .8rem;margin-bottom:1.1rem;vertical-align:middle}
-
 .mba-hero-title{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4.5rem);color:#fff;line-height:1.0;margin-bottom:1.1rem}
 .mba-hero-title em{color:var(--gold);font-style:italic}
-
 .mba-hero-sub{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:500px;margin-bottom:2.5rem}
-
 .mba-hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-mba-primary{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.95rem 2rem;transition:all .25s}
 .btn-mba-primary:hover{background:var(--gold-light)}
 .btn-mba-ghost{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:.95rem 1.75rem;transition:all .25s}
 .btn-mba-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-
-/* Right panel — image with diagonal overlay */
 .mba-hero-right{position:relative;overflow:hidden;min-height:500px}
 .mba-hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
-/* Strong diagonal bleed from left to right */
 .mba-hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,var(--sky-deep) 0%,rgba(17,43,78,.55) 45%,transparent 70%);z-index:1}
-/* Gold shimmer line across diagonal */
 .mba-hero-right::after{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);z-index:2;opacity:.6}
-
-/* Corner badge */
 .mba-badge{position:absolute;bottom:2.5rem;right:2.5rem;z-index:3}
 .mba-badge-inner{width:110px;height:110px;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-3deg);box-shadow:0 8px 30px rgba(0,0,0,.3)}
 .mba-badge-inner span:first-child{font-family:var(--sans);font-size:.48rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.65);margin-bottom:.1rem}
 .mba-badge-inner strong{font-family:var(--serif);font-size:2rem;color:var(--ink);line-height:1}
 .mba-badge-inner span:last-child{font-family:var(--sans);font-size:.45rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,13,13,.55);margin-top:.2rem;text-align:center;padding:0 .5rem}
-
-/* Stat chips on hero image */
 .mba-hero-stats{position:absolute;top:2.5rem;left:2rem;z-index:3;display:flex;flex-direction:column;gap:.6rem}
 .mba-stat-chip{background:rgba(13,13,13,.7);border:1px solid rgba(201,168,76,.3);backdrop-filter:blur(6px);padding:.5rem 1rem;display:flex;align-items:center;gap:.65rem}
 .mba-stat-chip-num{font-family:var(--serif);font-size:1.35rem;color:var(--gold);line-height:1}
 .mba-stat-chip-label{font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.3}
 
-/* ── LEVEL PROGRESS STRIP ─────────────── */
 .prog-level-strip{background:var(--gold);padding:.65rem 5vw}
 .prog-level-strip-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;overflow-x:auto;scrollbar-width:none}
 .prog-level-strip-inner::-webkit-scrollbar{display:none}
@@ -175,7 +148,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .level-step.active .level-step-name{color:var(--ink);font-weight:800}
 .level-arrow{color:rgba(13,13,13,.3);font-size:.85rem;flex-shrink:0}
 
-/* ── META STRIP ─────────────────────── */
 .prog-meta-strip{background:var(--sky-deep);border-bottom:3px solid var(--gold)}
 .prog-meta-inner{max-width:1400px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:repeat(4,1fr)}
 .prog-meta-item{padding:1.4rem 1.5rem;display:flex;align-items:center;gap:.85rem;border-right:1px solid rgba(255,255,255,.07)}
@@ -184,13 +156,10 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .prog-meta-text strong{display:block;font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.15rem}
 .prog-meta-text span{font-size:.85rem;color:#fff;font-weight:500}
 
-/* ── MAIN LAYOUT ─────────────────────── */
 .prog-wrap{max-width:1400px;margin:0 auto;padding:5rem 5vw;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start}
-
 .prog-intro{font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.45rem);line-height:1.65;color:var(--sky);border-left:4px solid var(--gold);padding-left:1.75rem;margin-bottom:2.25rem;font-style:italic}
 .prog-body p{font-size:1rem;line-height:1.85;color:rgba(13,13,13,.75);margin-bottom:1.75rem}
 
-/* WHO IS THIS FOR */
 .ideal-section{background:var(--sky-pale);border-left:4px solid var(--gold);padding:2rem 2.25rem;margin-bottom:3rem}
 .ideal-section-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
 .ideal-section-label::before{content:"";display:block;width:16px;height:2px;background:var(--gold)}
@@ -198,7 +167,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .ideal-item{display:flex;align-items:flex-start;gap:.85rem;font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.6}
 .ideal-item-dot{width:24px;height:24px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.6rem;margin-top:.1rem}
 
-/* ── KEY FEATURES ────────────────────── */
 .features-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .features-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
 .features-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.25rem);color:var(--ink);line-height:1.15;margin-bottom:2rem}
@@ -213,7 +181,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .feature-card:hover .feature-card-body h4{color:var(--sky)}
 .feature-card-body p{font-size:.85rem;color:rgba(13,13,13,.6);line-height:1.65}
 
-/* ── SPECIALIZATIONS ─────────────────── */
 .spec-section{margin-bottom:3.5rem}
 .spec-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .spec-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
@@ -240,7 +207,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .spec-item::before{content:"";width:6px;height:6px;background:var(--sky);border-radius:50%;flex-shrink:0}
 .spec-item:hover{border-color:var(--sky);color:var(--sky);background:var(--sky-pale)}
 
-/* ── OUTCOMES ────────────────────────── */
 .outcomes-section{margin-bottom:3.5rem}
 .outcomes-eyebrow{font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
 .outcomes-eyebrow::before{content:"";display:block;width:24px;height:2px;background:var(--gold)}
@@ -254,7 +220,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .outcome-text{font-size:.925rem;color:rgba(13,13,13,.75);line-height:1.65}
 .outcome-text strong{color:var(--ink);display:block;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem}
 
-/* ── ROLES GRADUATES TAKE ────────────── */
 .roles-section{background:var(--ink);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
 .roles-section::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;border:1px solid rgba(255,255,255,.05);border-radius:50%}
 .roles-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
@@ -264,7 +229,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .role-chip{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(201,168,76,.25);padding:.4rem .9rem;background:rgba(201,168,76,.06);transition:all .2s}
 .role-chip:hover{background:rgba(201,168,76,.12);border-color:var(--gold)}
 
-/* ── ELIGIBILITY BANNER ──────────────── */
 .eligibility-banner{background:var(--gold);padding:2.75rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-top:3rem}
 .eligibility-banner-left h3{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:.4rem}
 .eligibility-banner-left p{font-size:.9rem;color:rgba(13,13,13,.65);line-height:1.6;max-width:450px}
@@ -272,7 +236,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .btn-eligibility-main:hover{background:var(--sky)}
 .btn-eligibility-main svg{width:15px;height:15px;flex-shrink:0}
 
-/* ── SIDEBAR ─────────────────────────── */
 .sidebar-quick-apply{background:var(--sky);padding:2rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
 .sidebar-quick-apply::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
 .sidebar-quick-apply-label{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
@@ -292,7 +255,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .sidebar-info-text strong{display:block;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.4);margin-bottom:.15rem}
 .sidebar-info-text span{font-size:.85rem;color:var(--ink)}
 
-/* Pathway */
 .pathway-section{background:var(--sky-deep);padding:2.5rem;position:relative;overflow:hidden;margin-bottom:1.5rem}
 .pathway-section::before{content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;border:1px solid rgba(255,255,255,.06);border-radius:50%}
 .pathway-eyebrow{font-family:var(--sans);font-size:.62rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem}
@@ -311,7 +273,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .pathway-step-text span{font-size:.75rem;color:rgba(255,255,255,.45)}
 .pathway-connector{width:1px;height:12px;background:rgba(255,255,255,.15);margin-left:15px}
 
-/* All Programs */
 .sidebar-programs-box{border:1px solid rgba(13,13,13,.08);margin-bottom:1.5rem}
 .sidebar-programs-head{background:var(--ink);padding:.85rem 1.25rem;display:flex;align-items:center;justify-content:space-between}
 .sidebar-programs-head h4{font-family:var(--sans);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
@@ -329,7 +290,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .program-link-arrow{color:var(--gold);font-size:.8rem;opacity:0;transition:all .2s}
 .program-link-item:hover .program-link-arrow{opacity:1}
 
-/* ── CTA STRIP ───────────────────────── */
 .page-cta{background:var(--sky);padding:5rem 5vw;position:relative;overflow:hidden}
 .page-cta::before{content:"";position:absolute;top:-60px;right:-60px;width:300px;height:300px;border:1px solid rgba(255,255,255,.06);border-radius:50%}
 .page-cta::after{content:"";position:absolute;bottom:-80px;left:10%;width:200px;height:200px;border:1px solid rgba(255,255,255,.04);border-radius:50%}
@@ -343,7 +303,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .btn-cta-ghost{font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:.9rem 2rem;text-align:center;transition:all .25s}
 .btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
-/* ── FOOTER ──────────────────────────── */
 .site-footer{background:#111;padding:4rem 5vw 2rem}
 .footer-inner{max-width:1400px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
@@ -366,7 +325,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
-/* ── RESPONSIVE ──────────────────────── */
 @media(max-width:1100px){
   .prog-wrap{grid-template-columns:1fr;gap:3rem}
   .prog-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -400,7 +358,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 </head>
 <body>
 
-<!-- NEWS TICKER -->
 <div class="news-ticker">
   <div class="ticker-label">Latest News</div>
   <div class="ticker-track-wrap">
@@ -419,10 +376,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234">&#128222; +1 (555) 000-1234</a>
     <a href="mailto:info@cbsedu.us">&#9993; info@cbsedu.us</a>
     <a href="cm.html">&#128205; View Campus Map</a>
   </div>
@@ -435,7 +390,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
     <a href="index.html" class="logo" aria-label="CIML Business School Home">
@@ -498,8 +452,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <a href="acc.html">Accreditation</a><a href="wcs.html">Why Choose Us</a>
       </div>
     </div>
-    <div class="drawer-item open">
-      <a href="op.html" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+    <div class="drawer-item">
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
       <div class="drawer-sub">
         <a href="dp.html">Diploma Program</a>
         <a href="avd.html">Advanced Diploma</a>
@@ -523,7 +477,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </aside>
 
-<!-- ── MBA HERO ── -->
 <section class="mba-hero">
   <div class="mba-hero-left">
     <div class="hero-accent-bar"></div>
@@ -551,7 +504,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
   <div class="mba-hero-right">
     <img src="assets/images/offering-mba.jpg" alt="MBA Program — CIML Business School">
-    <!-- Stat chips layered over image -->
     <div class="mba-hero-stats">
       <div class="mba-stat-chip">
         <span class="mba-stat-chip-num">40+</span>
@@ -570,37 +522,20 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </section>
 
-<!-- LEVEL PROGRESS STRIP -->
 <div class="prog-level-strip">
   <div class="prog-level-strip-inner">
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Advanced Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Advanced Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step done">
-      <div class="level-step-dot">&#10003;</div>
-      <span class="level-step-name">Postgrad Diploma</span>
-    </div>
+    <div class="level-step done"><div class="level-step-dot">&#10003;</div><span class="level-step-name">Postgrad Diploma</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step active">
-      <div class="level-step-dot">MBA</div>
-      <span class="level-step-name">MBA</span>
-    </div>
+    <div class="level-step active"><div class="level-step-dot">MBA</div><span class="level-step-name">MBA</span></div>
     <span class="level-arrow">&#8594;</span>
-    <div class="level-step">
-      <div class="level-step-dot">DBA</div>
-      <span class="level-step-name">DBA</span>
-    </div>
+    <div class="level-step"><div class="level-step-dot">DBA</div><span class="level-step-name">DBA</span></div>
   </div>
 </div>
 
-<!-- META STRIP -->
 <div class="prog-meta-strip">
   <div class="prog-meta-inner">
     <div class="prog-meta-item"><div class="prog-meta-icon">&#127891;</div><div class="prog-meta-text"><strong>Qualification</strong><span>Master of Business Administration</span></div></div>
@@ -610,41 +545,26 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </div>
 
-<!-- ── MAIN CONTENT + SIDEBAR ── -->
 <div class="prog-wrap">
   <main class="prog-main">
 
     <p class="prog-intro">&ldquo;The MBA at CIML Business School is more than a qualification &mdash; it is the turning point. Where ambition meets academic rigour, and professionals become the leaders their industries demand.&rdquo;</p>
 
     <div class="prog-body">
-      <p>Designed for professionals and graduates who aspire to advance into executive leadership, strategic management, and specialized industry roles, the CIML MBA delivers a holistic command of modern business practice. Students engage with advanced theoretical frameworks, global case studies, applied research projects, and industry-focused assignments &mdash; developing both intellectual depth and real-world capability.</p>
+      <p>Designed for professionals and graduates who aspire to advance into executive leadership, strategic management, and specialized industry roles, the CIML Business School MBA delivers a holistic command of modern business practice. Students engage with advanced theoretical frameworks, global case studies, applied research projects, and industry-focused assignments &mdash; developing both intellectual depth and real-world capability.</p>
       <p>The program places a distinct emphasis on strategic thinking, leadership development, innovation, and global competitiveness &mdash; equipping graduates with the ability to manage change, drive organizational growth, and create sustainable value across diverse industries and geographies.</p>
     </div>
 
-    <!-- WHO IS THIS FOR -->
     <div class="ideal-section">
       <div class="ideal-section-label">Who This Program Is For</div>
       <div class="ideal-list">
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Professionals targeting executive, senior management, or C-suite roles in their organizations.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Graduates seeking a globally recognized master's qualification to accelerate career advancement.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Entrepreneurs and consultants who need the strategic credentials to lead and scale high-impact ventures.
-        </div>
-        <div class="ideal-item">
-          <div class="ideal-item-dot">&#8594;</div>
-          Those planning to continue to the Doctor of Business Administration (DBA) at the doctoral level.
-        </div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Professionals targeting executive, senior management, or C-suite roles in their organizations.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Graduates seeking a globally recognized master's qualification to accelerate career advancement.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Entrepreneurs and consultants who need the strategic credentials to lead and scale high-impact ventures.</div>
+        <div class="ideal-item"><div class="ideal-item-dot">&#8594;</div>Those planning to continue to the Doctor of Business Administration (DBA) at the doctoral level.</div>
       </div>
     </div>
 
-    <!-- KEY FEATURES -->
     <div class="features-eyebrow">Key Program Features</div>
     <h2 class="features-title">Executive Depth, <em style="font-style:italic;color:var(--sky)">Global Relevance</em></h2>
     <div class="features-grid">
@@ -680,7 +600,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
         <div class="feature-card-icon">&#128640;</div>
         <div class="feature-card-body">
           <h4>Direct DBA Progression</h4>
-          <p>The MBA is the gateway to CIML's Doctor of Business Administration — ensuring a seamless, recognized academic pathway to the highest credential available in professional business education.</p>
+          <p>The MBA is the gateway to CIML Business School's Doctor of Business Administration — ensuring a seamless, recognized academic pathway to the highest credential available in professional business education.</p>
         </div>
       </div>
       <div class="feature-card">
@@ -692,7 +612,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- SPECIALIZATIONS -->
     <div class="spec-section">
       <div class="spec-eyebrow">Specialization Tracks</div>
       <h2 class="spec-title">40+ Specializations Across Every Major Industry</h2>
@@ -802,7 +721,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- OUTCOMES -->
     <div class="outcomes-section">
       <div class="outcomes-eyebrow">What You'll Achieve</div>
       <h2 class="outcomes-title">Program Outcomes</h2>
@@ -815,7 +733,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- ROLES GRADUATES TAKE -->
     <div class="roles-section">
       <div class="roles-eyebrow">Where MBA Graduates Go</div>
       <div class="roles-title">Executive &amp; Senior Roles Our Graduates Occupy</div>
@@ -835,7 +752,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
 
-    <!-- ELIGIBILITY BANNER -->
     <div class="eligibility-banner">
       <div class="eligibility-banner-left">
         <h3>Find out if you qualify for the MBA</h3>
@@ -849,7 +765,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
   </main>
 
-  <!-- SIDEBAR -->
   <aside class="prog-sidebar">
 
     <div class="sidebar-quick-apply">
@@ -898,12 +813,11 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </aside>
 </div>
 
-<!-- CTA STRIP -->
 <section class="page-cta">
   <div class="page-cta-inner">
     <div>
       <h2>Step into the<br><em>MBA Program</em></h2>
-      <p>The CIML MBA is where executive ambition meets world-class academic rigour. With 40+ specializations, a globally validated credential, and a direct pathway to the DBA, your leadership journey begins here. Applications for 2026 are now open.</p>
+      <p>The CIML Business School MBA is where executive ambition meets world-class academic rigour. With 40+ specializations, a globally validated credential, and a direct pathway to the DBA, your leadership journey begins here. Applications for 2026 are now open.</p>
     </div>
     <div class="page-cta-btns">
       <a href="rmba.html" class="btn-cta-gold">Check Eligibility</a>
@@ -912,14 +826,13 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display='none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School<small>Shaping Tomorrow</small></div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -946,7 +859,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </ul></div>
       <div class="footer-col"><h4>Contact</h4><ul>
         <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
-        <li><a href="tel:+15550001234">+1 (555) 000-1234</a></li>
         <li><a href="app.html">Admissions / Apply</a></li>
         <li><a href="https://cbsedu.us/cbs/user/">Student Verification and Result Portal</a></li>
         <li><a href="cm.html">Campus Map</a></li>
@@ -960,11 +872,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 </footer>
 
 <script>
-/* Header scroll */
 const header=document.getElementById("siteHeader");
 window.addEventListener("scroll",()=>{header.classList.toggle("scrolled",window.scrollY>20)},{passive:true});
-
-/* Mobile drawer */
 const hamburgerBtn=document.getElementById("hamburgerBtn");
 const mobileDrawer=document.getElementById("mobileDrawer");
 const mobileOverlay=document.getElementById("mobileOverlay");
@@ -985,8 +894,6 @@ document.querySelectorAll(".drawer-has-sub").forEach(link=>{
   });
 });
 window.addEventListener("resize",()=>{if(window.innerWidth>1050)closeDrawer()},{passive:true});
-
-/* Specialization accordion */
 function toggleSpec(header){
   const group=header.closest(".spec-group");
   const isOpen=group.classList.contains("open");
