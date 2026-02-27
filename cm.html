@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Campus Map — CIML Business School</title>
+<title>Campus Map — CIML Business School — Shaping Tomorrow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo/cbs-logo.png">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -14,7 +14,8 @@
   --gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#A8872E;
   --rust:#B5451B;--sage:#3D5A4A;--sky:#1B3F6E;
   --serif:'DM Serif Display',Georgia,serif;
-  --sans:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --sans:'Cambria','Georgia',serif;
+  --body:'DM Sans',sans-serif;
   --ease-out:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
@@ -26,7 +27,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 
 /* NEWS TICKER */
 .news-ticker{background:var(--sky);color:#fff;display:flex;align-items:center;height:38px;overflow:hidden}
-.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
+.ticker-label{background:var(--gold);color:var(--ink);font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:0 1.25rem;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0}
 .ticker-track-wrap{overflow:hidden;flex:1;height:100%;display:flex;align-items:center}
 .ticker-track{display:inline-flex;animation:tickerScroll 30s linear infinite;white-space:nowrap}
 .ticker-track span{font-family:var(--body);font-size:.8rem;color:#fff;padding:0 2.5rem}
@@ -53,11 +54,11 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .logo-img{height:42px;width:auto;object-fit:contain}
 .logo-divider{width:1px;height:36px;background:rgba(13,13,13,.15)}
 .logo-name{display:flex;flex-direction:column;font-family:var(--sans);text-transform:uppercase;line-height:1.2}
-.logo-name-top{font-size:.9rem;font-weight:800;letter-spacing:.1em;color:var(--ink)}
-.logo-name-bottom{font-size:.55rem;font-weight:800;letter-spacing:.14em;color:var(--ink)}
+.logo-name-top{font-size:.9rem;font-weight:700;letter-spacing:.1em;color:var(--ink)}
+.logo-name-bottom{font-size:.9rem;font-weight:700;letter-spacing:.1em;color:var(--ink)}
 .primary-nav ul{display:flex;align-items:center}
 .primary-nav li{position:relative}
-.primary-nav li>a{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
+.primary-nav li>a{font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);padding:0 .65rem;height:80px;display:flex;align-items:center;gap:.3rem;white-space:nowrap;position:relative;transition:color .2s}
 .primary-nav li>a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease-out)}
 .primary-nav li:hover>a{color:var(--gold-dark)}
 .primary-nav li:hover>a::after{transform:scaleX(1)}
@@ -65,12 +66,12 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .has-drop:hover>a .chevron{transform:rotate(180deg)}
 .drop-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);min-width:250px;background:var(--ink);border-top:3px solid var(--gold);opacity:0;visibility:hidden;pointer-events:none;transition:all .3s var(--ease-out);z-index:800;box-shadow:0 8px 30px rgba(0,0,0,.2)}
 .has-drop:hover .drop-panel{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.drop-panel a{display:block;font-family:var(--body);font-size:.85rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
+.drop-panel a{display:block;font-family:var(--sans);font-size:1rem;color:rgba(255,255,255,.85);padding:.8rem 1.5rem;border-left:3px solid transparent;transition:all .2s}
 .drop-panel a:hover{color:var(--gold-light);background:rgba(201,168,76,.08);border-left-color:var(--gold);padding-left:1.85rem}
 .header-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
-.btn-portal{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .6rem;transition:all .2s;white-space:nowrap}
+.btn-portal{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border:2px solid var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
 .btn-portal:hover{background:var(--ink);color:#fff}
-.btn-apply{font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .7rem;transition:all .2s;white-space:nowrap}
+.btn-apply{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:.45rem .85rem;transition:all .2s;white-space:nowrap}
 .btn-apply:hover{background:var(--gold-dark);color:#fff}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:.5rem}
 .hamburger i{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s var(--ease-out);transform-origin:center}
@@ -84,7 +85,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .mobile-drawer{position:fixed;top:0;right:0;width:min(320px,90vw);height:100dvh;background:var(--ink);z-index:860;transform:translateX(100%);transition:transform .4s var(--ease-out);display:flex;flex-direction:column;overflow-y:auto}
 .mobile-drawer.open{transform:translateX(0)}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:800;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.drawer-logo-text{font-family:var(--sans);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .drawer-logo-text em{color:var(--gold);font-style:normal}
 .drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.1rem;transition:all .2s}
 .drawer-close:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
@@ -96,7 +97,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .drawer-item.open .drawer-plus{transform:rotate(45deg)}
 .drawer-sub{display:none;padding-bottom:.75rem}
 .drawer-item.open .drawer-sub{display:block}
-.drawer-sub a{display:block;font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
+.drawer-sub a{display:block;font-family:var(--sans);font-size:.825rem;color:rgba(255,255,255,.75);padding:.5rem 1rem;border-left:2px solid rgba(201,168,76,.3);margin-left:.25rem;transition:all .2s}
 .drawer-sub a:hover{color:var(--gold-light);border-left-color:var(--gold);padding-left:1.25rem}
 .drawer-foot{padding:1.25rem 1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem}
 .drawer-btn{display:block;text-align:center;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85rem;transition:all .2s}
@@ -126,7 +127,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .map-wrapper{width:100%;height:520px;position:relative;border-bottom:4px solid var(--gold)}
 .map-wrapper iframe{width:100%;height:100%;border:0;display:block}
 .map-badge{position:absolute;top:1.5rem;left:1.5rem;background:var(--sky);color:#fff;padding:1rem 1.25rem;max-width:260px;border-left:4px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,.2);z-index:2}
-.map-badge-label{font-family:var(--sans);font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.map-badge-label{font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
 .map-badge h3{font-family:var(--serif);font-size:1.05rem;color:#fff;line-height:1.3;margin-bottom:.35rem}
 .map-badge p{font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.5}
 .map-badge a{display:inline-flex;align-items:center;gap:.4rem;margin-top:.75rem;font-family:var(--sans);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.5);padding:.4rem .75rem;transition:all .2s}
@@ -145,7 +146,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .contact-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
 .contact-card:hover::before{transform:scaleX(1)}
 .contact-card-icon{width:48px;height:48px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.25rem;flex-shrink:0}
-.contact-card h4{font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:.75rem}
+.contact-card h4{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:.75rem}
 .contact-card p,.contact-card a{font-size:.9rem;color:rgba(13,13,13,.75);line-height:1.7;display:block}
 .contact-card a{transition:color .2s}
 .contact-card a:hover{color:var(--sky)}
@@ -154,7 +155,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .connect-strip{background:var(--sky);padding:3rem 5vw}
 .connect-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .connect-text h3{font-family:var(--serif);font-size:1.75rem;color:#fff;margin-bottom:.35rem}
-.connect-text p{font-size:.9rem;color:rgba(255,255,255,.75)}
+.connect-text p{font-family:var(--sans);font-size:.9rem;color:rgba(255,255,255,.75)}
 .connect-social{display:flex;gap:.6rem;align-items:center}
 .connect-label{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-right:.5rem}
 .social-link{width:42px;height:42px;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:all .25s;font-size:1rem;color:#fff}
@@ -174,22 +175,21 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:2rem}
 .footer-brand-logo-wrap{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
 .footer-brand-logo-img{height:48px;width:auto;object-fit:contain;background:#fff;padding:.4rem .6rem;border-radius:2px;display:block}
-.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.2}
-.footer-brand-name small{display:block;font-size:.6rem;letter-spacing:.12em;color:var(--gold)}
+.footer-brand-name{font-family:var(--sans);font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;line-height:1.4}
 .footer-brand p{font-size:.9rem;color:#b8b8b8;line-height:1.75;max-width:280px;margin-bottom:1.5rem}
 .footer-social{display:flex;gap:.6rem}
 .footer-social-link{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);transition:all .25s}
 .footer-social-link img{width:15px;height:15px;object-fit:contain;filter:invert(1);opacity:.8}
 .footer-social-link:hover{border-color:var(--gold);background:rgba(201,168,76,.15)}
 .footer-social-link:hover img{opacity:1}
-.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
+.footer-col h4{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold);display:inline-block}
 .footer-col ul li{margin-bottom:.7rem}
-.footer-col ul li a{font-size:.875rem;color:#b8b8b8;transition:all .2s}
+.footer-col ul li a{font-family:var(--sans);font-size:.875rem;color:#b8b8b8;transition:all .2s}
 .footer-col ul li a:hover{color:var(--gold-light);padding-left:.35rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom p{font-size:.8rem;color:#888}
+.footer-bottom p{font-family:var(--sans);font-size:.8rem;color:#888}
 .footer-legal{display:flex;gap:1.25rem}
-.footer-legal a{font-size:.8rem;color:#888;transition:color .2s}
+.footer-legal a{font-family:var(--sans);font-size:.8rem;color:#888;transition:color .2s}
 .footer-legal a:hover{color:#ccc}
 
 /* RESPONSIVE */
@@ -210,7 +210,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
   .footer-bottom{flex-direction:column;text-align:center}
 }
 
-/* ENTRANCE ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .page-hero-inner{animation:fadeUp .7s var(--ease-out) both}
 .map-wrapper{animation:fadeUp .7s .15s var(--ease-out) both}
@@ -241,7 +240,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-contact">
-    <a href="tel:+15550001234"><span class="tbc-icon">📞</span> +1 (555) 000-1234</a>
     <a href="mailto:info@cbsedu.us"><span class="tbc-icon">✉</span> info@cbsedu.us</a>
     <a href="cm.html"><span class="tbc-icon">📍</span> View Campus Map</a>
   </div>
@@ -330,7 +328,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       </div>
     </div>
     <div class="drawer-item">
-      <a href="op.html" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
+      <a href="#" class="drawer-link drawer-has-sub">Our Programs <span class="drawer-plus">+</span></a>
       <div class="drawer-sub">
         <a href="dp.html">Diploma Program</a><a href="avd.html">Advanced Diploma</a>
         <a href="pgd.html">Postgraduate Diploma</a><a href="mba.html">MBA</a><a href="dba.html">DBA</a>
@@ -368,7 +366,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 <!-- MAP -->
 <div class="map-section">
   <div class="map-wrapper">
-    <!-- Embedded Google Map for 530-B Harkle Road, STE 100, Santa Fe, NM 87505 -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.034682243674!2d-105.97290248469!3d35.66919738019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87185dd6f7a69c03%3A0x3a8f7f6b0b0e0c0d!2s530+Harkle+Rd+%23100%2C+Santa+Fe%2C+NM+87505%2C+USA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
       allowfullscreen=""
@@ -377,8 +374,6 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       title="CIML Business School Campus Map — 530-B Harkle Road, STE 100, Santa Fe, NM 87505"
       aria-label="Google Map showing CIML Business School location">
     </iframe>
-
-    <!-- Floating address badge over the map -->
     <div class="map-badge" role="complementary" aria-label="Campus address">
       <div class="map-badge-label">📍 Campus Address</div>
       <h3>CIML Business School</h3>
@@ -398,26 +393,17 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <p class="contact-lead">We welcome inquiries from prospective students, partners, and stakeholders. Please reach out to us through any of the following channels — our team is ready to assist you.</p>
 
     <div class="contact-grid">
-      <!-- Address -->
       <div class="contact-card">
         <div class="contact-card-icon">📍</div>
         <h4>Campus Address</h4>
-        <p>
-          530-B Harkle Road, STE 100<br>
-          Santa Fe, NM 87505<br>
-          New Mexico, USA
-        </p>
+        <p>530-B Harkle Road, STE 100<br>Santa Fe, NM 87505<br>New Mexico, USA</p>
       </div>
-
-      <!-- Email & Website -->
       <div class="contact-card">
         <div class="contact-card-icon">✉️</div>
-        <h4>Email & Website</h4>
+        <h4>Email &amp; Website</h4>
         <a href="mailto:info@cbsedu.us">info@cbsedu.us</a>
         <a href="https://www.cbsedu.us" target="_blank" rel="noopener noreferrer" style="margin-top:.35rem">www.cbsedu.us</a>
       </div>
-
-      <!-- Online Presence -->
       <div class="contact-card">
         <div class="contact-card-icon">🌐</div>
         <h4>Stay Connected</h4>
@@ -425,9 +411,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
           <strong style="font-weight:600;color:var(--ink)">Website:</strong><br>
           <a href="https://www.cbsedu.us" target="_blank" rel="noopener noreferrer">CIML Business School</a>
         </p>
-        <p style="margin-top:.5rem">
-          Follow us on social media for news, events, and updates from our global community of learners and leaders.
-        </p>
+        <p style="margin-top:.5rem">Follow us on social media for news, events, and updates from our global community of learners and leaders.</p>
       </div>
     </div>
   </div>
@@ -449,7 +433,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <a href="https://www.facebook.com" class="social-link" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a>
     </div>
     <div class="connect-cta">
-      <a href="app.html" class="btn-connect btn-connect-gold">Apply for 2026</a>
+      <a href="app.html" class="btn-connect btn-connect-gold">Apply Now</a>
       <a href="mailto:info@cbsedu.us" class="btn-connect btn-connect-outline">Email Us</a>
     </div>
   </div>
@@ -461,8 +445,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-brand-logo-wrap">
-          <img src="assets/logo/cbs-logo.png" alt="CIML" class="footer-brand-logo-img" onerror="this.style.display:'none';">
-          <div class="footer-brand-name">CIML<small>Business School</small></div>
+          <img src="assets/logo/cbs-logo.png" alt="CIML Business School" class="footer-brand-logo-img" onerror="this.style.display='none';">
+          <div class="footer-brand-name">CIML Business School</div>
         </div>
         <p>Empowering minds and shaping futures through rigorous academics, transformative experiences, and a global community of learners and leaders.</p>
         <div class="footer-social">
@@ -486,7 +470,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <div class="footer-col">
         <h4>Institution</h4>
         <ul>
-          <li><a href="ov.html">Overview</a></li>
+          <li><a href="ov.html">About CIML Business School</a></li>
           <li><a href="acc.html">Accreditation</a></li>
           <li><a href="wcs.html">Why Choose Us</a></li>
           <li><a href="#">News &amp; Events</a></li>
@@ -495,6 +479,7 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
+          <li><a href="#">530-B Harkle Road, STE 100<br>Santa Fe, NM 87505<br>New Mexico, USA</a></li>
           <li><a href="mailto:info@cbsedu.us">info@cbsedu.us</a></li>
           <li><a href="https://www.cbsedu.us" target="_blank" rel="noopener noreferrer">www.cbsedu.us</a></li>
           <li><a href="app.html">Admissions / Apply</a></li>
@@ -514,11 +499,8 @@ button{cursor:pointer;background:none;border:none;font-family:inherit}
 </footer>
 
 <script>
-/* Header scroll shadow */
 const header=document.getElementById('siteHeader');
 window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
-
-/* Mobile drawer */
 const hamburgerBtn=document.getElementById('hamburgerBtn');
 const mobileDrawer=document.getElementById('mobileDrawer');
 const mobileOverlay=document.getElementById('mobileOverlay');
