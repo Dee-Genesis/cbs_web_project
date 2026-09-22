@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Dashboard — CBS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:   #0b1e3d;
+  --gold:   #c9972e;
+  --gold-lt:#f0c86a;
+  --white:  #ffffff;
+  --off:    #f5f5f0;
+  --text:   #2d2d2d;
+  --muted:  #6b7280;
+  --border: #e0ddd6;
+  --radius: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--off); min-height: 100vh; }
+.top-bar { background: var(--white); box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; }
+.top-bar h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); }
+.logout-link { border: 1.5px solid var(--navy); color: var(--navy); padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.logout-link:hover { background: var(--navy); color: var(--white); }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 2rem 24px 4rem; }
+.status-msg { padding: 0.9rem 1.2rem; border-radius: var(--radius); margin-bottom: 1.25rem; font-size: 0.9rem; display: none; }
+.status-msg.error { background: #fbeae7; border-left: 3px solid #b3402c; color: #7a2c1d; }
+.status-msg.ok { background: #eaf4ee; border-left: 3px solid #2f6b4f; color: #1e4a35; }
+.tabs { display: flex; gap: 8px; margin-bottom: 1.25rem; }
+.tab-btn { font-size: 0.86rem; font-weight: 600; color: var(--navy); background: var(--white); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 30px; cursor: pointer; transition: all 0.2s; }
+.tab-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.panel { display: none; }
+.panel.active { display: block; }
+.card { background: var(--white); border-radius: 12px; box-shadow: 0 8px 32px rgba(11,30,61,0.08); overflow: hidden; margin-bottom: 1.5rem; }
+.add-form { padding: 1.75rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.9rem; align-items: end; border-bottom: 1px solid var(--border); }
+.add-form h2 { grid-column: 1 / -1; font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.25rem; }
+.field label { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.field input, .field select { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; padding: 0.6rem 0.8rem; border: 1.5px solid var(--border); border-radius: var(--radius); background: var(--off); }
+.field input:focus, .field select:focus { outline: none; border-color: var(--gold); background: var(--white); }
+.add-submit { background: var(--gold); color: var(--white); font-size: 0.85rem; font-weight: 600; padding: 0.7rem 1.4rem; border: none; border-radius: 30px; cursor: pointer; transition: background 0.2s; height: fit-content; }
+.add-submit:hover { background: var(--navy); }
+.add-submit:disabled { background: var(--muted); cursor: default; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.88rem; white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+.table-scroll { overflow-x: auto; }
+.loading-row td { text-align: center; color: var(--muted); padding: 2.5rem; }
+.btn-del { background: none; border: 1.5px solid #b3402c; color: #b3402c; padding: 5px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-del:hover { background: #b3402c; color: var(--white); }
+.btn-del:disabled { opacity: 0.5; cursor: default; }
+#gate { max-width: 400px; margin: 100px auto; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div id="gate"><p>Checking your session…</p></div>
+
+<div id="dashboard" style="display:none;">
+  <div class="top-bar">
+    <h1>CBS Admin Dashboard</h1>
+    <a href="login.php?logout" class="logout-link">Log out</a>
+  </div>
+
+  <div class="wrap">
+    <div id="statusMsg" class="status-msg"></div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="certificates">Certificates</button>
+    </div>
+
+    <!-- Certificates tab -->
+    <div class="panel active" id="panel-certificates">
+      <div class="card">
+        <form class="add-form" id="certificateForm">
+          <h2>Add Certificate Record</h2>
+          <div class="field"><label>Reference No.</label><input type="text" name="memberNo" required></div>
+          <div class="field"><label>Full Name</label><input type="text" name="certificate" required></div>
+          <div class="field"><label>Type</label>
+            <select name="recordType">
+              <option value="">—</option>
+              <option value="degree">Degree</option>
+              <option value="diploma">Diploma</option>
+            </select>
+          </div>
+          <div class="field"><label>Program</label><input type="text" name="award"></div>
+          <div class="field"><label>Date Issued</label><input type="date" name="dateIssued"></div>
+          <button type="submit" class="add-submit">Add</button>
+        </form>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Ref No.</th><th>Full Name</th><th>Type</th><th>Program</th><th>Issued</th><th></th></tr>
+            </thead>
+            <tbody id="certificateRows">
+              <tr class="loading-row"><td colspan="6">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var LOGIN_PATH = 'login.php';
+
+function showStatus(message, isError) {
+  var el = document.getElementById('statusMsg');
+  el.textContent = message;
+  el.className = 'status-msg ' + (isError ? 'error' : 'ok');
+  el.style.display = 'block';
+  window.scrollTo(0, 0);
+  setTimeout(function () { el.style.display = 'none'; }, 4000);
+}
+
+function escapeHtml(str) {
+  var d = document.createElement('div');
+  d.textContent = str ?? '';
+  return d.innerHTML;
+}
+
+document.querySelectorAll('.tab-btn').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    var tab = btn.dataset.tab;
+    document.getElementById('panel-certificates').classList.toggle('active', tab === 'certificates');
+  });
+});
+
+function loadCertificates() {
+  var tbody = document.getElementById('certificateRows');
+  fetch('certificates_actions.php?action=list&_=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.ok) { throw new Error(data.message || 'Failed to load.'); }
+      if (data.rows.length === 0) {
+        tbody.innerHTML = '<tr class="loading-row"><td colspan="6">No certificate records found.</td></tr>';
+        return;
+      }
+      // Server already returns rows newest-first (ORDER BY id DESC) for LIFO order.
+      tbody.innerHTML = data.rows.map(function (row) {
+        return '<tr>' +
+          '<td>' + escapeHtml(row.memberNo) + '</td>' +
+          '<td>' + escapeHtml(row.certificate) + '</td>' +
+          '<td>' + escapeHtml(row.recordType || '—') + '</td>' +
+          '<td>' + escapeHtml(row.award || '—') + '</td>' +
+          '<td>' + escapeHtml(row.dateIssued || '—') + '</td>' +
+          '<td><button class="btn-del" data-type="certificates" data-id="' + escapeHtml(row.memberNo) + '">Delete</button></td>' +
+          '</tr>';
+      }).join('');
+    })
+    .catch(function (err) {
+      tbody.innerHTML = '<tr class="loading-row"><td colspan="6">Could not load records.</td></tr>';
+      showStatus(err.message, true);
+    });
+}
+
+function handleAddForm(form, endpoint, onDone) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var submitBtn = form.querySelector('.add-submit');
+    submitBtn.disabled = true;
+    var body = new URLSearchParams(new FormData(form));
+    body.set('action', 'create');
+
+    fetch(endpoint, { method: 'POST', body: body })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data.ok) { throw new Error(data.message || 'Could not save.'); }
+        showStatus('Record added.', false);
+        form.reset();
+        onDone();
+      })
+      .catch(function (err) { showStatus(err.message, true); })
+      .finally(function () { submitBtn.disabled = false; });
+  });
+}
+
+handleAddForm(document.getElementById('certificateForm'), 'certificates_actions.php', loadCertificates);
+
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.btn-del');
+  if (!btn) return;
+
+  var id = btn.dataset.id;
+  if (!confirm('Delete this certificate record (' + id + ')? This cannot be undone.')) {
+    return;
+  }
+
+  var endpoint = 'certificates_actions.php';
+  btn.disabled = true;
+
+  fetch(endpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ action: 'delete', memberNo: id })
+  })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.ok) { throw new Error(data.message || 'Delete failed.'); }
+      showStatus('Record deleted.', false);
+      loadCertificates();
+    })
+    .catch(function (err) {
+      showStatus(err.message, true);
+      btn.disabled = false;
+    });
+});
+
+fetch('session_check.php')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    if (!data.loggedIn) {
+      window.location.href = LOGIN_PATH;
+      return;
+    }
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('dashboard').style.display = '';
+    loadCertificates();
+  })
+  .catch(function () {
+    window.location.href = LOGIN_PATH;
+  });
+</script>
+</body>
+</html>
